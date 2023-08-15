@@ -19,8 +19,6 @@ module serv_decode
    output reg       o_rd_op,
    output reg       o_two_stage_op,
    output reg       o_dbus_en,
-   //Extension
-   output reg [2:0] o_ext_funct3,
    //To bufreg
    output reg       o_bufreg_rs1_en,
    output reg       o_bufreg_imm_en,
@@ -82,7 +80,7 @@ module serv_decode
    reg        op31;
    
    
-   reg       imm25;
+//   reg       imm25;
    reg       imm30;
 
    wire co_two_stage_op =
@@ -274,7 +272,7 @@ module serv_decode
         if (i_rst) begin // NOP
             funct3 <= 3'b000;
             imm30  <= 1'b0;
-            imm25  <= 1'b0;
+//            imm25  <= 1'b0;
             opcode <= 5'b00100;
             op20   <= 1'b0;
             op21   <= 1'b0;
@@ -291,7 +289,7 @@ module serv_decode
 //            funct3 <= i_wb_rdt[14:12] & {3{!enter_debug}};
             funct3 <= i_wb_rdt[14:12] & {3{!enter_debug}};
             imm30  <= i_wb_rdt[30];
-            imm25  <= i_wb_rdt[25];
+//            imm25  <= i_wb_rdt[25];
 //            opcode <= i_wb_rdt[6:2];
             opcode[4:2] <= i_wb_rdt[6:4] | {3{enter_debug}};
             opcode[1:0] <= i_wb_rdt[3:2] & {2{!enter_debug}};

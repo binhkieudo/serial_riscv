@@ -2,7 +2,9 @@ module serv_rf_top
 #(
     parameter RESET_PC = 32'd0,
     parameter RF_WIDTH = 8,
-	parameter RF_L2D   = $clog2((32+4)*32/RF_WIDTH)
+    parameter RF_COUNT = 16,
+    parameter CSR_COUNT= 8,
+	parameter RF_L2D   = $clog2((RF_COUNT+CSR_COUNT)*32/RF_WIDTH)
 )
 (
     input  wire 	    clk,
@@ -27,8 +29,7 @@ module serv_rf_top
     input  wire         i_dbg_reset,
     output wire         o_dbg_process // set whenever CPU in debug mode (halt, ebreak, step)  
 );
-   
-    localparam CSR_REGS = 4;
+  
 
     wire 	            rf_wreq;
     wire 	            rf_rreq;
@@ -92,7 +93,8 @@ module serv_rf_top
 
     serv_rf_ram_if #(
         .width          (RF_WIDTH       ),
-        .csr_regs       (CSR_REGS       )
+        .csr_regs       (CSR_COUNT      ),
+        .rf_count       (RF_COUNT       )
     ) rf_ram_if (
         // Global control
         .i_clk    (clk      ),
@@ -121,8 +123,9 @@ module serv_rf_top
    );
 
    serv_rf_ram #(
-      .width    (RF_WIDTH),
-      .csr_regs (CSR_REGS)
+      .width     (RF_WIDTH),
+      .rf_count  (RF_COUNT),
+      .csr_count (CSR_COUNT)
    ) rf_ram (
       .i_clk   (clk     ),
       .i_rst   (i_rst | i_dbg_reset ),

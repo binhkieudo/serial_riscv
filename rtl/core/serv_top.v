@@ -32,7 +32,11 @@ module serv_top
    output wire 		  o_dbus_we ,
    output wire 		  o_dbus_cyc,
    input  wire [31:0] i_dbus_rdt,
-   input  wire 		  i_dbus_ack
+   input  wire 		  i_dbus_ack,
+   // Debug interface
+   input  wire        i_dbg_halt,
+   input  wire        i_dbg_reset,
+   output wire        o_dbg_process
 );
 
    wire [4:0]    rd_addr;

@@ -1,4 +1,10 @@
-module servant
+module servant # (
+    parameter memsize = 8192,
+    parameter RESET_ADDR = 32'h0000_0000,
+    parameter RF_WIDTH = 8,
+    parameter RF_COUNT = 16,
+    parameter CSR_COUNT = 8 
+)
 (
  input  wire wb_clk,
  input  wire wb_rstn,
@@ -16,8 +22,6 @@ module servant
  output wire o_flash_MOSI,
  input  wire i_flash_MISO
 );
-
-   parameter memsize = 8192;
 
    wire 	timer_irq;
 
@@ -167,7 +171,6 @@ module servant
    );
 
    servant_ram #(
-       .memfile (memfile),
        .depth (memsize)
    ) ram (
       // Wishbone interface
@@ -183,7 +186,6 @@ module servant
     );
 
     timer #(
-	    .RESET_STRATEGY (reset_strategy),
 	    .WIDTH (32)
     ) timer (
 	    .i_clk    (wb_clk      ),
@@ -206,8 +208,12 @@ module servant
       .o_gpio   (q          )
    );
 
-   serv_rf_top
-     #(.RESET_PC (32'h0000_0000))
+   serv_rf_top #(
+    .RESET_PC  (RESET_ADDR    ),
+    .RF_WIDTH  (RF_WIDTH      ),
+    .RF_COUNT  (RF_COUNT      ),
+    .CSR_COUNT (CSR_COUNT     )     
+   )
    cpu
      (
       .clk          (wb_clk         ),

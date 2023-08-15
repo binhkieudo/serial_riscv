@@ -1,8 +1,8 @@
 module servant_ram
   #(//Memory parameters
     parameter depth = 256,
-    parameter aw    = $clog2(depth),
-    parameter memfile = "")
+    parameter aw    = $clog2(depth)
+)
    (input wire 		   i_wb_clk,
     input wire 		   i_wb_rst,
     input wire [31:2]  i_wb_adr,

@@ -1,7 +1,8 @@
 module serv_rf_ram #(
     parameter width     = 8,
-    parameter csr_regs  = 4,
-    parameter depth     = 32*32/width
+    parameter rf_count  = 16,
+    parameter csr_count = 8,
+    parameter depth     = (rf_count+csr_count)*32/width
 )
 (
     input  wire                      i_clk,

@@ -18,7 +18,6 @@ module serv_rf_if
    input  wire 		 i_trap,
    input  wire       i_ebreak,
    input  wire       i_dbg_process,
-   input  wire       i_halt,
    input  wire 		 i_mret,
    input  wire       i_dret,
    input  wire 		 i_mepc,
@@ -64,7 +63,7 @@ module serv_rf_if
    wire mtval = i_mtval_pc ? i_bad_pc : i_bufreg_q;
 
    assign o_wdata0 = i_trap ? mtval  : rd;
-   assign o_wdata1 = i_ebreak? i_pcnext:
+   assign o_wdata1 = i_ebreak? i_mepc:
                      i_trap ? i_mepc : i_csr;
 
    /* Port 0 handles writes to mtval during traps and rd otherwise
