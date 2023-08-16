@@ -1,4 +1,6 @@
-module serv_rf_if
+module serv_rf_if #(
+   parameter E_EXT = 1
+)
 (
    //RF Interface
    input  wire 		 i_cnt_en,
@@ -49,7 +51,7 @@ module serv_rf_if
    output wire 		 o_rs2
  );
 
-
+   wire csr_bit = ~E_EXT;
    /*
     ********** Write side ***********
     */
@@ -80,12 +82,12 @@ module serv_rf_if
 //   assign o_wreg0 = i_trap ? {6'b100011} : {1'b0,i_rd_waddr};
 //   assign o_wreg1 = i_trap ? {6'b100010} : {3'b010,i_csr_addr};
 
-   assign o_wreg0 = i_trap ? {6'b010010} : // mtval
+   assign o_wreg0 = i_trap ? {csr_bit, 5'b010010} : // mtval
                              {1'b0,i_rd_waddr};
                              
-   assign o_wreg1 = i_ebreak ? {6'b010101} : // dpc
-                    i_trap   ? {6'b010001} : // mepc
-                             {3'b010,i_csr_addr};
+   assign o_wreg1 = i_ebreak ? {csr_bit, 5'b010101} : // dpc
+                    i_trap   ? {csr_bit, 5'b010001} : // mepc
+                             {csr_bit, 2'b10,i_csr_addr};
    
    assign o_wen0 = i_cnt_en & (i_trap | rd_wen) & !i_ebreak;
 //   assign o_wen1 = i_cnt_en & (i_trap | i_csr_en | i_ebreak) & !i_dbg_process;
@@ -136,7 +138,7 @@ module serv_rf_if
 		                 
 //		                 ({2{i_csr_en}} & i_csr_addr) | 
 //		                 ({2{sel_rs2}} & i_rs2_raddr[1:0])}; // [1:0]
-   assign o_rreg1[5]   = 1'b0; // only use 32 registers
+   assign o_rreg1[5]   = csr_bit & (~sel_rs2); // only use 32 registers
    assign o_rreg1[4]   =  ~sel_rs2; // 1 if csr is selected
    assign o_rreg1[3]   =   sel_rs2 & i_rs2_raddr[3]; // select rs2 if not csr, otherwise zero
    assign o_rreg1[2:0] =  {i_dret, i_trap, i_trap | i_mret | i_dret} |

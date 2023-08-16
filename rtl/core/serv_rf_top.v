@@ -1,10 +1,9 @@
 module serv_rf_top
 #(
     parameter RESET_PC = 32'd0,
+    parameter E_EXT    = 1,
     parameter RF_WIDTH = 8,
-    parameter RF_COUNT = 16,
-    parameter CSR_COUNT= 8,
-	parameter RF_L2D   = $clog2((RF_COUNT+CSR_COUNT)*32/RF_WIDTH)
+    parameter CSR_COUNT= 8
 )
 (
     input  wire 	    clk,
@@ -30,6 +29,8 @@ module serv_rf_top
     output wire         o_dbg_process // set whenever CPU in debug mode (halt, ebreak, step)  
 );
   
+    localparam  RF_COUNT = E_EXT? 16 : 32;
+    localparam  RF_L2D   = $clog2((RF_COUNT+CSR_COUNT)*32/RF_WIDTH);
 
     wire 	            rf_wreq;
     wire 	            rf_rreq;
@@ -53,7 +54,8 @@ module serv_rf_top
     wire [RF_WIDTH-1:0] rdata;
 
    serv_top #(
-     .RESET_PC (RESET_PC)
+     .RESET_PC (RESET_PC),
+     .E_EXT    (E_EXT   )
    ) cpu (
       .clk         (clk         ),
       .i_rst       (i_rst       ),
