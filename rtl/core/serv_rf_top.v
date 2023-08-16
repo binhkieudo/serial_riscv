@@ -1,7 +1,7 @@
 module serv_rf_top
 #(
     parameter RESET_PC = 32'd0,
-    parameter E_EXT    = 1,
+    parameter E_EXT    = 1'b1,
     parameter RF_WIDTH = 8,
     parameter CSR_COUNT= 8
 )

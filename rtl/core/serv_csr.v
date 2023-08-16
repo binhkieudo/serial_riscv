@@ -1,4 +1,6 @@
-module serv_csr
+module serv_csr # (
+    parameter E_EXT = 1'b1
+)
 (
    input  wire 	     i_clk,
    input  wire 	     i_rst,
@@ -68,24 +70,22 @@ module serv_csr
    
    wire 	d = i_csr_d_sel ? i_csr_imm : i_rs1;
 
+   wire     e_extension = E_EXT;
+   
    assign csr_in = (i_csr_source == CSR_SOURCE_EXT) ? d :
 		           (i_csr_source == CSR_SOURCE_SET) ? csr_out | d :
 		           (i_csr_source == CSR_SOURCE_CLR) ? csr_out & ~d :
 		           (i_csr_source == CSR_SOURCE_CSR) ? csr_out : 1'b0;
 
    assign csr_out = (i_mstatus_en & mstatus_mie & i_cnt3) |
-                    (i_misa_en & i_cnt4)                  | // support E extension
-//                    (i_misa_en & i_cnt8)                  | // support I extension
+                    (i_misa_en & i_cnt4 & e_extension)    | // support E extension
+                    (i_misa_en & i_cnt8 & !e_extension)   | // support I extension
                     (i_misa_en & i_cnt30)                 | // 32-bit
-//                    (!i_mhartid_en)                       | // only one hart -> return zeros
                     (i_dcsr_en & i_cnt30)                 | // adapt to sepc 1.0 
                     (i_dcsr_en & i_cnt15 & dcsr_ebreakm)  | // ebreakm
-//                    (i_dcsr_en & i_cnt8 & dcsr_step)      | // dcsr.cause: debug cause is step highest priority
-//                    (i_dcsr_en & i_cnt7 & !(dcsr_step | i_ebreak) & i_dbg_halt) | // dcsr.cause: debug from external (lowest priority)    
-//                    (i_dcsr_en & i_cnt6 & !dcsr_step & (i_ebreak | i_dbg_halt)) | // dcsr.cause: debug from ebreak /halt
-                    (i_dcsr_en & i_cnt8 & dcsr_cause[2]) | // dcsr.cause
-                    (i_dcsr_en & i_cnt7 & dcsr_cause[1]) | // dcsr.cause   
-                    (i_dcsr_en & i_cnt6 & dcsr_cause[0]) | // dcsr.cause
+                    (i_dcsr_en & i_cnt8 & dcsr_cause[2])  | // dcsr.cause
+                    (i_dcsr_en & i_cnt7 & dcsr_cause[1])  | // dcsr.cause   
+                    (i_dcsr_en & i_cnt6 & dcsr_cause[0])  | // dcsr.cause
 		            (i_dcsr_en & i_cnt2 & dcsr_step)      |
 		            (i_rf_csr_out)                        |
 		            (i_mcause_en & i_en & mcause);

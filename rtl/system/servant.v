@@ -1,8 +1,8 @@
 module servant # (
     parameter memsize = 8192,
     parameter RESET_ADDR = 32'h0000_0000,
+    parameter E_EXT = 1'b1,
     parameter RF_WIDTH = 8,
-    parameter RF_COUNT = 16,
     parameter CSR_COUNT = 8 
 )
 (
@@ -23,6 +23,7 @@ module servant # (
  input  wire i_flash_MISO
 );
 
+    
    wire 	timer_irq;
 
    wire [31:0] 	wb_ibus_adr;
@@ -210,8 +211,8 @@ module servant # (
 
    serv_rf_top #(
     .RESET_PC  (RESET_ADDR    ),
+    .E_EXT     (E_EXT         ),
     .RF_WIDTH  (RF_WIDTH      ),
-    .RF_COUNT  (RF_COUNT      ),
     .CSR_COUNT (CSR_COUNT     )     
    )
    cpu

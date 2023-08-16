@@ -1,5 +1,5 @@
 module serv_rf_if #(
-   parameter E_EXT = 1
+   parameter E_EXT = 1'b1
 )
 (
    //RF Interface
@@ -51,7 +51,7 @@ module serv_rf_if #(
    output wire 		 o_rs2
  );
 
-   wire csr_bit = ~E_EXT;
+   wire csr_bit = E_EXT;
    /*
     ********** Write side ***********
     */

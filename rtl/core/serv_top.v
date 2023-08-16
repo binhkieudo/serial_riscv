@@ -1,7 +1,7 @@
 module serv_top
 #(
     parameter RESET_PC = 32'd0,
-    parameter E_EXT    = 1
+    parameter E_EXT    = 1'b1
 )
 (
    input  wire 		  clk,
@@ -415,10 +415,10 @@ module serv_top
       .o_rd       (alu_rd       )
    );
 
-   serv_rf_if rf_if #(
+   serv_rf_if #(
       .E_EXT   (E_EXT)
    )
-   (
+   rf_if (
       //RF interface
       .i_cnt_en    (cnt_en          ),
       .i_cnt_11to31(cnt11to31       ),
@@ -488,7 +488,10 @@ module serv_top
       .o_wb_sel     (o_dbus_sel     )
    );
 
-   serv_csr csr (
+   serv_csr # (
+        .E_EXT        (E_EXT          )
+   )
+   csr (
 	    .i_clk        (clk            ),
 	    .i_rst        (i_rst          ),
 	    .i_dbg_halt   (i_dbg_halt     ),
