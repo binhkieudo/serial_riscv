@@ -78,8 +78,8 @@ module serv_csr # (
 		           (i_csr_source == CSR_SOURCE_CSR) ? csr_out : 1'b0;
 
    assign csr_out = (i_mstatus_en & mstatus_mie & i_cnt3) |
-                    (i_misa_en & i_cnt4 & e_extension)    | // support E extension
-                    (i_misa_en & i_cnt8 & !e_extension)   | // support I extension
+                    (i_misa_en & i_cnt4)    | // support E extension
+//                    (i_misa_en & i_cnt8 & !e_extension)   | // support I extension
                     (i_misa_en & i_cnt30)                 | // 32-bit
                     (i_dcsr_en & i_cnt30)                 | // adapt to sepc 1.0 
                     (i_dcsr_en & i_cnt15 & dcsr_ebreakm)  | // ebreakm

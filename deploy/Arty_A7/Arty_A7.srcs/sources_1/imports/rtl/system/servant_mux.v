@@ -39,7 +39,8 @@ module servant_mux
    output wire [3:0]  o_wb_flash_sel,
    output wire 	      o_wb_flash_we,
    output wire 	      o_wb_flash_cyc,
-   input wire [31:0]  i_wb_flash_rdt
+   input  wire [31:0] i_wb_flash_rdt,
+   input  wire        i_wb_flash_ack
 );
         
    wire [2:0] 	  s = i_wb_cpu_adr[31:29];
@@ -52,6 +53,7 @@ module servant_mux
    always @(posedge i_clk) begin
       
       if (i_rst) o_wb_cpu_ack <= 1'b0;
+      //else if (s == 3'b110) o_wb_cpu_ack <= i_wb_flash_ack;
       else o_wb_cpu_ack <= i_wb_cpu_cyc & !o_wb_cpu_ack;
       
 //      o_wb_cpu_ack <= 1'b0;

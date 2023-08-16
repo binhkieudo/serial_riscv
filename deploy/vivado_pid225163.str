@@ -1,0 +1,1524 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 04:59:54 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 225163
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Thu Aug 17 03:58:19 JST 2023
+Time zone: 	Japan Standard Time (Asia/Tokyo)
+
+OS: Ubuntu
+OS Version: 5.15.0-78-generic
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: 0
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	/opt/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9
+Java executable: 	/opt/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m, -Xrs]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	binhkieudo
+User home directory: /home/binhkieudo
+User working directory: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2022.2
+RDI_DATADIR: /opt/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: /home/binhkieudo/.Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: /home/binhkieudo/.Xilinx/Vivado/2022.2/
+Vivado layouts directory: /home/binhkieudo/.Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	/opt/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vivado.log
+Vivado journal file: 	/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-225163-binhkieudo-hotswap
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: /opt/Xilinx/Vivado/2022.2
+RDI_BASEROOT: /opt/Xilinx/Vivado
+RDI_BINROOT: /opt/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /opt/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: /opt/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: /opt/Xilinx/Vivado/2022.2/lib/lnx64.o/Ubuntu/20:/opt/Xilinx/Vivado/2022.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vivado/2022.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /opt/Xilinx/Vitis/2022.2/bin:/opt/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /opt/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/vivado
+RDI_TPS_ROOT: /opt/Xilinx/Vivado/2022.2/tps/lnx64
+RDI_USE_JDK11: True
+XILINX: /opt/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2022.2
+XILINX_SDK: /opt/Xilinx/Vitis/2022.2
+XILINX_VITIS: /opt/Xilinx/Vitis/2022.2
+XILINX_VIVADO: /opt/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2022.2
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,926 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 103 MB (+105256kb) [00:00:06]
+// [Engine Memory]: 1,795 MB (+1730820kb) [00:00:06]
+// Opening Vivado Project: ./Arty_A7/Arty_A7.xpr. Version: Vivado v2022.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project ./Arty_A7/Arty_A7.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,931 MB. GUI used memory: 65 MB. Current time: 8/17/23, 3:58:20 AM JST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,961 MB (+79439kb) [00:00:12]
+// [GUI Memory]: 124 MB (+16667kb) [00:00:13]
+// [Engine Memory]: 2,070 MB (+11425kb) [00:00:13]
+// WARNING: HEventQueue.dispatchEvent() is taking  2186 ms.
+// Tcl Message: open_project ./Arty_A7/Arty_A7.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2022.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:07 . Memory (MB): peak = 7352.633 ; gain = 261.148 ; free physical = 18838 ; free virtual = 88147 
+// Project name: Arty_A7; location: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7; part: xc7a35ticsg324-1L
+dismissDialog("Open Project"); // bq
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 426 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 1); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 2); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), serv_flash : flash_controller (flash_controller.v)]", 9); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), serv_flash : flash_controller (flash_controller.v), spi_controller : spi_master (spi_master.v)]", 10, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), serv_flash : flash_controller (flash_controller.v), spi_controller : spi_master (spi_master.v)]", 10, false, false, false, false, false, true); // D - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,119 MB. GUI used memory: 71 MB. Current time: 8/17/23, 4:05:40 AM JST
+// Elapsed time: 34 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), serv_flash : flash_controller (flash_controller.v)]", 9, true, false, false, false, true, false); // D - Popup Trigger - Node
+// [GUI Memory]: 130 MB (+51kb) [00:08:01]
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top flash_controller [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp with file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp 
+// Tcl Message: launch_runs synth_1 -jobs 16 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Thu Aug 17 04:06:18 2023] Launched synth_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+selectCodeEditor("spi_master.v", 477, 481); // ac
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,148 MB. GUI used memory: 72 MB. Current time: 8/17/23, 4:06:20 AM JST
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 45 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), serv_flash : flash_controller (flash_controller.v)]", 10, true); // D - Node
+selectRadioButton(PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN, "Open Synthesized Design"); // a
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Synthesis Completed"); // S.a
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // f
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // f
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Report Utilization]", 24, false); // f
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7a35ticsg324-1L 
+// [Engine Memory]: 2,225 MB (+54320kb) [00:09:03]
+// TclEventType: READ_XDC_FILE_START
+// HMemoryUtils.trashcanNow. Engine heap size: 2,560 MB. GUI used memory: 72 MB. Current time: 8/17/23, 4:07:15 AM JST
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,563 MB. GUI used memory: 72 MB. Current time: 8/17/23, 4:07:15 AM JST
+// [Engine Memory]: 2,565 MB (+239586kb) [00:09:06]
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// [Engine Memory]: 2,725 MB (+34095kb) [00:09:07]
+// WARNING: HEventQueue.dispatchEvent() is taking  1388 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a35ticsg324-1L 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 7670.039 ; gain = 0.000 ; free physical = 18214 ; free virtual = 87577 
+// Tcl Message: INFO: [Project 1-479] Netlist was created with Vivado 2022.2 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc] 
+// Tcl Message: Finished Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc] 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7819.848 ; gain = 0.000 ; free physical = 18141 ; free virtual = 87504 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+// Tcl Message: open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 7988.070 ; gain = 568.195 ; free physical = 18002 ; free virtual = 87365 
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Report Utilization"); // a
+// TclEventType: UTILIZATION_RESULT_GENERATED
+// [GUI Memory]: 139 MB (+3042kb) [00:09:09]
+// [GUI Memory]: 148 MB (+1514kb) [00:09:10]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,718 MB. GUI used memory: 106 MB. Current time: 8/17/23, 4:07:19 AM JST
+// Tcl Message: report_utilization -name utilization_1 
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // F
+dismissDialog("Report Utilization"); // bq
+// [GUI Memory]: 163 MB (+8112kb) [00:09:23]
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "spi_master.v", 1); // o
+// Elapsed time: 129 seconds
+selectCodeEditor("spi_master.v", 594, 343); // ac
+// Elapsed time: 88 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Synthesis", "Synthesized Design", "DesignTask.NETLIST_PLANNING");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,715 MB. GUI used memory: 99 MB. Current time: 8/17/23, 4:11:13 AM JST
+// Engine heap size: 2,715 MB. GUI used memory: 100 MB. Current time: 8/17/23, 4:11:13 AM JST
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: close_design 
+// TclEventType: DESIGN_CLOSE
+dismissDialog("Close"); // bq
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// Elapsed time: 14 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "spi.v"); // Q
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // m
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 24 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/spi.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/spi.v 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // p
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("spi_master.v", 199, 27); // ac
+selectCodeEditor("spi_master.v", 199, 27, false, false, false, false, true); // ac - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 2,744 MB. GUI used memory: 78 MB. Current time: 8/17/23, 4:11:45 AM JST
+// Elapsed time: 27 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, spi (spi.v)]", 14, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, spi (spi.v)]", 14, false, false, false, false, false, true); // D - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "spi_master.v", 1); // o
+selectCodeEditor("spi_master.v", 202, 540); // ac
+selectCodeEditor("spi_master.v", 181, 447); // ac
+selectCodeEditor("spi_master.v", 266, 863, true, false, false, false, false); // ac - Shift Key
+typeControlKey((HResource) null, "spi_master.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "spi.v", 2); // o
+selectCodeEditor("spi.v", 119, 490); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 247, 486); // ac
+selectCodeEditor("spi.v", 365, 143); // ac
+selectCodeEditor("spi.v", 161, 456); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 18, 341); // ac
+selectCodeEditor("spi.v", 23, 312); // ac
+selectCodeEditor("spi.v", 38, 314); // ac
+selectCodeEditor("spi.v", 38, 314, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 95, 311); // ac
+selectCodeEditor("spi.v", 94, 310, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 67, 331); // ac
+selectCodeEditor("spi.v", 67, 331, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 0, 219); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 2,768 MB. GUI used memory: 78 MB. Current time: 8/17/23, 4:12:45 AM JST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 381, 343); // ac
+selectCodeEditor("spi.v", 28, 380); // ac
+selectCodeEditor("spi.v", 21, 388); // ac
+selectCodeEditor("spi.v", 442, 400); // ac
+selectCodeEditor("spi.v", 363, 325); // ac
+selectCodeEditor("spi.v", 318, 319); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,800 MB. GUI used memory: 78 MB. Current time: 8/17/23, 4:13:05 AM JST
+// Elapsed time: 10 seconds
+selectCodeEditor("spi.v", 266, 82); // ac
+selectCodeEditor("spi.v", 266, 82, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 3, true, false, false, false, false, true); // D - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 3); // D
+selectCodeEditor("servant.v", 176, 179); // ac
+selectCodeEditor("servant.v", 175, 179, false, false, false, false, true); // ac - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "spi.v", 2); // o
+selectCodeEditor("spi.v", 317, 485); // ac
+selectCodeEditor("spi.v", 140, 433); // ac
+selectCodeEditor("spi.v", 186, 442); // ac
+selectCodeEditor("spi.v", 208, 372); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 28, 353); // ac
+selectCodeEditor("spi.v", 78, 228); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,821 MB. GUI used memory: 79 MB. Current time: 8/17/23, 4:13:55 AM JST
+// Elapsed time: 11 seconds
+selectCodeEditor("spi.v", 33, 393); // ac
+selectCodeEditor("spi.v", 136, 247); // ac
+selectCodeEditor("spi.v", 136, 247, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 239, 384); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 322, 390); // ac
+selectCodeEditor("spi.v", 192, 406); // ac
+selectCodeEditor("spi.v", 137, 254); // ac
+selectCodeEditor("spi.v", 137, 254, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 221, 411); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 196, 404); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 135, 236); // ac
+selectCodeEditor("spi.v", 135, 236, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 260, 403); // ac
+selectCodeEditor("spi.v", 260, 403, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 318, 405); // ac
+selectCodeEditor("spi.v", 310, 407); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 2,854 MB. GUI used memory: 79 MB. Current time: 8/17/23, 4:14:20 AM JST
+selectCodeEditor("spi.v", 537, 386); // ac
+// Elapsed time: 20 seconds
+selectCodeEditor("spi.v", 193, 220); // ac
+selectCodeEditor("spi.v", 193, 275); // ac
+// Elapsed time: 57 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), cpu : serv_rf_top (serv_rf_top.v)]", 11, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), cpu : serv_rf_top (serv_rf_top.v)]", 11, true, false, false, false, false, true); // D - Double Click - Node
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "serv_rf_top.v", 4, true, false); // o - Popup Trigger
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "spi.v", 2); // o
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 2,862 MB (+106kb) [00:21:09]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,878 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:19:20 AM JST
+// Elapsed time: 240 seconds
+selectCodeEditor("spi.v", 336, 510); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 506, 830); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 282, 769); // ac
+selectCodeEditor("spi.v", 282, 769, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 183, 829); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("spi.v", 247, 765); // ac
+selectCodeEditor("spi.v", 247, 765, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 207, 821); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 281, 772); // ac
+selectCodeEditor("spi.v", 281, 772, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 234, 821); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 315, 773); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("spi.v", 30, 370); // ac
+selectCodeEditor("spi.v", 279, 371); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,910 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:21:00 AM JST
+// Elapsed time: 51 seconds
+selectCodeEditor("spi.v", 22, 407); // ac
+selectCodeEditor("spi.v", 32, 410); // ac
+selectCodeEditor("spi.v", 259, 454); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 32, 351); // ac
+selectCodeEditor("spi.v", 32, 389); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,947 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:21:55 AM JST
+// Elapsed time: 12 seconds
+selectCodeEditor("spi.v", 532, 409); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 382, 758); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 327, 353); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 439, 701); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 14 seconds
+selectCodeEditor("spi.v", 195, 722); // ac
+selectCodeEditor("spi.v", 195, 722, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 281, 678); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 427, 677); // ac
+// Elapsed time: 14 seconds
+selectCodeEditor("spi.v", 191, 711); // ac
+selectCodeEditor("spi.v", 191, 711, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 202, 698); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 305, 696); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 533, 731); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,980 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:23:05 AM JST
+// Elapsed time: 14 seconds
+selectCodeEditor("spi.v", 222, 504); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 396, 647); // ac
+// Elapsed time: 39 seconds
+selectCodeEditor("spi.v", 240, 498); // ac
+selectCodeEditor("spi.v", 240, 498, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 271, 735); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 261, 409); // ac
+selectCodeEditor("spi.v", 260, 409, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 205, 729); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 454, 729); // ac
+selectCodeEditor("spi.v", 454, 729, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 292, 729); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 650, 771); // ac
+// [Engine Memory]: 3,013 MB (+8201kb) [00:26:24]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,013 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:24:35 AM JST
+// Elapsed time: 10 seconds
+selectCodeEditor("spi.v", 33, 489); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 32, 447); // ac
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,046 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:25:20 AM JST
+// Elapsed time: 59 seconds
+selectCodeEditor("spi.v", 86, 577); // ac
+selectCodeEditor("spi.v", 189, 97); // ac
+selectCodeEditor("spi.v", 189, 97, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 109, 654); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 273, 266); // ac
+selectCodeEditor("spi.v", 272, 266, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 279, 260); // ac
+selectCodeEditor("spi.v", 279, 260, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 293, 234); // ac
+selectCodeEditor("spi.v", 293, 234, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 240, 717); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 14 seconds
+selectCodeEditor("spi.v", 275, 150); // ac
+selectCodeEditor("spi.v", 275, 150, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 278, 183); // ac
+selectCodeEditor("spi.v", 278, 183, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 54 seconds
+selectCodeEditor("spi.v", 118, 191); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 293, 107); // ac
+selectCodeEditor("spi.v", 292, 109, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 164, 109); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 279, 108); // ac
+selectCodeEditor("spi.v", 278, 110, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 3,078 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:27:55 AM JST
+selectCodeEditor("spi.v", 340, 647); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 480, 657); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 214, 673); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 301, 557); // ac
+// Elapsed time: 11 seconds
+selectCodeEditor("spi.v", 211, 563); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 265, 575); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 504, 573); // ac
+selectCodeEditor("spi.v", 489, 560); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 346, 579); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 493, 574); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 506, 584); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,111 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:28:50 AM JST
+// Elapsed time: 28 seconds
+selectCodeEditor("spi.v", 177, 240); // ac
+selectCodeEditor("spi.v", 177, 240, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 106, 721); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 275, 276); // ac
+selectCodeEditor("spi.v", 275, 276, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 291, 666); // ac
+selectCodeEditor("spi.v", 288, 658); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 290, 118); // ac
+selectCodeEditor("spi.v", 279, 201); // ac
+selectCodeEditor("spi.v", 278, 138); // ac
+selectCodeEditor("spi.v", 278, 138, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 344, 547); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, spi (spi.v)]", 17, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, spi (spi.v)]", 17, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, spi (spi.v)]", 17, false, false, false, false, true, false); // D - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top spi [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,136 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:29:45 AM JST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp with file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/flash_controller.dcp 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs synth_1 -jobs 16 
+// Tcl Message: [Thu Aug 17 04:29:52 2023] Launched synth_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 56 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Synthesis Completed"); // S.a
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 2, true, false, false, false, false, true); // D - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 3,162 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:30:55 AM JST
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 2); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 2, true, false, false, false, false, true); // D - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 2); // D
+// PAResourceOtoP.PAViews_CODE: Code: close view
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 3, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("servant.v", 78, 589); // ac
+selectCodeEditor("servant.v", 68, 539); // ac
+selectCodeEditor("servant.v", 59, 579); // ac
+selectCodeEditor("servant.v", 92, 603); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "spi.v", 2); // o
+selectCodeEditor("spi.v", 55, 736); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant.v", 3); // o
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 359, 545); // ac
+selectCodeEditor("servant.v", 39, 484); // ac
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 41 seconds
+selectCodeEditor("servant.v", 0, 730); // ac
+selectCodeEditor("servant.v", 93, 717); // ac
+selectCodeEditor("servant.v", 228, 713); // ac
+selectCodeEditor("servant.v", 151, 485); // ac
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 3,179 MB (+16151kb) [00:34:30]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,179 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:32:40 AM JST
+selectCodeEditor("servant.v", 265, 137); // ac
+selectCodeEditor("servant.v", 265, 137, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 208, 484); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 271, 161); // ac
+selectCodeEditor("servant.v", 271, 161, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 213, 505); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("servant.v", 113, 309); // ac
+selectCodeEditor("servant.v", 113, 309, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 238, 314); // ac
+selectCodeEditor("servant.v", 240, 315, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 207, 231); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 155, 274); // ac
+selectCodeEditor("servant.v", 155, 274, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("servant.v", 289, 88); // ac
+selectCodeEditor("servant.v", 289, 88, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 276, 109); // ac
+selectCodeEditor("servant.v", 276, 109, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 214, 445); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 315, 125); // ac
+selectCodeEditor("servant.v", 315, 125, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 210, 466); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 306, 150); // ac
+selectCodeEditor("servant.v", 306, 150, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 209, 488); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 307, 172); // ac
+selectCodeEditor("servant.v", 307, 172, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("servant.v", 316, 162); // ac
+selectCodeEditor("servant.v", 316, 162, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 210, 499); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 329, 189); // ac
+selectCodeEditor("servant.v", 330, 183); // ac
+selectCodeEditor("servant.v", 330, 183, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 206, 523); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+// Elapsed time: 15 seconds
+selectCodeEditor("servant.v", 260, 376); // ac
+selectCodeEditor("servant.v", 260, 376, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 212, 308); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), servant_mux : servant_mux (servant_mux.v)]", 6, false); // D
+// Elapsed time: 34 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), servant_mux : servant_mux (servant_mux.v)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), servant_mux : servant_mux (servant_mux.v)]", 6, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("servant_mux.v", 381, 498); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 21 seconds
+selectCodeEditor("servant_mux.v", 324, 410); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 3,205 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:34:45 AM JST
+selectCodeEditor("servant_mux.v", 324, 410, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant_mux.v", 'c'); // ac
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("servant.v", 385, 601); // ac
+selectCodeEditor("servant.v", 436, 684); // ac
+selectCodeEditor("servant.v", 413, 682); // ac
+selectCodeEditor("servant.v", 371, 674); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 233, 251); // ac
+selectCodeEditor("servant.v", 233, 251, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 256, 634); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+typeControlKey(null, null, 'z');
+selectCodeEditor("servant.v", 228, 629); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant_mux.v", 5); // o
+selectCodeEditor("servant_mux.v", 310, 433); // ac
+selectCodeEditor("servant_mux.v", 325, 417); // ac
+selectCodeEditor("servant_mux.v", 325, 417, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("servant_mux.v", 199, 300); // ac
+selectCodeEditor("servant_mux.v", 199, 300, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("servant_mux.v", 379, 431); // ac
+// Elapsed time: 52 seconds
+selectCodeEditor("servant_mux.v", 423, 614); // ac
+selectCodeEditor("servant_mux.v", 370, 522); // ac
+typeControlKey((HResource) null, "servant_mux.v", 'c'); // ac
+selectCodeEditor("servant_mux.v", 151, 639); // ac
+typeControlKey((HResource) null, "servant_mux.v", 'v'); // ac
+selectCodeEditor("servant_mux.v", 288, 634); // ac
+selectCodeEditor("servant_mux.v", 266, 622); // ac
+selectCodeEditor("servant_mux.v", 266, 622, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant_mux.v", 'c'); // ac
+selectCodeEditor("servant_mux.v", 286, 634); // ac
+typeControlKey((HResource) null, "servant_mux.v", 'v'); // ac
+selectCodeEditor("servant_mux.v", 322, 391); // ac
+selectCodeEditor("servant_mux.v", 318, 392); // ac
+typeControlKey((HResource) null, "servant_mux.v", 'c'); // ac
+selectCodeEditor("servant_mux.v", 325, 428); // ac
+selectCodeEditor("servant_mux.v", 327, 389); // ac
+selectCodeEditor("servant_mux.v", 327, 389, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant_mux.v", 'c'); // ac
+selectCodeEditor("servant_mux.v", 437, 636); // ac
+typeControlKey((HResource) null, "servant_mux.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,238 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:36:45 AM JST
+// Elapsed time: 16 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("servant.v", 273, 413); // ac
+selectCodeEditor("servant.v", 260, 429); // ac
+selectCodeEditor("servant.v", 219, 419); // ac
+selectCodeEditor("servant.v", 257, 431); // ac
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 133, 825); // ac
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), spi_inst0 : spi (spi.v)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), spi_inst0 : spi (spi.v)]", 11, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("spi.v", 301, 370); // ac
+selectCodeEditor("spi.v", 333, 335); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("spi.v", 279, 406); // ac
+selectCodeEditor("spi.v", 53, 370); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("spi.v", 240, 347); // ac
+selectCodeEditor("spi.v", 240, 347, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 165, 831); // ac
+typeControlKey(null, null, 'z');
+// Elapsed time: 10 seconds
+selectCodeEditor("spi.v", 112, 793); // ac
+selectCodeEditor("spi.v", 112, 793, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 275, 751); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("spi.v", 121, 785); // ac
+selectCodeEditor("spi.v", 121, 785, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 219, 785); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 273, 791); // ac
+selectCodeEditor("spi.v", 465, 434); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:38:40 AM JST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectCodeEditor("spi.v", 97, 806); // ac
+dismissDialog("Invalid Top Module"); // s
+selectCodeEditor("spi.v", 192, 765); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,304 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:38:55 AM JST
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 4, true, false, false, false, false, true); // D - Double Click - Node
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant.v", 3, true, false); // o - Popup Trigger
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "spi.v", 2); // o
+selectCodeEditor("servant.v", 247, 607); // ac
+selectCodeEditor("servant.v", 245, 602); // ac
+selectCodeEditor("servant.v", 171, 622); // ac
+selectCodeEditor("servant.v", 241, 615); // ac
+selectCodeEditor("servant.v", 255, 579); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 246, 621); // ac
+selectCodeEditor("servant.v", 237, 605); // ac
+selectCodeEditor("spi.v", 243, 462); // ac
+selectCodeEditor("spi.v", 243, 462, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("servant.v", 93, 591); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("servant.v", 47, 661); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant.v", 0, true, false); // o - Popup Trigger
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:39:45 AM JST
+// [Engine Memory]: 3,342 MB (+4233kb) [00:41:36]
+selectMenuItem((HResource) null, "Move to Previous Tab Group"); // JMenuItem
+selectCodeEditor("servant.v", 286, 318); // ac
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 243, 520); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 251, 313); // ac
+selectCodeEditor("servant.v", 250, 313, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 210, 253); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 193, 390); // ac
+selectCodeEditor("servant.v", 193, 390, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 208, 277); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 185, 409); // ac
+selectCodeEditor("servant.v", 185, 409, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 209, 297); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 190, 429); // ac
+selectCodeEditor("servant.v", 190, 429, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "servant.v", 'c'); // ac
+selectCodeEditor("servant.v", 212, 314); // ac
+typeControlKey((HResource) null, "servant.v", 'v'); // ac
+selectCodeEditor("servant.v", 263, 419); // ac
+selectCodeEditor("servant.v", 267, 422); // ac
+selectCodeEditor("servant.v", 22, 377); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("servant.v", 326, 251); // ac
+// TclEventType: DG_GRAPH_STALE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,374 MB. GUI used memory: 81 MB. Current time: 8/17/23, 4:40:20 AM JST
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 3, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("top_artya7.v", 304, 335); // ac
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant.v", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top_artya7.v", 5); // o
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("top_artya7.v", 166, 215); // ac
+selectCodeEditor("top_artya7.v", 165, 215, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("top_artya7.v", 207, 732); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'v'); // ac
+selectCodeEditor("top_artya7.v", 157, 182); // ac
+selectCodeEditor("top_artya7.v", 157, 182, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("top_artya7.v", 212, 750); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'v'); // ac
+selectCodeEditor("top_artya7.v", 164, 199); // ac
+selectCodeEditor("top_artya7.v", 162, 199, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("top_artya7.v", 207, 769); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'v'); // ac
+selectCodeEditor("top_artya7.v", 163, 222); // ac
+selectCodeEditor("top_artya7.v", 163, 222, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("top_artya7.v", 249, 789); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'v'); // ac
+selectCodeEditor("top_artya7.v", 253, 732); // ac
+selectCodeEditor("top_artya7.v", 252, 753); // ac
+selectCodeEditor("top_artya7.v", 260, 773); // ac
+selectCodeEditor("top_artya7.v", 259, 790); // ac
+selectCodeEditor("top_artya7.v", 148, 275); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,406 MB. GUI used memory: 82 MB. Current time: 8/17/23, 4:41:40 AM JST
+// Elapsed time: 24 seconds
+selectCodeEditor("top_artya7.v", 661, 432); // ac
+selectCodeEditor("top_artya7.v", 164, 353); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 71 seconds
+selectCodeEditor("top_artya7.v", 237, 224); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("top_artya7.v", 250, 845); // ac
+selectCodeEditor("top_artya7.v", 257, 833); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'v'); // ac
+selectCodeEditor("top_artya7.v", 50, 789); // ac
+// Elapsed time: 87 seconds
+selectCodeEditor("top_artya7.v", 272, 789); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,438 MB. GUI used memory: 82 MB. Current time: 8/17/23, 4:44:45 AM JST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 232 seconds
+selectCodeEditor("top_artya7.v", 270, 491); // ac
+selectCodeEditor("top_artya7.v", 201, 447); // ac
+selectCodeEditor("top_artya7.v", 271, 431); // ac
+selectCodeEditor("top_artya7.v", 263, 433); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("top_artya7.v", 198, 445); // ac
+typeControlKey((HResource) null, "top_artya7.v", 'v'); // ac
+selectCodeEditor("top_artya7.v", 277, 456); // ac
+selectCodeEditor("top_artya7.v", 277, 443); // ac
+selectCodeEditor("top_artya7.v", 268, 444); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,470 MB. GUI used memory: 76 MB. Current time: 8/17/23, 4:48:45 AM JST
+selectCodeEditor("top_artya7.v", 1063, 228); // ac
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant_mux.v", 3); // o
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Arty-A7-35.xdc]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Arty-A7-35.xdc]", 6, false, false, false, false, false, true); // D - Double Click
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Arty-A7-35.xdc", 6, true, false); // o - Popup Trigger
+selectMenuItem((HResource) null, "New Vertical Group"); // JMenuItem
+// Elapsed time: 19 seconds
+selectCodeEditor("Arty-A7-35.xdc", 1062, 373); // ac
+selectCodeEditor("Arty-A7-35.xdc", 1019, 374); // ac
+selectCodeEditor("Arty-A7-35.xdc", 1059, 370); // ac
+selectCodeEditor("Arty-A7-35.xdc", 992, 363); // ac
+selectCodeEditor("Arty-A7-35.xdc", 1091, 284); // ac
+selectCodeEditor("Arty-A7-35.xdc", 1077, 292); // ac
+selectCodeEditor("Arty-A7-35.xdc", 508, 374); // ac
+selectCodeEditor("top_artya7.v", 220, 333); // ac
+selectCodeEditor("top_artya7.v", 220, 333, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 793, 241); // ac
+typeControlKey((HResource) null, "Arty-A7-35.xdc", 'v'); // ac
+selectCodeEditor("top_artya7.v", 215, 315); // ac
+selectCodeEditor("top_artya7.v", 215, 315, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("top_artya7.v", 213, 358); // ac
+selectCodeEditor("top_artya7.v", 213, 358, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 794, 260); // ac
+typeControlKey((HResource) null, "Arty-A7-35.xdc", 'v'); // ac
+selectCodeEditor("top_artya7.v", 212, 371); // ac
+selectCodeEditor("top_artya7.v", 212, 371, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 790, 277); // ac
+typeControlKey((HResource) null, "Arty-A7-35.xdc", 'v'); // ac
+selectCodeEditor("top_artya7.v", 218, 308); // ac
+selectCodeEditor("top_artya7.v", 218, 308, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 787, 295); // ac
+selectCodeEditor("Arty-A7-35.xdc", 791, 301); // ac
+selectCodeEditor("Arty-A7-35.xdc", 793, 295); // ac
+typeControlKey((HResource) null, "Arty-A7-35.xdc", 'v'); // ac
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Arty-A7-35.xdc", 780, 323); // ac
+selectCodeEditor("top_artya7.v", 240, 427); // ac
+selectCodeEditor("top_artya7.v", 240, 427, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("top_artya7.v", 225, 368); // ac
+selectCodeEditor("top_artya7.v", 257, 404); // ac
+selectCodeEditor("top_artya7.v", 257, 404, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 794, 332); // ac
+typeControlKey((HResource) null, "Arty-A7-35.xdc", 'v'); // ac
+selectCodeEditor("top_artya7.v", 270, 426); // ac
+selectCodeEditor("Arty-A7-35.xdc", 411, 353); // ac
+selectCodeEditor("Arty-A7-35.xdc", 415, 380); // ac
+selectCodeEditor("Arty-A7-35.xdc", 427, 362); // ac
+selectCodeEditor("top_artya7.v", 240, 424); // ac
+selectCodeEditor("top_artya7.v", 239, 424, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 792, 352); // ac
+typeControlKey((HResource) null, "Arty-A7-35.xdc", 'v'); // ac
+selectCodeEditor("top_artya7.v", 234, 446); // ac
+selectCodeEditor("top_artya7.v", 236, 446, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "top_artya7.v", 'c'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 791, 374); // ac
+typeControlKey((HResource) null, "Arty-A7-35.xdc", 'v'); // ac
+selectCodeEditor("Arty-A7-35.xdc", 828, 352); // ac
+typeControlKey(null, null, 'z');
+// PAResourceOtoP.PAViews_CODE: Code: close view
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // E
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 28, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp with file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/spi.dcp 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 16 
+// Tcl Message: [Thu Aug 17 04:51:02 2023] Launched synth_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/runme.log [Thu Aug 17 04:51:02 2023] Launched impl_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 88 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Implementation Completed"); // S.a
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 3, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top top_artya7 [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,498 MB. GUI used memory: 80 MB. Current time: 8/17/23, 4:52:45 AM JST
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 28, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp with file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/spi.dcp 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 16 
+// Tcl Message: [Thu Aug 17 04:52:48 2023] Launched synth_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/runme.log [Thu Aug 17 04:52:48 2023] Launched impl_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant.v", 4); // o
+// TclEventType: RUN_STATUS_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant_mux.v", 3); // o
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v)]", 1); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v)]", 2); // D
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), servant_mux : servant_mux (servant_mux.v)]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), servant_mux : servant_mux (servant_mux.v)]", 4, false, false, false, false, false, true); // D - Double Click
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 73 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Implementation Completed"); // S.a
+// Elapsed time: 174 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), spi_inst0 : spi (spi.v)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), spi_inst0 : spi (spi.v)]", 9, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("spi.v", 257, 862); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 18 seconds
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 24, 867); // ac
+selectCodeEditor("spi.v", 1054, 865); // ac
+selectCodeEditor("spi.v", 32, 827); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 17 seconds
+selectCodeEditor("spi.v", 109, 834); // ac
+// Elapsed time: 48 seconds
+selectCodeEditor("spi.v", 1136, 850); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 38, 858); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 92 seconds
+selectCodeEditor("spi.v", 258, 867); // ac
+selectCodeEditor("spi.v", 257, 869, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+// Elapsed time: 757 seconds
+selectCodeEditor("spi.v", 1106, 852); // ac
+selectCodeEditor("spi.v", 1174, 856); // ac
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 284, 790); // ac
+selectCodeEditor("spi.v", 284, 790, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 416, 753); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("spi.v", 217, 845); // ac
+selectCodeEditor("spi.v", 216, 846, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 263, 782); // ac
+selectCodeEditor("spi.v", 263, 782, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 1286, 865); // ac
+selectCodeEditor("spi.v", 1307, 848); // ac
+selectCodeEditor("spi.v", 1307, 848, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 366, 784); // ac
+selectCodeEditor("spi.v", 366, 784, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 1056, 842); // ac
+selectCodeEditor("spi.v", 1056, 842, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 476, 796); // ac
+selectCodeEditor("spi.v", 478, 794, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 349, 843); // ac
+selectCodeEditor("spi.v", 349, 843, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 567, 786); // ac
+selectCodeEditor("spi.v", 567, 786, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 718, 785); // ac
+selectCodeEditor("spi.v", 718, 785, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 558, 842); // ac
+selectCodeEditor("spi.v", 558, 842, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 715, 789); // ac
+selectCodeEditor("spi.v", 715, 789, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+// Elapsed time: 21 seconds
+selectCodeEditor("spi.v", 676, 865); // ac
+selectCodeEditor("spi.v", 676, 865, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 1109, 790); // ac
+selectCodeEditor("spi.v", 1109, 790, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 685, 844); // ac
+selectCodeEditor("spi.v", 685, 844, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 1107, 786); // ac
+selectCodeEditor("spi.v", 1107, 786, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 817, 844); // ac
+selectCodeEditor("spi.v", 817, 844, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 837, 790); // ac
+selectCodeEditor("spi.v", 837, 790, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 994, 784); // ac
+selectCodeEditor("spi.v", 994, 784, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("spi.v", 1166, 846); // ac
+selectCodeEditor("spi.v", 1166, 846, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+selectCodeEditor("spi.v", 1002, 784); // ac
+selectCodeEditor("spi.v", 1002, 784, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "spi.v", 'v'); // ac
+selectCodeEditor("spi.v", 1074, 830); // ac
+selectCodeEditor("spi.v", 1414, 868); // ac
+selectCodeEditor("spi.v", 1133, 784); // ac
+selectCodeEditor("spi.v", 726, 831); // ac
+selectCodeEditor("spi.v", 1154, 797); // ac
+typeControlKey((HResource) null, "spi.v", 'c'); // ac
+// Elapsed time: 97 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 31, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // W.d
+dismissDialog("Save Constraints"); // bq
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 16 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Thu Aug 17 05:16:34 2023] Launched impl_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bq
+// [Engine Memory]: 3,517 MB (+7991kb) [01:18:27]
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 40 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+dismissDialog("Open Hardware Manager"); // bq
+selectButton(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Hardware_auto_connect_target"); // B
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:10:28     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,551 MB. GUI used memory: 83 MB. Current time: 8/17/23, 5:17:20 AM JST
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 05 2022-08:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2023 Xilinx, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// [Engine Memory]: 5,274 MB (+1658226kb) [01:19:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  2624 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319B4A283A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bq
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a35t_0 (1) ; Programmed", 2, "xc7a35t_0 (1)", 0, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ao
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq
+// HMemoryUtils.trashcanNow. Engine heap size: 5,308 MB. GUI used memory: 83 MB. Current time: 8/17/23, 5:47:20 AM JST
+// Elapsed time: 2320 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top_artya7.v", 4); // o
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant_mux.v", 3); // o
+selectCodeEditor("servant_mux.v", 332, 191); // ac
+selectCodeEditor("servant_mux.v", 331, 191, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 88 seconds
+selectCodeEditor("servant_mux.v", 1482, 338); // ac
+// Elapsed time: 139 seconds
+selectCodeEditor("servant_mux.v", 1304, 214); // ac
+// Elapsed time: 479 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bq
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), cpu : serv_rf_top (serv_rf_top.v)]", 8); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), cpu : serv_rf_top (serv_rf_top.v), cpu : serv_top (serv_top.v)]", 9); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), cpu : serv_rf_top (serv_rf_top.v), cpu : serv_top (serv_top.v), csr : serv_csr (serv_csr.v)]", 19, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top_artya7 (top_artya7.v), u0 : servant (servant.v), cpu : serv_rf_top (serv_rf_top.v), cpu : serv_top (serv_top.v), csr : serv_csr (serv_csr.v)]", 19, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("serv_csr.v", 485, 220); // ac
+selectCodeEditor("serv_csr.v", 420, 203); // ac
+selectCodeEditor("serv_csr.v", 530, 194); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 31, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp with file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp 
+dismissDialog("Resetting Runs"); // bq
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 16 
+// Tcl Message: [Thu Aug 17 06:08:46 2023] Launched synth_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/runme.log [Thu Aug 17 06:08:46 2023] Launched impl_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 33 seconds
+selectCodeEditor("serv_csr.v", 1268, 268); // ac
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 90 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+dismissDialog("Open Hardware Manager"); // bq
+selectButton(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Hardware_auto_connect_target"); // B
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:10:28     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 05 2022-08:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2023 Xilinx, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319B4A283A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bq
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a35t_0 (1) ; Programmed", 2, "xc7a35t_0 (1)", 0, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ao
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'D' command handler elapsed time: 6 seconds
+dismissDialog("Program Device"); // bq
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // j
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Confirm Close"); // u
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bq
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant_mux.v", 3); // o
+selectCodeEditor("servant_mux.v", 63, 486); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 31, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+dismissDialog("Synthesis is Out-of-date"); // u
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1161] Replacing file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp with file /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp 
+dismissDialog("Resetting Runs"); // bq
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 16 
+// Tcl Message: [Thu Aug 17 06:11:23 2023] Launched synth_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/runme.log [Thu Aug 17 06:11:23 2023] Launched impl_1... Run output will be captured here: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bq
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 119 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // t
+dismissDialog("Open Hardware Manager"); // bq
+selectButton(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Hardware_auto_connect_target"); // B
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// TclEventType: HW_SERVER_UPDATE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,327 MB. GUI used memory: 93 MB. Current time: 8/17/23, 6:13:26 AM JST
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 INFO: [Labtools 27-2222] Launching hw_server... INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2022.2   **** Build date : Oct 14 2022 at 05:10:28     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0 INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ******** Xilinx cs_server v2022.2.0   ****** Build date   : Oct 05 2022-08:25:37     **** Build number : 2022.2.1664925937       ** Copyright 2017-2023 Xilinx, Inc. All Rights Reserved.    
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319B4A283A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bq
+selectTreeTable(PAResourceEtoH.HardwareTreePanel_HARDWARE_TREE_TABLE, "xc7a35t_0 (1) ; Programmed", 2, "xc7a35t_0 (1)", 0, true, false, false, false, true, false); // m - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_PROGRAM_FPGA, "Program Device..."); // ao
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // aP
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bq
+// Elapsed time: 1354 seconds
+selectCodeEditor("spi_master.v", 375, 691); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 5,327 MB. GUI used memory: 92 MB. Current time: 8/17/23, 6:43:26 AM JST
+// Elapsed time: 444 seconds
+selectCodeEditor("spi_master.v", 326, 525); // ac
+// Elapsed time: 1289 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "servant_mux.v", 2); // o

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692210848" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692220283" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
   <File Type="VDS-TIMING-PB" Name="top_artya7_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="top_artya7_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_artya7.dcp"/>
@@ -23,15 +23,6 @@
     <File Path="$PSRCDIR/sources_1/imports/rtl/ip/debug_dtm.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/debug_dtm.v"/>
-        <Attr Name="ImportTime" Val="1692202497"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/rtl/ip/flash_controller.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/flash_controller.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -209,10 +200,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/rtl/ip/spi_master.v">
+    <File Path="$PSRCDIR/sources_1/new/spi.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/spi_master.v"/>
-        <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -229,6 +218,26 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/top_artya7.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/ip/spi_master.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/spi_master.v"/>
+        <Attr Name="ImportTime" Val="1692202497"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/ip/flash_controller.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/flash_controller.v"/>
+        <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -278,9 +287,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

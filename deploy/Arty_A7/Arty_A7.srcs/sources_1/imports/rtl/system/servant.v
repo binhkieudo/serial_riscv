@@ -168,7 +168,8 @@ module servant # (
       .o_wb_flash_sel (wb_flash_sel ),
       .o_wb_flash_we  (wb_flash_we  ),
       .o_wb_flash_cyc (wb_flash_cyc ),
-      .i_wb_flash_rdt (wb_flash_rdt )      
+      .i_wb_flash_rdt (wb_flash_rdt ),
+      .i_wb_flash_ack (wb_flash_ack )      
    );
 
    servant_ram #(
@@ -240,23 +241,41 @@ module servant # (
       .o_dbg_process(w_dbg_process  )   
      );
         
-    // SPI Programmer
-    flash_controller serv_flash(
-        // Wishbone slave
-        .i_wb_clk   (wb_clk       ),
-        .i_wb_rst   (wb_rst       ),
-        .i_wb_adr   (wb_flash_adr ),
+//    // SPI Programmer
+//    flash_controller serv_flash(
+//        // Wishbone slave
+//        .i_wb_clk   (wb_clk       ),
+//        .i_wb_rst   (wb_rst       ),
+//        .i_wb_adr   (wb_flash_adr ),
+//        .i_wb_dat   (wb_flash_dat ),
+//        .i_wb_sel   (wb_flash_sel ),
+//        .i_wb_we    (wb_flash_we  ),
+//        .i_wb_cyc   (wb_flash_cyc ),
+//        .o_wb_rdt   (wb_flash_rdt ),
+//        .o_wb_ack   (             ),
+//        // SPI
+//        .SCK        (o_flash_SCK  ),
+//        .CS_n       (o_flash_CSn  ),
+//        .MOSI       (o_flash_MOSI ),
+//        .MISO       (i_flash_MISO )
+//    );
+    // SPI
+    spi spi_inst0(
+        // Global control
+        .wb_clk     (wb_clk ),
+        .wb_rstn    (wb_rstn ),
+        // Wishbone interface
         .i_wb_dat   (wb_flash_dat ),
         .i_wb_sel   (wb_flash_sel ),
-        .i_wb_we    (wb_flash_we  ),
+        .i_wb_we    (wb_flash_we ),
         .i_wb_cyc   (wb_flash_cyc ),
         .o_wb_rdt   (wb_flash_rdt ),
-        .o_wb_ack   (             ),
+        .o_wb_ack   (wb_flash_ack ),
         // SPI
         .SCK        (o_flash_SCK  ),
-        .CS_n       (o_flash_CSn  ),
+        .CSn        (o_flash_CSn  ),
         .MOSI       (o_flash_MOSI ),
-        .MISO       (i_flash_MISO )
+        .MISO       (i_flash_MISO )   
     );
     
     // Debug Transport Module (DTM)

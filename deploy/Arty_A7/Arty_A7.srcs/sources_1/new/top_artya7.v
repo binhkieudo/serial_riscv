@@ -30,7 +30,16 @@ module top_artya7(
         input  wire jtag_tdi,
         input  wire jtag_tms,
         input  wire jtag_tck,
-        output wire jtag_tdo
+        output wire jtag_tdo,
+        // Flash SPI
+        output wire SCK,
+        output wire CSn,
+        output wire MOSI,
+        input  wire MISO,
+        //---
+        output wire FLASH_RST,
+        output wire FLASH_WP,
+        output wire FLASH_HOLD
     );
     
     reg [3:0] r_rstn = 4'b0000;
@@ -57,10 +66,13 @@ module top_artya7(
      .o_jtag_tdo    (jtag_tdo   ),
      .i_jtag_tms    (jtag_tms   ),
      // Flash control
-     .o_flash_SCK   ( ),
-     .o_flash_CSn   ( ),
-     .o_flash_MOSI  ( ),
-     .i_flash_MISO  (1'b0 )
+     .o_flash_SCK   (SCK        ),
+     .o_flash_CSn   (CSn        ),
+     .o_flash_MOSI  (MOSI       ),
+     .i_flash_MISO  (MISO       )
     );
     
+    assign FLASH_RST    = 1'b1;
+    assign FLASH_WP     = 1'b0;
+    assign FLASH_HOLD   = 1'b0;
 endmodule
