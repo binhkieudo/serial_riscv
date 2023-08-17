@@ -160,8 +160,21 @@ module debug_dm(
     reg         dm_ctrl_hart_resume_req;
     reg [1:0]   dm_ctrl_hart_resume_state;
     reg         dm_ctrl_hart_resume_ack;
-    reg         dm_ctrl_hart_reset;
-        
+    reg         dm_ctrl_hart_reset;    
+    
+//    ila_0 ila0_inst(
+//        .clk    (i_clk              ),
+//        .probe0 (i_dmi_req_address  ),
+//        .probe1 (i_dmi_req_op       ),
+//        .probe2 (i_dmi_req_valid    ),
+//        .probe3 (i_dmi_req_data     ),
+//        .probe4 (o_dmi_rsp_valid    ),
+//        .probe5 (o_dmi_rsp_data     ),
+//        .probe6 (cpu_progbuf0       ),
+//        .probe7 (cpu_progbuf1       ),
+//        .probe8 (cpu_progbuf2       ),
+//        .probe9 (data_buf           )
+//    );
     /*================================================================
     ============ Debug Module (DM) control FSM =======================
     ================================================================*/

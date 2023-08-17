@@ -2,17 +2,17 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu Aug 17 06:11:26 2023
-# Process ID: 293240
-# Current directory: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1
+# Start of session at: Thu Aug 17 20:10:20 2023
+# Process ID: 2384453
+# Current directory: /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1
 # Command line: vivado -log top_artya7.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_artya7.tcl
-# Log file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.vds
-# Journal file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/vivado.jou
-# Running On: binhkieudo-hotswap, OS: Linux, CPU Frequency: 1400.000 MHz, CPU Physical cores: 16, Host memory: 33036 MB
+# Log file: /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.vds
+# Journal file: /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/vivado.jou
+# Running On: binhkieudo, OS: Linux, CPU Frequency: 3300.000 MHz, CPU Physical cores: 10, Host memory: 134739 MB
 #-----------------------------------------------------------
 source top_artya7.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/utils_1/imports/synth_1/clock_gen.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top_artya7 -part xc7a35ticsg324-1L
 Starting synth_design
@@ -23,92 +23,93 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 293263
-INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/opt/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-7075] Helper process launched with PID 2384474
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2743.418 ; gain = 388.637 ; free physical = 13442 ; free virtual = 82994
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2168.236; parent = 1957.738; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3774.516; parent = 2746.391; children = 1028.125
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2746.176 ; gain = 391.645 ; free physical = 93279 ; free virtual = 114498
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2171.292; parent = 1960.977; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3750.645; parent = 2746.180; children = 1004.465
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_artya7' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/top_artya7.v:23]
-INFO: [Synth 8-6157] synthesizing module 'servant' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant.v:1]
+INFO: [Synth 8-6157] synthesizing module 'top_artya7' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/top_artya7.v:23]
+INFO: [Synth 8-6157] synthesizing module 'servant' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant.v:1]
 	Parameter memsize bound to: 8192 - type: integer 
 	Parameter RESET_ADDR bound to: 0 - type: integer 
 	Parameter E_EXT bound to: 1 - type: integer 
 	Parameter CSR_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'servant_arbiter' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_arbiter.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'servant_arbiter' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_arbiter.v:4]
-INFO: [Synth 8-6157] synthesizing module 'servant_mux' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_mux.v:7]
-INFO: [Synth 8-6155] done synthesizing module 'servant_mux' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_mux.v:7]
-INFO: [Synth 8-6157] synthesizing module 'servant_ram' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_ram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'servant_arbiter' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_arbiter.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'servant_arbiter' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_arbiter.v:4]
+INFO: [Synth 8-6157] synthesizing module 'servant_mux' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_mux.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'servant_mux' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_mux.v:7]
+INFO: [Synth 8-6157] synthesizing module 'servant_ram' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_ram.v:1]
 	Parameter depth bound to: 8192 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'servant_ram' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_ram.v:1]
-INFO: [Synth 8-6157] synthesizing module 'timer' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/timer.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'servant_ram' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant_ram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'timer' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/timer.v:1]
 	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/timer.v:1]
-INFO: [Synth 8-6157] synthesizing module 'gpio' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/gpio.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'gpio' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/gpio.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_rf_top' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/timer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/gpio.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/gpio.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_top' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:1]
 	Parameter RESET_PC bound to: 0 - type: integer 
 	Parameter E_EXT bound to: 1 - type: integer 
 	Parameter RF_WIDTH bound to: 8 - type: integer 
 	Parameter CSR_COUNT bound to: 8 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'serv_top' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_top' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_top.v:1]
 	Parameter RESET_PC bound to: 0 - type: integer 
 	Parameter E_EXT bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'serv_state' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_state.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_state' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_state.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_decode' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'serv_decode' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:2]
-INFO: [Synth 8-6157] synthesizing module 'serv_immdec' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_immdec.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_immdec' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_immdec.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_bufreg' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_bufreg' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_bufreg2' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg2.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_bufreg2' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg2.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_ctrl' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_ctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_state' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_state.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_state' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_state.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_decode' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'serv_decode' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:2]
+INFO: [Synth 8-6157] synthesizing module 'serv_immdec' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_immdec.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_immdec' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_immdec.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_bufreg' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_bufreg' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_bufreg2' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_bufreg2' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_bufreg2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_ctrl' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_ctrl.v:1]
 	Parameter RESET_PC bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'serv_ctrl' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_ctrl.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_alu' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_alu.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_alu' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_alu.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_rf_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_if.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_ctrl' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_ctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_alu' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_alu.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_alu' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_if' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_if.v:1]
 	Parameter E_EXT bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'serv_rf_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_if.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_mem_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_mem_if.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_mem_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_mem_if.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_csr' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_csr.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_if.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_mem_if' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_mem_if.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_mem_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_mem_if.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_csr' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_csr.v:1]
 	Parameter E_EXT bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'serv_csr' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_csr.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_top' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_top.v:1]
-INFO: [Synth 8-6157] synthesizing module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram_if.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_csr' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_csr.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_top' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram_if.v:1]
 	Parameter width bound to: 8 - type: integer 
 	Parameter csr_regs bound to: 8 - type: integer 
 	Parameter rf_count bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'serv_rf_ram_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram_if.v:1]
-WARNING: [Synth 8-689] width (6) of port connection 'i_wreg0' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:108]
-WARNING: [Synth 8-689] width (6) of port connection 'i_wreg1' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:109]
-WARNING: [Synth 8-689] width (6) of port connection 'i_rreg0' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:114]
-WARNING: [Synth 8-689] width (6) of port connection 'i_rreg1' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:115]
-INFO: [Synth 8-6157] synthesizing module 'serv_rf_ram' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_ram_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram_if.v:1]
+WARNING: [Synth 8-689] width (6) of port connection 'i_wreg0' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:108]
+WARNING: [Synth 8-689] width (6) of port connection 'i_wreg1' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:109]
+WARNING: [Synth 8-689] width (6) of port connection 'i_rreg0' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:114]
+WARNING: [Synth 8-689] width (6) of port connection 'i_rreg1' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:115]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_ram' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram.v:1]
 	Parameter width bound to: 8 - type: integer 
 	Parameter rf_count bound to: 16 - type: integer 
 	Parameter csr_count bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'serv_rf_ram' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'serv_rf_top' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:1]
-INFO: [Synth 8-6157] synthesizing module 'spi' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/spi.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'spi' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/spi.v:23]
-INFO: [Synth 8-6157] synthesizing module 'debug_dtm' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dtm.v:2]
-INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dtm.v:92]
-INFO: [Synth 8-6155] done synthesizing module 'debug_dtm' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dtm.v:2]
-INFO: [Synth 8-6157] synthesizing module 'debug_dm' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:2]
-INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:614]
-INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:617]
-INFO: [Synth 8-6155] done synthesizing module 'debug_dm' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'servant' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'top_artya7' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/top_artya7.v:23]
-WARNING: [Synth 8-6014] Unused sequential element op29_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:282]
-WARNING: [Synth 8-6014] Unused sequential element op31_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:283]
-WARNING: [Synth 8-6014] Unused sequential element r_dmi_req_valid_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:447]
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_ram' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_ram.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_top' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_rf_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'spi' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/spi.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'spi' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/spi.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debug_dtm' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dtm.v:2]
+INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dtm.v:111]
+INFO: [Synth 8-6155] done synthesizing module 'debug_dtm' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dtm.v:2]
+INFO: [Synth 8-6157] synthesizing module 'debug_dm' [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:2]
+INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:627]
+INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:630]
+INFO: [Synth 8-6155] done synthesizing module 'debug_dm' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'servant' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/system/servant.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'top_artya7' (0#1) [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/top_artya7.v:23]
+WARNING: [Synth 8-6014] Unused sequential element op29_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:282]
+WARNING: [Synth 8-6014] Unused sequential element op31_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/core/serv_decode.v:283]
+WARNING: [Synth 8-6014] Unused sequential element invalid_state_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dtm.v:91]
+WARNING: [Synth 8-6014] Unused sequential element r_dmi_req_valid_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/debug_dm.v:460]
 WARNING: [Synth 8-3917] design top_artya7 has port FLASH_RST driven by constant 1
 WARNING: [Synth 8-3917] design top_artya7 has port FLASH_WP driven by constant 0
 WARNING: [Synth 8-3917] design top_artya7 has port FLASH_HOLD driven by constant 0
@@ -162,63 +163,63 @@ WARNING: [Synth 8-7129] Port i_wb_adr[14] in module servant_ram is either unconn
 WARNING: [Synth 8-7129] Port i_wb_adr[13] in module servant_ram is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_wb_flash_ack in module servant_mux is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2824.355 ; gain = 469.574 ; free physical = 13539 ; free virtual = 83092
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2168.236; parent = 1957.738; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3852.484; parent = 2824.359; children = 1028.125
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2825.145 ; gain = 470.613 ; free physical = 93353 ; free virtual = 114573
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2171.292; parent = 1960.977; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3829.613; parent = 2825.148; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2839.199 ; gain = 484.418 ; free physical = 13539 ; free virtual = 83092
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2168.236; parent = 1957.738; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3867.328; parent = 2839.203; children = 1028.125
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2842.957 ; gain = 488.426 ; free physical = 93353 ; free virtual = 114573
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2171.292; parent = 1960.977; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3847.426; parent = 2842.961; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2839.199 ; gain = 484.418 ; free physical = 13539 ; free virtual = 83092
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2168.236; parent = 1957.738; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3867.328; parent = 2839.203; children = 1028.125
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2842.957 ; gain = 488.426 ; free physical = 93353 ; free virtual = 114573
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2171.292; parent = 1960.977; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3847.426; parent = 2842.961; children = 1004.465
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2839.199 ; gain = 0.000 ; free physical = 13530 ; free virtual = 83083
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2842.957 ; gain = 0.000 ; free physical = 93350 ; free virtual = 114569
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc]
-Finished Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_artya7_propImpl.xdc].
+Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc]
+Finished Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_artya7_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_artya7_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3000.949 ; gain = 0.000 ; free physical = 13451 ; free virtual = 83004
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3004.707 ; gain = 0.000 ; free physical = 93268 ; free virtual = 114488
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3000.949 ; gain = 0.000 ; free physical = 13451 ; free virtual = 83004
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3004.707 ; gain = 0.000 ; free physical = 93268 ; free virtual = 114488
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/opt/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13504 ; free virtual = 83060
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2173.002; parent = 1962.864; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93331 ; free virtual = 114551
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2182.886; parent = 1973.062; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13504 ; free virtual = 83060
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2173.002; parent = 1962.864; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93331 ; free virtual = 114550
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2182.886; parent = 1973.062; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13508 ; free virtual = 83064
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2173.002; parent = 1962.864; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93331 ; free virtual = 114550
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2182.886; parent = 1973.062; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'tap_ctrl_state_reg' in module 'debug_dtm'
 INFO: [Synth 8-802] inferred FSM for state register 'dmi_ctrl_state_reg' in module 'debug_dtm'
@@ -289,9 +290,9 @@ INFO: [Synth 8-3354] encoded FSM with state register 'dm_ctrl_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'dm_ctrl_cmderr_reg' using encoding 'sequential' in module 'debug_dm'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13497 ; free virtual = 83057
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2173.002; parent = 1962.864; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93318 ; free virtual = 114539
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2182.886; parent = 1973.062; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -308,7 +309,7 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit         XORs := 3     
 +---Registers : 
 	               40 Bit    Registers := 1     
-	               32 Bit    Registers := 16    
+	               32 Bit    Registers := 17    
 	               30 Bit    Registers := 1     
 	                9 Bit    Registers := 2     
 	                8 Bit    Registers := 5     
@@ -326,6 +327,7 @@ Detailed RTL Component Info :
 	   2 Input   40 Bit        Muxes := 1     
 	   2 Input   32 Bit        Muxes := 25    
 	   4 Input   32 Bit        Muxes := 2     
+	   3 Input   32 Bit        Muxes := 4     
 	   7 Input   32 Bit        Muxes := 1     
 	  16 Input   32 Bit        Muxes := 1     
 	   2 Input   29 Bit        Muxes := 2     
@@ -344,7 +346,7 @@ Detailed RTL Component Info :
 	   6 Input    3 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 80    
+	   2 Input    1 Bit        Muxes := 83    
 	   5 Input    1 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 5     
 	   7 Input    1 Bit        Muxes := 1     
@@ -395,9 +397,9 @@ WARNING: [Synth 8-7129] Port i_wb_adr[14] in module servant_ram is either unconn
 WARNING: [Synth 8-7129] Port i_wb_adr[13] in module servant_ram is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_wb_flash_ack in module servant_mux is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13474 ; free virtual = 83034
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2173.002; parent = 1962.864; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93254 ; free virtual = 114480
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2182.886; parent = 1973.062; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -419,17 +421,17 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13367 ; free virtual = 82927
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2277.977; parent = 2068.015; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93145 ; free virtual = 114371
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2282.934; parent = 2073.245; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13316 ; free virtual = 82880
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2321.592; parent = 2111.630; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93096 ; free virtual = 114323
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.582; parent = 2116.894; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -453,9 +455,9 @@ INFO: [Synth 8-7052] The timing for the instance u0/ram/mem_reg_0 (implemented a
 INFO: [Synth 8-7052] The timing for the instance u0/ram/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance u0/cpu/rf_ram/memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13313 ; free virtual = 82876
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2322.775; parent = 2112.813; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93092 ; free virtual = 114319
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.582; parent = 2116.894; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -473,49 +475,49 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13278 ; free virtual = 82839
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2323.061; parent = 2113.104; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93019 ; free virtual = 114257
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.582; parent = 2116.894; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13278 ; free virtual = 82838
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2323.064; parent = 2113.108; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93019 ; free virtual = 114257
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.582; parent = 2116.894; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13277 ; free virtual = 82837
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2323.064; parent = 2113.108; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93019 ; free virtual = 114257
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.676; parent = 2117.001; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13277 ; free virtual = 82837
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2323.064; parent = 2113.108; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93019 ; free virtual = 114257
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.676; parent = 2117.001; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13276 ; free virtual = 82837
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2323.064; parent = 2113.108; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93019 ; free virtual = 114257
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.676; parent = 2117.001; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13276 ; free virtual = 82837
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2323.064; parent = 2113.108; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93019 ; free virtual = 114257
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.691; parent = 2117.017; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -548,46 +550,48 @@ Report Cell Usage:
 +------+---------+------+
 |1     |BUFG     |     1|
 |2     |CARRY4   |     8|
-|3     |LUT1     |     4|
-|4     |LUT2     |    79|
+|3     |LUT1     |     3|
+|4     |LUT2     |   108|
 |5     |LUT3     |   182|
-|6     |LUT4     |   104|
-|7     |LUT5     |   163|
-|8     |LUT6     |   281|
+|6     |LUT4     |   101|
+|7     |LUT5     |   149|
+|8     |LUT6     |   299|
 |9     |MUXF7    |     3|
 |10    |RAMB18E1 |     1|
 |11    |RAMB36E1 |     2|
 |13    |SRL16E   |     2|
 |14    |FDCE     |    30|
 |15    |FDPE     |     6|
-|16    |FDRE     |   703|
-|17    |FDSE     |    13|
+|16    |FDRE     |   731|
+|17    |FDSE     |    17|
 |18    |IBUF     |     7|
 |19    |OBUF     |     8|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13276 ; free virtual = 82836
-Synthesis current peak Physical Memory [PSS] (MB): peak = 2323.064; parent = 2113.108; children = 210.498
-Synthesis current peak Virtual Memory [VSS] (MB): peak = 3997.062; parent = 2968.938; children = 1028.125
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93018 ; free virtual = 114256
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2326.723; parent = 2117.048; children = 210.315
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3977.160; parent = 2972.695; children = 1004.465
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 30 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3000.949 ; gain = 484.418 ; free physical = 13323 ; free virtual = 82884
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3000.949 ; gain = 646.168 ; free physical = 13323 ; free virtual = 82884
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 3004.707 ; gain = 488.426 ; free physical = 93076 ; free virtual = 114314
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3004.707 ; gain = 650.176 ; free physical = 93076 ; free virtual = 114314
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3000.949 ; gain = 0.000 ; free physical = 13432 ; free virtual = 82992
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3004.707 ; gain = 0.000 ; free physical = 93185 ; free virtual = 114425
 INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3000.949 ; gain = 0.000 ; free physical = 13366 ; free virtual = 82931
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3004.707 ; gain = 0.000 ; free physical = 93130 ; free virtual = 114371
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: a45184f0
+Synth Design complete, checksum: b136a4f6
 INFO: [Common 17-83] Releasing license: Synthesis
-87 Infos, 89 Warnings, 0 Critical Warnings and 0 Errors encountered.
+87 Infos, 90 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 3000.949 ; gain = 960.238 ; free physical = 13608 ; free virtual = 83174
-INFO: [Common 17-1381] The checkpoint '/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:32 . Memory (MB): peak = 3004.707 ; gain = 963.246 ; free physical = 93365 ; free virtual = 114606
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Common 17-1381] The checkpoint '/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_artya7_utilization_synth.rpt -pb top_artya7_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug 17 06:12:05 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 17 20:11:01 2023...

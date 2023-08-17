@@ -1,0 +1,46 @@
+$date
+        2023-Aug-17 19:48:18
+$end
+$version
+        Vivado v2022.2 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 4 " u0/serv_dtm/tap_ctrl_state [3:0] $end
+$var reg 5 & u0/serv_dtm/tap_reg_ireg [4:0] $end
+$var reg 2 + dmi_op [1:0] $end
+$var reg 40 - u0/serv_dtm/tap_reg_dmi [39:0] $end
+$var reg 32 U dmi_wdata [31:0] $end
+$var reg 6 u dmi_addr [5:0] $end
+$var reg 1 { u0/serv_dtm/i_tck $end
+$var reg 1 | _TRIGGER $end
+$var reg 1 } _WINDOW $end
+$var reg 1 ~ _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 "
+b10 &
+b0 +
+b111110011111100 -
+b1111100111111 U
+b0 u
+1{
+0|
+1}
+0~
+$end
+#1
+b101 "
+1|
+#48
+0{
+#98
+1{
+#101
+b1100 "
+#149
+0{

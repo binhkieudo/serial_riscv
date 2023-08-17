@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Thu Aug 17 06:13:02 2023
-| Host             : binhkieudo-hotswap running 64-bit Ubuntu 20.04.6 LTS
+| Date             : Thu Aug 17 20:11:52 2023
+| Host             : binhkieudo running 64-bit Ubuntu 20.04.6 LTS
 | Command          : report_power -file top_artya7_power_routed.rpt -pb top_artya7_power_summary_routed.pb -rpx top_artya7_power_routed.rpx
 | Design           : top_artya7
 | Device           : xc7a35ticsg324-1L
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.079        |
+| Total On-Chip Power (W)  | 0.080        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.017        |
+| Dynamic (W)              | 0.018        |
 | Device Static (W)        | 0.062        |
 | Effective TJA (C/W)      | 4.8          |
 | Max Ambient (C)          | 99.6         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.003 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     1607 |       --- |             --- |
-|   LUT as Logic          |     0.002 |      628 |     20800 |            3.02 |
-|   Register              |    <0.001 |      752 |     41600 |            1.81 |
+| Slice Logic             |     0.002 |     1669 |       --- |             --- |
+|   LUT as Logic          |     0.002 |      654 |     20800 |            3.14 |
+|   Register              |    <0.001 |      784 |     41600 |            1.88 |
 |   CARRY4                |    <0.001 |        8 |      8150 |            0.10 |
 |   F7/F8 Muxes           |    <0.001 |        3 |     32600 |           <0.01 |
 |   LUT as Shift Register |    <0.001 |        2 |      9600 |            0.02 |
 |   Others                |     0.000 |       30 |       --- |             --- |
-| Signals                 |     0.003 |     1247 |       --- |             --- |
+| Signals                 |     0.003 |     1275 |       --- |             --- |
 | Block RAM               |     0.006 |      2.5 |        50 |            5.00 |
 | I/O                     |     0.004 |       15 |       210 |            7.14 |
 | Static Power            |     0.062 |          |           |                 |
-| Total                   |     0.079 |          |           |                 |
+| Total                   |     0.080 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.950 |     0.020 |       0.014 |      0.006 |       NA    | Unspecified | NA         |
+| Vccint    |       0.950 |     0.021 |       0.015 |      0.006 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.011 |       0.000 |      0.011 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -143,10 +143,10 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| top_artya7   |     0.017 |
+| top_artya7   |     0.018 |
 |   u0         |     0.014 |
-|     cpu      |     0.005 |
-|       cpu    |     0.003 |
+|     cpu      |     0.006 |
+|       cpu    |     0.004 |
 |       rf_ram |     0.001 |
 |     ram      |     0.005 |
 |     serv_dm  |     0.002 |
