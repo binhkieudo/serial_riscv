@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.tcl"
+  variable script "/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.tcl"
   variable category "vivado_impl"
 }
 
@@ -123,7 +123,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param tcl.collectionResultDisplayLimit 0
-  set_param chipscope.maxJobs 5
+  set_param chipscope.maxJobs 4
   set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35ticsg324-1L
@@ -133,15 +133,18 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.cache/wt [current_project]
-  set_property parent.project_path /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.xpr [current_project]
-  set_property ip_output_repo /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/wt [current_project]
+  set_property parent.project_path /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.xpr [current_project]
+  set_property ip_output_repo /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp
+  add_files -quiet /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp
+  read_ip -quiet /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/vio_0/vio_0.xci
+  read_ip -quiet /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/ila_1/ila_1.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc
+  read_xdc /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
@@ -306,6 +309,7 @@ set rc [catch {
   create_msg_db write_bitstream.pb
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi top_artya7.mmi }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }

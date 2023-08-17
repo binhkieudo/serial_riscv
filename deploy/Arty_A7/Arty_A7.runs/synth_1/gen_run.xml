@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692270617" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692294886" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
   <File Type="VDS-TIMING-PB" Name="top_artya7_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="top_artya7_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_artya7.dcp"/>
@@ -223,14 +223,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/ila_1/ila_1.xci">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/ip/spi_master.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -298,4 +290,6 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ila_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
 </GenRun>

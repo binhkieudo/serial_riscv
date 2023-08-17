@@ -81,27 +81,47 @@ module debug_dtm (
     reg  [31:0] tap_reg_idcode;
     reg  [31:0] tap_reg_dtmcs;
     wire [31:0] tap_reg_dtmcs_nxt;
-    reg  [39:0] tap_reg_dmi;         // 6-bit address, 32-bit data, 2-bit operation
+    //reg  [39:0] tap_reg_dmi;         // 6-bit address, 32-bit data, 2-bit operation
+    reg  [71:0] tap_reg_dmi;         // 6-bit address, 32-bit data, 2-bit operation
     wire [39:0] tap_reg_dmi_nxt;     // 6-bit address, 32-bit data, 2-bit operation
     
-    reg invalid_state = 1'b0;
+    reg [31:0] count;
+    reg [1:0] count_enable = 2'b00;
+    
+    wire count_rst;
     
     always @(posedge i_clk) begin
-        if (i_rst)
-            invalid_state <= 1'b0;
-        else if (tap_ctrl_state == STATE_update_ir)
-            invalid_state <= (tap_reg_ireg != 5'b00001) |
-                             (tap_reg_ireg != 5'b10000) |
-                             (tap_reg_ireg != 5'b10001);
+        if (i_rst) 
+            count_enable <= 2'b00;
+        else if ((tap_ctrl_state == STATE_shift_dr) && 
+                 (tap_reg_ireg   == 5'b00010      ) && 
+                 (count_enable   == 2'b00         ))
+            count_enable <= 2'b01;
+        else if ((count_enable == 2'b01) && (tap_ctrl_state == STATE_exit1_dr)) count_enable <= 2'b00;
+    
+        if (i_rst || count_rst)
+            count <= 32'd0;
+        else if ((tap_ctrl_state == STATE_shift_dr) && 
+                 (tap_reg_ireg   == 5'b00010      ) && 
+                 (count_enable   == 2'b00         ))
+            count <= 32'd0;
+        else if ((count_enable == 2'b01) && tap_sync_tck_rising)
+            count <= count + 1'b1;
     end
     
-//    ila_1 ila_1_inst(
-//        .clk    (i_clk ),
-//        .probe0 (tap_ctrl_state ),
-//        .probe1 (tap_reg_ireg   ),
-//        .probe2 ({tap_reg_dmi[39:34], tap_reg_dmi[33:2], tap_reg_dmi[1:0]}),
-//        .probe3 (i_tck)
-//    );
+    vio_0 vio_0_inst(
+        .clk        (i_clk ),
+        .probe_in0  (count ),
+        .probe_out0 (count_rst)
+    );
+
+    ila_1 ila_1_inst(
+        .clk    (i_clk ),
+        .probe0 (tap_ctrl_state ),
+        .probe1 (tap_reg_ireg   ),
+        .probe2 (tap_reg_dmi),
+        .probe3 (i_tck)
+    );
                     
     always @(posedge i_clk)
         if (i_rst || !tap_sync_trst) tap_ctrl_state <= STATE_test_logic_reset;
@@ -221,9 +241,9 @@ module debug_dtm (
             tap_reg_bypass <= 1'b0;
             tap_reg_idcode <= 32'd0;
             tap_reg_dtmcs <= 32'd0;
-            tap_reg_dmi <= 40'd0;
+            tap_reg_dmi <= 72'd0;
             r_tdo <= 1'b0;
-            tap_response <= 32'd0;
+//            tap_response <= 32'd0;
         end
         else begin
             // Serial data input: Instruction register
@@ -237,8 +257,11 @@ module debug_dtm (
             if (tap_ctrl_state == STATE_capture_dr) begin // preload phase
                 if (tap_reg_ireg == 5'b00001) tap_reg_idcode <= {IDCODE_VERSION, IDCODE_PARTID, IDCODE_MANID, 1'b1};
                 if (tap_reg_ireg == 5'b10000) tap_reg_dtmcs  <= tap_reg_dtmcs_nxt;
-                if (tap_reg_ireg == 5'b10001) tap_reg_dmi <= tap_reg_dmi_nxt;
-                if (tap_reg_ireg == 5'b00010) tap_response <= 32'hffffffff;
+                if (tap_reg_ireg == 5'b10001) begin
+                    tap_reg_dmi[71:40] <= 32'd0;
+                    tap_reg_dmi[39:0] <= tap_reg_dmi_nxt;
+                end
+                else  if (tap_reg_ireg == 5'b00010) tap_reg_dmi <= 72'h3e_6174_1000_0000_0000;
                 if (!(tap_reg_ireg == 5'b00001) && !(tap_reg_ireg == 5'b10000) && !(tap_reg_ireg == 5'b10001))
                     tap_reg_bypass <= 1'b0;
             end
@@ -248,13 +271,13 @@ module debug_dtm (
                     
                     if (tap_reg_ireg == 5'b10000) tap_reg_dtmcs  <= {tap_sync_tdi, tap_reg_dtmcs[31:1]};
                     
-                    if (tap_reg_ireg == 5'b10001) tap_reg_dmi    <= {tap_sync_tdi, tap_reg_dmi[39:1]};
-                    else if (tap_reg_ireg == 5'b00010) tap_reg_dmi    <= {tap_sync_tdi, tap_reg_dmi[39:1]};
+                    if (tap_reg_ireg == 5'b10001) tap_reg_dmi    <= {32'd0, tap_sync_tdi, tap_reg_dmi[39:1]};
+                    else if (tap_reg_ireg == 5'b00010) tap_reg_dmi    <= {tap_sync_tdi, tap_reg_dmi[71:1]};
                     
                     if (!(tap_reg_ireg == 5'b00001) && !(tap_reg_ireg == 5'b10000) && !(tap_reg_ireg == 5'b10001))
                         tap_reg_bypass <= tap_sync_tdi;
                     
-                    if (tap_reg_ireg == 5'b00010) tap_response <= {1'b1, tap_response[31:1]};
+//                    if (tap_reg_ireg == 5'b00010) tap_response <= {1'b1, tap_response[31:1]};
                     
                 end                
             end
@@ -268,7 +291,7 @@ module debug_dtm (
                         5'b00001: r_tdo <= tap_reg_idcode[0];
                         5'b10000: r_tdo <= tap_reg_dtmcs[0];
                         5'b10001: r_tdo <= tap_reg_dmi[0];
-                        5'b00010: r_tdo <= tap_response[0];
+                        5'b00010: r_tdo <= tap_reg_dmi[0];
                         default:  r_tdo <= tap_reg_bypass;
                     endcase
         end

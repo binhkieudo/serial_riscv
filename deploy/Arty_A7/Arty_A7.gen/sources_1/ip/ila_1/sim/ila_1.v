@@ -61,7 +61,7 @@ input clk;
 
 input [3 : 0] probe0;
 input [4 : 0] probe1;
-input [39 : 0] probe2;
+input [71 : 0] probe2;
 input [0 : 0] probe3;
 
 
