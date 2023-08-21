@@ -32,7 +32,7 @@ module spi(
    input  wire          wb_clk,
    input  wire          wb_rstn,
    // interrupt
-   output wire	        o_int,
+//   output wire	        o_int,
    // memory mapped
    input  wire [31:0]   i_wb_adr,
    input  wire [31:0]   i_wb_dat,
@@ -48,19 +48,20 @@ module spi(
 );
 
    parameter BAUD_WIDTH = 8;
-   parameter BAUD_DIV = 0;
+   parameter BAUD_DIV = 4;
    parameter SPI_MODE = 0;
    parameter BC_WIDTH = 3;
    parameter DIV_WIDTH = BAUD_DIV ? $clog2(BAUD_DIV / 2 - 1) : BAUD_WIDTH;
 
 
     
-   wire [2:0] adr_i;
+   wire [1:0] adr_i;
    reg  [7:0] sr8; // shift register 
    reg  [7:0] bb8; // buffer register
    wire [7:0] sr8_sf;
    
    reg [BC_WIDTH - 1:0]		bc, bc_next;
+   
    reg [DIV_WIDTH - 1:0]	ccr;
    reg [DIV_WIDTH - 1:0]	cc, cc_next;
    
@@ -69,35 +70,39 @@ module spi(
    wire       istb; // set interrupt enable
    wire		  cstb; // set spi mode 
    wire       bstb; // set clock divider 
-   wire       bbastb; // set number of byte receive 
+//   wire       bbastb; // set number of byte receive 
     
    reg		  sck;
    reg		  sf, ld;
    reg	      bba;   // buffer flag
 //   reg  [1:0] bba_limit;
-//   reg        r_wstb;
+   reg        r_wstb;
    reg		  txren, txeen;
    wire 	  txr, txe;
    wire		  cpol, cpha;
    reg		  cpolr, cphar;
    wire 	  wr;
    
-   assign adr_i = i_wb_adr[4:2];
+//   assign adr_i = i_wb_adr[4:2];
+   assign adr_i = i_wb_adr[3:2];
    assign o_wb_ack = i_wb_cyc; // zero wait
    assign wr = i_wb_cyc & i_wb_we;
-   assign wstb = wr & (adr_i == 1);
-   assign istb = wr & (adr_i == 2);
-   assign cstb = wr & (adr_i == 3);
-   assign bstb = wr & (adr_i == 4);
+//   assign wstb = wr & (adr_i == 1);
+   assign wstb = wr & adr_i[0];
+//   assign istb = wr & (adr_i == 2);
+//   assign cstb = wr & (adr_i == 3);
+//   assign bstb = wr & (adr_i == 4);
 //   assign bbastb = wr & (adr_i == 5);
    assign sr8_sf = { sr8[6:0],misod };
    
    assign o_wb_rdt[31:8] = 24'd0;
-   assign o_wb_rdt[7:0]  = (sr8                   & {8{(adr_i == 0)}}) |
-		                   (bb8                   & {8{(adr_i == 1)}}) |
-		                   ({6'd0, txr, txe }     & {8{(adr_i == 2)}}) |
-		                   ({6'd0, cpolr, cphar}  & {8{(adr_i == 3)}}) |
-		                   (ccr                   & {8{(adr_i == 4)}});
+   assign o_wb_rdt[7:0]  = (sr8                   & {8{adr_i[0]}}) |
+                           ({6'd0, txr, txe }     & {8{adr_i[1]}});
+//                         (sr8                   & {8{(adr_i == 1)}});
+//		                   (bb8                   & {8{(adr_i == 1)}}) |
+//		                   ({6'd0, txr, txe }     & {8{(adr_i == 2)}}) |
+//		                   ({6'd0, cpolr, cphar}  & {8{(adr_i == 3)}}) |
+//		                   (ccr                   & {8{(adr_i == 4)}});
 //		                   ({6'd0, bba}           & {8{(adr_i == 5)}});
 
    parameter IDLE = 0,
@@ -106,22 +111,22 @@ module spi(
 
    reg [1:0] spi_seq, spi_seq_next;
    
-      wb_ila wb_ila_0(
-        .clk    (wb_clk ),
-        .probe0 (i_wb_adr ),
-        .probe1 (i_wb_dat ),
-        .probe2 (i_wb_we ),
-        .probe3 (i_wb_cyc ),
-        .probe4 (o_wb_rdt ),
-        .probe5 (o_wb_ack ),
-        .probe6 (spi_seq),
-        .probe7  (SCK ),
-        .probe8  (CSn ),
-        .probe9  (MOSI ),
-        .probe10 (MISO ),
-        .probe11 (bc),
-        .probe12 (bba)
-    );
+//      wb_ila wb_ila_0(
+//        .clk    (wb_clk ),
+//        .probe0 (i_wb_adr ),
+//        .probe1 (i_wb_dat ),
+//        .probe2 (i_wb_we ),
+//        .probe3 (i_wb_cyc ),
+//        .probe4 (o_wb_rdt ),
+//        .probe5 (o_wb_ack ),
+//        .probe6 (spi_seq),
+//        .probe7  (SCK ),
+//        .probe8  (CSn ),
+//        .probe9  (MOSI ),
+//        .probe10 (MISO ),
+//        .probe11 (bc),
+//        .probe12 (bba)
+//    );
     
    always @(posedge wb_clk)
      if (!wb_rstn)  spi_seq <= IDLE;
@@ -129,13 +134,15 @@ module spi(
 
    always @(posedge wb_clk) begin
 	cc <= cc_next;
+//    cc <= (BAUD_DIV / 2 - 1);
 	bc <= bc_next;
    end
 
    always @(*)
      begin
 	sck = cpol;
-	cc_next = BAUD_DIV ? (BAUD_DIV / 2 - 1) : ccr;
+//	cc_next = BAUD_DIV ? (BAUD_DIV / 2 - 1) : ccr;
+    cc_next = BAUD_DIV / 2 - 1;
 	bc_next = bc;
 	ld = 1'b0;
 	sf = 1'b0;
@@ -143,7 +150,7 @@ module spi(
 	case (spi_seq)
 	  IDLE: begin
 	       if (bba) begin
-		    bc_next = 7;
+		    bc_next = 0;
 		    ld = 1'b1;
 		    spi_seq_next = PHASE2;
 		    end
@@ -165,16 +172,17 @@ module spi(
 	    begin
 	       sck = ~(cpol ^ cpha);
 	       if (cc == 0) begin
-		      bc_next = bc -1;
+		      bc_next = bc + 1'b1;
 		      sf = 1'b1;
-		      if (bc == 0) begin
-			     if (bba) begin
-			         bc_next = 7;
-			         ld = 1'b1;
-			         spi_seq_next = PHASE2;
-			     end
-			     else
-			         spi_seq_next = IDLE;
+		      if (&bc) begin
+//			     if (bba) begin
+//			         bc_next = 7;
+//			         ld = 1'b1;
+//			         spi_seq_next = PHASE2;
+//			     end
+//			     else
+//			         spi_seq_next = IDLE;
+                 spi_seq_next = IDLE;
 		      end
 		      else
 		          spi_seq_next = PHASE2;
@@ -189,38 +197,42 @@ module spi(
 
    always @(posedge wb_clk) begin
     // control reg
-	if (cstb) { cpolr, cphar } <= i_wb_dat[1:0];
-	else      { cpolr, cphar } <= { cpolr, cphar };
+//	if (cstb) { cpolr, cphar } <= i_wb_dat[1:0];
+//	else      { cpolr, cphar } <= { cpolr, cphar };
     
     // irq enable reg
-	if (istb)  { txren, txeen } <= i_wb_dat[1:0];
-	else       { txren, txeen } <= { txren, txeen };
+//	if (istb)  { txren, txeen } <= i_wb_dat[1:0];
+//	else       { txren, txeen } <= { txren, txeen };
 	  
     // baud reg
-	if (bstb)  ccr <= i_wb_dat[7:0];
-	else       ccr <= ccr;
+//	if (bstb)  ccr <= i_wb_dat[7:0];
+//	else       ccr <= ccr;
 
     // shift reg
-	if (ld && (spi_seq == IDLE)) sr8 <= bb8;
-	else if (ld)                 sr8 <= 8'd0;
-	else if (sf)                 sr8 <= sr8_sf;
-	else                         sr8 <= sr8;
+    
+//	if (ld) sr8    <= bb8;
+//	else if (ld)                 sr8 <= 8'd0;
+    if (wstb)      sr8 <= i_wb_dat[7:0];
+	else if (sf)   sr8 <= sr8_sf;
+	else           sr8 <= sr8;
     
     // buffer reg
-	if (wstb)      bb8 <= i_wb_dat[7:0];
-	else if (ld)   bb8 <= (spi_seq == IDLE) ? sr8 : sr8_sf;
-	else           bb8 <= bb8;
+//	if (wstb)      bb8 <= i_wb_dat[7:0];
+//	else if (ld)   bb8 <= (spi_seq == IDLE) ? sr8 : sr8_sf;
+//	else           bb8 <= sr8_sf;
+	
    end // always @ (posedge clk_i)
 
    always @(posedge wb_clk) begin
 	if (!wb_rstn)  bba <= 1'b0;
 	else if (wstb) bba <= 1'b1;
-	else if (ld)   bba <= 1'b0;
-	else           bba <= bba;
+//	else if (ld)   bba <= 1'b0;
+	else           bba <= 1'b0;
 
-//	if (!wb_rstn | wstb)                bba <= 2'b0;
-//	else if (ld && (spi_seq != IDLE))   bba <= bba + 1'b1;
-//	else                                bba <= bba;
+//	if (!wb_rstn)  bba <= 3'b000;
+//	else if (wstb) bba <= 3'b101;
+//	else if (ld)   bba <= bba - 3'b001;
+//	else           bba <= bba;
 
 //	if (!wb_rstn)    bba_limit <= 2'b00;
 //	else if (bbastb) bba_limit <= i_wb_dat[1:0];
@@ -235,11 +247,13 @@ module spi(
 
 
 
-   assign { cpol, cpha } = ((SPI_MODE >= 0) & (SPI_MODE < 4)) ?
-			   SPI_MODE : { cpolr, cphar };
+//   assign { cpol, cpha } = ((SPI_MODE >= 0) & (SPI_MODE < 4)) ?
+//			   SPI_MODE : { cpolr, cphar };
+   assign { cpol, cpha } = 2'b00;
    assign txe = (spi_seq == IDLE);
    assign txr = ~bba;
-   assign o_int = (txr & txren) | (txe & txeen);
+//   assign o_int = (txr & txren) | (txe & txeen);
+//   assign o_int = 1'b0;
    assign SCK = sck;
    assign CSn = 1'b0;
    assign MOSI = sr8[7];

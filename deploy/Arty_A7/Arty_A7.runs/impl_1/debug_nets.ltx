@@ -15,7 +15,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "u0/spi_inst0/wb_ila_0",
+                        "name": "u0/spi_inst0/spi_ila_0",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,459 +23,17 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "3D2C9B23D8CE54FCBBBFDCCF3E967892",
+                        "uuid": "451026A4E4DB57309EF58E2043F9B75A",
                         "pins": [
                             {
                                 "name": "probe0",
                                 "id": 0,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": true,
+                                "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
                                 "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/n_0_1",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe0",
-                                "id": 1,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 1,
-                                "rightIndex": 1,
-                                "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/n_0_0",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe0",
-                                "id": 2,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 2,
-                                "rightIndex": 31,
-                                "portIndex": 0,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/i_wb_adr",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[31]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[30]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[29]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[28]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[27]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[26]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[25]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[24]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[23]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[22]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[21]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[20]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[19]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[18]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[17]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[16]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[15]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[14]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[13]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[12]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[11]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[10]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[9]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[8]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[7]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[6]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[5]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[4]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[3]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_adr[2]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe1",
-                                "id": 3,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 1,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/i_wb_dat",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[31]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[30]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[29]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[28]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[27]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[26]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[25]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[24]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[23]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[22]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[21]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[20]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[19]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[18]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[17]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[16]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[15]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[14]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[13]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[12]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[11]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[10]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[9]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[8]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[7]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[6]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[5]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[4]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[3]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[2]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[1]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/i_wb_dat[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe2",
-                                "id": 4,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 2,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/i_wb_we",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe3",
-                                "id": 5,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 3,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/i_wb_cyc_1",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe4",
-                                "id": 6,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 31,
-                                "portIndex": 4,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/o_wb_rdt",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[31]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[30]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[29]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[28]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[27]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[26]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[25]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[24]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[23]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[22]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[21]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[20]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[19]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[18]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[17]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[16]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[15]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[14]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[13]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[12]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[11]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[10]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[9]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[8]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[7]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[6]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[5]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[4]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[3]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[2]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[1]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/o_wb_rdt[0]"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe5",
-                                "id": 7,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 5,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/i_wb_cyc",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe6",
-                                "id": 8,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 0,
-                                "rightIndex": 1,
-                                "portIndex": 6,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/spi_seq",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "u0/spi_inst0/spi_seq[1]",
-                                                "parentNetId": 98
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/spi_seq[0]",
-                                                "parentNetId": 99
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe7",
-                                "id": 9,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 7,
                                 "nets": [
                                     {
                                         "name": "u0/spi_inst0/SCK",
@@ -484,14 +42,14 @@
                                 ]
                             },
                             {
-                                "name": "probe8",
-                                "id": 10,
+                                "name": "probe1",
+                                "id": 1,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
-                                "portIndex": 8,
+                                "portIndex": 1,
                                 "nets": [
                                     {
                                         "name": "u0/spi_inst0/CSn",
@@ -500,14 +58,14 @@
                                 ]
                             },
                             {
-                                "name": "probe9",
-                                "id": 11,
+                                "name": "probe2",
+                                "id": 2,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
-                                "portIndex": 9,
+                                "portIndex": 2,
                                 "nets": [
                                     {
                                         "name": "u0/spi_inst0/MOSI",
@@ -516,14 +74,14 @@
                                 ]
                             },
                             {
-                                "name": "probe10",
-                                "id": 12,
+                                "name": "probe3",
+                                "id": 3,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
-                                "portIndex": 10,
+                                "portIndex": 3,
                                 "nets": [
                                     {
                                         "name": "u0/spi_inst0/MISO",
@@ -532,45 +90,28 @@
                                 ]
                             },
                             {
-                                "name": "probe11",
-                                "id": 13,
+                                "name": "probe4",
+                                "id": 4,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 2,
-                                "portIndex": 11,
+                                "rightIndex": 1,
+                                "portIndex": 4,
                                 "nets": [
                                     {
-                                        "name": "u0/spi_inst0/bc",
+                                        "name": "u0/spi_inst0/spi_seq",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "u0/spi_inst0/bc[2]"
+                                                "name": "u0/spi_inst0/spi_seq[1]",
+                                                "parentNetId": 4
                                             },
                                             {
-                                                "name": "u0/spi_inst0/bc[1]"
-                                            },
-                                            {
-                                                "name": "u0/spi_inst0/bc[0]"
+                                                "name": "u0/spi_inst0/spi_seq[0]",
+                                                "parentNetId": 5
                                             }
                                         ]
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe12",
-                                "id": 14,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": false,
-                                "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 12,
-                                "nets": [
-                                    {
-                                        "name": "u0/spi_inst0/bba",
-                                        "isBus": false
                                     }
                                 ]
                             }
@@ -579,7 +120,7 @@
                 ],
                 "parent_nets": [
                     {
-                        "id": 98,
+                        "id": 4,
                         "name": "u0/spi_inst0/spi_seq[1]",
                         "state_reg": [
                             {
@@ -602,7 +143,7 @@
                         ]
                     },
                     {
-                        "id": 99,
+                        "id": 5,
                         "name": "u0/spi_inst0/spi_seq[0]",
                         "state_reg": [
                             {

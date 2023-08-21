@@ -260,12 +260,10 @@ module servant # (
 //        .MISO       (i_flash_MISO )
 //    );
     // SPI
-    spi spi_inst0(
+    tiny_spi spi_inst0(
         // Global control
         .wb_clk     (wb_clk ),
         .wb_rstn    (wb_rstn ),
-        // Interrupt
-        .o_int      ( ),
         // Wishbone interface
         .i_wb_adr   (wb_flash_adr ),
         .i_wb_dat   (wb_flash_dat ),

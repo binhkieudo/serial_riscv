@@ -1,0 +1,9 @@
+0.7
+2020.2
+Oct 14 2022
+05:07:14
+/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/imports/rtl/ip/clock_gen.v,1692585419,verilog,,,,clock_gen,,,,,,,,
+/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/spi.v,1692589446,verilog,,,,spi,,uvm,,,,,,
+/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/tb_spi.v,1692592419,systemVerilog,,,,tb_spi,,uvm,,,,,,
+/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/new/tiny_spi.v,1692591777,verilog,,,,tiny_spi,,uvm,,,,,,

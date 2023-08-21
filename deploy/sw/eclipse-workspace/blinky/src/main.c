@@ -11,75 +11,66 @@
 typedef unsigned char uint8_t;
 typedef unsigned int  uint32_t;
 
+#define READ_ID   0x9f
 #define FLASH_OK  0x3
 #define FALSH_NOP 0x0
 
 const unsigned int DELAY = 0x100000;
 
 const uint32_t FLASH_BASE  = 0xc0000000;
-const uint32_t FLASH_RDATA = 0xc0000000;
-const uint32_t FLASH_WDATA = 0xc0000004;   // +1
-const uint32_t FLASH_STATS = 0xc0000008;   // +2
-const uint32_t FLASH_CONTROL = 0xc000000c; // +3
-const uint32_t FLASH_BAUDDIV = 0xc0000010; // +4
+const uint32_t FLASH_STATS = 0xc0000000; // +0
+const uint32_t FLASH_DATA  = 0xc0000004; // +1
 
-void flash_setup () {
+uint8_t flash_writeByte (uint8_t data) {
 	uint32_t* pFlash = (uint32_t*)FLASH_BASE;
-
-	// Setting SPI mode
-	*(pFlash + 3) = 0;
-
-	// Setting baud divider = input clock / 4
-	*(pFlash + 4) = 4;
-}
-
-void flash_writeByte (uint8_t data) {
-	unsigned int* pFlash = (unsigned int*)FLASH_BASE;
 
 	uint32_t wdata = 0x000000ff & data;
 	uint32_t status = 0;
+	uint8_t  readByte = 0;
 
 	// Write byte to buffer
 	*(pFlash + 1) = wdata;
 
 	// Reading
 	while (status != FLASH_OK) {
-		status = 0x3 & *(pFlash + 2);
+		status = 0x3 & *(pFlash);
 	}
+	readByte = *(pFlash + 1);
 }
 
-uint32_t flash_readWord () {
-	uint32_t retVal = 0;
+uint32_t flash_readID () {
+	uint32_t devID = 0;
+	uint8_t rData = 0;
+	uint32_t* pFlash = (uint32_t*)FLASH_BASE;
 
-//	flash_writeByte (FALSH_NOP);
-	flash_writeByte (FALSH_NOP);
-	flash_writeByte (FALSH_NOP);
-	flash_writeByte (FALSH_NOP);
+	// Make sure that chip select is disable
+	*(pFlash) = 0x0;
 
-	return retVal;
+	// Enable flash
+	*(pFlash) = 0x1;
+
+	// Write command
+	flash_writeByte(READ_ID);
+
+	// Read data
+	rData = flash_writeByte(FALSH_NOP);
+	devID = devID | (0x000000ff & rData);
+	rData = flash_writeByte(FALSH_NOP);
+	devID = (devID << 8) | (0x000000ff & rData);
+	rData = flash_writeByte(FALSH_NOP);
+	devID = (devID << 8) | (0x000000ff & rData);
+
+	// Disable flash
+	*(pFlash) = 0x0;
+
+	return devID;
 }
 
 int
 main(void)
 {
-  unsigned int* pLed = (unsigned int*)0x80000000;
-
-  int i;
-  int ledVal = 0;
-  uint32_t flash_data;
-
-  *pLed = 0x0;
-
-  flash_setup();
   while (1) {
-	  flash_writeByte(0x9f);
-	  flash_data = flash_readWord();
-  }
-
-  while (1) {
-	  for (i = 0; i < DELAY; i = i + 1);
-	  ledVal = ledVal ^ 0x00000001;
-	  *pLed = ledVal;
+	  flash_readID();
   }
 
   return 0;
