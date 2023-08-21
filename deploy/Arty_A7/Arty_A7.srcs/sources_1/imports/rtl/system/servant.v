@@ -1,5 +1,5 @@
 module servant # (
-    parameter memsize = 8192,
+    parameter memsize = 8192, // in byte
     parameter RESET_ADDR = 32'h0000_0000,
     parameter E_EXT = 1'b1,
     parameter RF_WIDTH = 8,
@@ -241,24 +241,7 @@ module servant # (
       .o_dbg_process(w_dbg_process  )   
      );
         
-//    // SPI Programmer
-//    flash_controller serv_flash(
-//        // Wishbone slave
-//        .i_wb_clk   (wb_clk       ),
-//        .i_wb_rst   (wb_rst       ),
-//        .i_wb_adr   (wb_flash_adr ),
-//        .i_wb_dat   (wb_flash_dat ),
-//        .i_wb_sel   (wb_flash_sel ),
-//        .i_wb_we    (wb_flash_we  ),
-//        .i_wb_cyc   (wb_flash_cyc ),
-//        .o_wb_rdt   (wb_flash_rdt ),
-//        .o_wb_ack   (             ),
-//        // SPI
-//        .SCK        (o_flash_SCK  ),
-//        .CS_n       (o_flash_CSn  ),
-//        .MOSI       (o_flash_MOSI ),
-//        .MISO       (i_flash_MISO )
-//    );
+    
     // SPI
     tiny_spi spi_inst0(
         // Global control

@@ -16,7 +16,7 @@ module servant_ram
 
    wire [3:0] 		we = {4{i_wb_we & i_wb_cyc}} & i_wb_sel;
 
-   reg [31:0] 		mem [0:depth/4-1] /* verilator public */;
+   reg [31:0] 		mem [0:depth/4-1];
 
    wire [aw-3:0] 	addr = i_wb_adr[aw-1:2];
    

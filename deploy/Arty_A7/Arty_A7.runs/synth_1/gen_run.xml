@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692599077" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
-  <File Type="VDS-TIMING-PB" Name="top_artya7_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="top_artya7_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="top_artya7.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="top_artya7_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="top_artya7_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_artya7_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="top_artya7.vds"/>
-  <File Type="REPORTS-TCL" Name="top_artya7_reports.tcl"/>
-  <File Type="PA-TCL" Name="top_artya7.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692641055" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
+  <File Type="VDS-TIMING-PB" Name="boot_rom_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="boot_rom_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="boot_rom.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="boot_rom_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="boot_rom_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="boot_rom_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="boot_rom.vds"/>
+  <File Type="REPORTS-TCL" Name="boot_rom_reports.tcl"/>
+  <File Type="PA-TCL" Name="boot_rom.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/boot_rom.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/ip/debug_dm.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/debug_dm.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -22,6 +30,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/ip/debug_dtm.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/debug_dtm.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -31,6 +40,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/ip/gpio.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/gpio.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -40,6 +50,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_alu.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_alu.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -49,6 +60,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_bufreg.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_bufreg.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -58,6 +70,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_bufreg2.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_bufreg2.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -67,6 +80,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_csr.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_csr.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -76,6 +90,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_ctrl.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_ctrl.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -85,6 +100,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_decode.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_decode.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -94,6 +110,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_immdec.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_immdec.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -103,6 +120,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_mem_if.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_mem_if.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -112,6 +130,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_rf_if.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_rf_if.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -121,6 +140,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_rf_ram.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_rf_ram.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -130,6 +150,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_rf_ram_if.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_rf_ram_if.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -139,6 +160,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_rf_top.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_rf_top.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -148,6 +170,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_state.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_state.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -157,6 +180,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/core/serv_top.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/core/serv_top.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -166,6 +190,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/system/servant.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/system/servant.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -175,6 +200,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/system/servant_arbiter.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/system/servant_arbiter.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -184,6 +210,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/system/servant_mux.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/system/servant_mux.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -193,6 +220,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/system/servant_ram.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/system/servant_ram.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -202,6 +230,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/ip/timer.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/timer.v"/>
         <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -211,6 +240,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/tiny_spi.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -218,6 +248,7 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/top_artya7.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -271,7 +302,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="top_artya7"/>
+      <Option Name="TopModule" Val="boot_rom"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -303,10 +334,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="spi_ila"/>
 </GenRun>

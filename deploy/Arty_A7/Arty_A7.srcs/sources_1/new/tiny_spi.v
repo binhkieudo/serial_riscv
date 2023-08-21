@@ -122,8 +122,8 @@ module tiny_spi(
     else if (cs_set) CSn <= !i_wb_dat[0];
    end
    
-   assign txe = (spi_seq == IDLE);
-   assign txr = ~wstb;
+   assign txe = !(spi_seq == IDLE);
+   assign txr = wstb;
    assign SCK = sck;
    assign MOSI = sr8[7];
    assign misod = MISO;
