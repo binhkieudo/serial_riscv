@@ -15,7 +15,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "u0/serv_dtm/ila_1_inst",
+                        "name": "u0/spi_inst0/wb_ila_0",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -23,7 +23,7 @@
                             "slave_index": 0,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "F0C750DF9ADD58D49D00F214808A0E78",
+                        "uuid": "3D2C9B23D8CE54FCBBBFDCCF3E967892",
                         "pins": [
                             {
                                 "name": "probe0",
@@ -32,28 +32,134 @@
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 3,
+                                "rightIndex": 0,
                                 "portIndex": 0,
                                 "nets": [
                                     {
-                                        "name": "u0/serv_dtm/tap_ctrl_state",
+                                        "name": "u0/spi_inst0/n_0_1",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe0",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 1,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/n_0_0",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe0",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 2,
+                                "rightIndex": 31,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/i_wb_adr",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "u0/serv_dtm/tap_ctrl_state[3]",
-                                                "parentNetId": 0
+                                                "name": "u0/spi_inst0/i_wb_adr[31]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/tap_ctrl_state[2]",
-                                                "parentNetId": 1
+                                                "name": "u0/spi_inst0/i_wb_adr[30]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/tap_ctrl_state[1]",
-                                                "parentNetId": 2
+                                                "name": "u0/spi_inst0/i_wb_adr[29]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/tap_ctrl_state[0]",
-                                                "parentNetId": 3
+                                                "name": "u0/spi_inst0/i_wb_adr[28]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[27]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[26]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[25]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[24]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[23]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[22]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[21]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[20]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[19]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[18]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[17]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[16]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[15]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[14]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[13]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[12]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[11]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[10]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[9]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[8]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[7]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[6]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[5]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[4]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[3]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_adr[2]"
                                             }
                                         ]
                                     }
@@ -61,32 +167,113 @@
                             },
                             {
                                 "name": "probe1",
-                                "id": 1,
+                                "id": 3,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 4,
+                                "rightIndex": 31,
                                 "portIndex": 1,
                                 "nets": [
                                     {
-                                        "name": "u0/serv_dtm/tap_reg_ireg",
+                                        "name": "u0/spi_inst0/i_wb_dat",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "u0/serv_dtm/tap_reg_ireg[4]"
+                                                "name": "u0/spi_inst0/i_wb_dat[31]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/tap_reg_ireg[3]"
+                                                "name": "u0/spi_inst0/i_wb_dat[30]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/tap_reg_ireg[2]"
+                                                "name": "u0/spi_inst0/i_wb_dat[29]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/tap_reg_ireg[1]"
+                                                "name": "u0/spi_inst0/i_wb_dat[28]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/tap_reg_ireg[0]"
+                                                "name": "u0/spi_inst0/i_wb_dat[27]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[26]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[25]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[24]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[23]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[22]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[21]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[20]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[19]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[18]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[17]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[16]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[15]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[14]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[13]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[12]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[11]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[10]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[9]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[8]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[7]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[6]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[5]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[4]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[3]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[2]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[1]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/i_wb_dat[0]"
                                             }
                                         ]
                                     }
@@ -94,241 +281,23 @@
                             },
                             {
                                 "name": "probe2",
-                                "id": 2,
+                                "id": 4,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
-                                "isVector": true,
+                                "isVector": false,
                                 "leftIndex": 0,
-                                "rightIndex": 71,
+                                "rightIndex": 0,
                                 "portIndex": 2,
                                 "nets": [
                                     {
-                                        "name": "u0/serv_dtm/tap_reg_dmi",
-                                        "isBus": true,
-                                        "subnets": [
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[71]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[70]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[69]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[68]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[67]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[66]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[65]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[64]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[63]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[62]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[61]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[60]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[59]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[58]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[57]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[56]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[55]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[54]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[53]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[52]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[51]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[50]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[49]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[48]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[47]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[46]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[45]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[44]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[43]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[42]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[41]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[40]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[39]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[38]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[37]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[36]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[35]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[34]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[33]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[32]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[31]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[30]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[29]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[28]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[27]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[26]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[25]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[24]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[23]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[22]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[21]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[20]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[19]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[18]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[17]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[16]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[15]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[14]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[13]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[12]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[11]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[10]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[9]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[8]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[7]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[6]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[5]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[4]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[3]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[2]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[1]"
-                                            },
-                                            {
-                                                "name": "u0/serv_dtm/tap_reg_dmi[0]"
-                                            }
-                                        ]
+                                        "name": "u0/spi_inst0/i_wb_we",
+                                        "isBus": false
                                     }
                                 ]
                             },
                             {
                                 "name": "probe3",
-                                "id": 3,
+                                "id": 5,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -337,151 +306,270 @@
                                 "portIndex": 3,
                                 "nets": [
                                     {
-                                        "name": "u0/serv_dtm/i_tck",
+                                        "name": "u0/spi_inst0/i_wb_cyc_1",
                                         "isBus": false
                                     }
                                 ]
-                            }
-                        ]
-                    },
-                    {
-                        "type": "VIO_V2",
-                        "name": "u0/serv_dtm/vio_0_inst",
-                        "spec": "labtools_vio_v3",
-                        "ipName": "vio",
-                        "core_location": {
-                            "user_chain": 1,
-                            "slave_index": 1,
-                            "bscan_switch_index": 0
-                        },
-                        "uuid": "4A6E23622861554F92DAF3089E6CC65E",
-                        "pins": [
+                            },
                             {
-                                "name": "probe_in0",
-                                "id": 4,
-                                "type": "DATA",
+                                "name": "probe4",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
                                 "rightIndex": 31,
-                                "portIndex": 0,
+                                "portIndex": 4,
                                 "nets": [
                                     {
-                                        "name": "u0/serv_dtm/count",
+                                        "name": "u0/spi_inst0/o_wb_rdt",
                                         "isBus": true,
                                         "subnets": [
                                             {
-                                                "name": "u0/serv_dtm/count[31]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[31]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[30]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[30]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[29]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[29]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[28]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[28]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[27]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[27]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[26]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[26]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[25]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[25]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[24]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[24]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[23]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[23]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[22]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[22]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[21]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[21]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[20]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[20]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[19]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[19]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[18]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[18]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[17]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[17]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[16]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[16]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[15]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[15]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[14]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[14]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[13]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[13]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[12]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[12]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[11]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[11]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[10]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[10]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[9]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[9]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[8]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[8]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[7]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[7]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[6]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[6]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[5]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[5]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[4]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[4]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[3]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[3]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[2]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[2]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[1]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[1]"
                                             },
                                             {
-                                                "name": "u0/serv_dtm/count[0]"
+                                                "name": "u0/spi_inst0/o_wb_rdt[0]"
                                             }
                                         ]
                                     }
                                 ]
                             },
                             {
-                                "name": "probe_out0",
-                                "id": 5,
-                                "type": "DATA",
-                                "direction": "OUT",
+                                "name": "probe5",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
                                 "isVector": false,
                                 "leftIndex": 0,
                                 "rightIndex": 0,
-                                "portIndex": 0,
+                                "portIndex": 5,
                                 "nets": [
                                     {
-                                        "name": "u0/serv_dtm/count_rst",
+                                        "name": "u0/spi_inst0/i_wb_cyc",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe6",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/spi_seq",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u0/spi_inst0/spi_seq[1]",
+                                                "parentNetId": 98
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/spi_seq[0]",
+                                                "parentNetId": 99
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe7",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/SCK",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe8",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/CSn",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/MOSI",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe10",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/MISO",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 2,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/bc",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "u0/spi_inst0/bc[2]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/bc[1]"
+                                            },
+                                            {
+                                                "name": "u0/spi_inst0/bc[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 14,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "u0/spi_inst0/bba",
                                         "isBus": false
                                     }
                                 ]
@@ -491,300 +579,46 @@
                 ],
                 "parent_nets": [
                     {
-                        "id": 0,
-                        "name": "u0/serv_dtm/tap_ctrl_state[3]",
+                        "id": 98,
+                        "name": "u0/spi_inst0/spi_seq[1]",
                         "state_reg": [
                             {
-                                "name": "u0/serv_dtm/tap_ctrl_state_reg[3]",
+                                "name": "u0/spi_inst0/spi_seq_reg[1]",
                                 "states": [
                                     {
-                                        "name": "STATE_test_logic_reset",
-                                        "val": "1111"
+                                        "name": "IDLE",
+                                        "val": "00"
                                     },
                                     {
-                                        "name": "STATE_run_test_idle",
-                                        "val": "1100"
+                                        "name": "PHASE2",
+                                        "val": "10"
                                     },
                                     {
-                                        "name": "STATE_select_dr_scan",
-                                        "val": "0111"
-                                    },
-                                    {
-                                        "name": "STATE_capture_dr",
-                                        "val": "0110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_dr",
-                                        "val": "0010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_dr",
-                                        "val": "0001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_dr",
-                                        "val": "0011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_dr",
-                                        "val": "0000"
-                                    },
-                                    {
-                                        "name": "STATE_update_dr",
-                                        "val": "0101"
-                                    },
-                                    {
-                                        "name": "STATE_select_ir_scan",
-                                        "val": "0100"
-                                    },
-                                    {
-                                        "name": "STATE_capture_ir",
-                                        "val": "1110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_ir",
-                                        "val": "1010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_ir",
-                                        "val": "1001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_ir",
-                                        "val": "1011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_ir",
-                                        "val": "1000"
-                                    },
-                                    {
-                                        "name": "STATE_update_ir",
-                                        "val": "1101"
+                                        "name": "PHASE1",
+                                        "val": "01"
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "id": 1,
-                        "name": "u0/serv_dtm/tap_ctrl_state[2]",
+                        "id": 99,
+                        "name": "u0/spi_inst0/spi_seq[0]",
                         "state_reg": [
                             {
-                                "name": "u0/serv_dtm/tap_ctrl_state_reg[2]",
+                                "name": "u0/spi_inst0/spi_seq_reg[0]",
                                 "states": [
                                     {
-                                        "name": "STATE_test_logic_reset",
-                                        "val": "1111"
+                                        "name": "IDLE",
+                                        "val": "00"
                                     },
                                     {
-                                        "name": "STATE_run_test_idle",
-                                        "val": "1100"
+                                        "name": "PHASE2",
+                                        "val": "10"
                                     },
                                     {
-                                        "name": "STATE_select_dr_scan",
-                                        "val": "0111"
-                                    },
-                                    {
-                                        "name": "STATE_capture_dr",
-                                        "val": "0110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_dr",
-                                        "val": "0010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_dr",
-                                        "val": "0001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_dr",
-                                        "val": "0011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_dr",
-                                        "val": "0000"
-                                    },
-                                    {
-                                        "name": "STATE_update_dr",
-                                        "val": "0101"
-                                    },
-                                    {
-                                        "name": "STATE_select_ir_scan",
-                                        "val": "0100"
-                                    },
-                                    {
-                                        "name": "STATE_capture_ir",
-                                        "val": "1110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_ir",
-                                        "val": "1010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_ir",
-                                        "val": "1001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_ir",
-                                        "val": "1011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_ir",
-                                        "val": "1000"
-                                    },
-                                    {
-                                        "name": "STATE_update_ir",
-                                        "val": "1101"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "id": 2,
-                        "name": "u0/serv_dtm/tap_ctrl_state[1]",
-                        "state_reg": [
-                            {
-                                "name": "u0/serv_dtm/tap_ctrl_state_reg[1]",
-                                "states": [
-                                    {
-                                        "name": "STATE_test_logic_reset",
-                                        "val": "1111"
-                                    },
-                                    {
-                                        "name": "STATE_run_test_idle",
-                                        "val": "1100"
-                                    },
-                                    {
-                                        "name": "STATE_select_dr_scan",
-                                        "val": "0111"
-                                    },
-                                    {
-                                        "name": "STATE_capture_dr",
-                                        "val": "0110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_dr",
-                                        "val": "0010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_dr",
-                                        "val": "0001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_dr",
-                                        "val": "0011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_dr",
-                                        "val": "0000"
-                                    },
-                                    {
-                                        "name": "STATE_update_dr",
-                                        "val": "0101"
-                                    },
-                                    {
-                                        "name": "STATE_select_ir_scan",
-                                        "val": "0100"
-                                    },
-                                    {
-                                        "name": "STATE_capture_ir",
-                                        "val": "1110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_ir",
-                                        "val": "1010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_ir",
-                                        "val": "1001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_ir",
-                                        "val": "1011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_ir",
-                                        "val": "1000"
-                                    },
-                                    {
-                                        "name": "STATE_update_ir",
-                                        "val": "1101"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "id": 3,
-                        "name": "u0/serv_dtm/tap_ctrl_state[0]",
-                        "state_reg": [
-                            {
-                                "name": "u0/serv_dtm/tap_ctrl_state_reg[0]",
-                                "states": [
-                                    {
-                                        "name": "STATE_test_logic_reset",
-                                        "val": "1111"
-                                    },
-                                    {
-                                        "name": "STATE_run_test_idle",
-                                        "val": "1100"
-                                    },
-                                    {
-                                        "name": "STATE_select_dr_scan",
-                                        "val": "0111"
-                                    },
-                                    {
-                                        "name": "STATE_capture_dr",
-                                        "val": "0110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_dr",
-                                        "val": "0010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_dr",
-                                        "val": "0001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_dr",
-                                        "val": "0011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_dr",
-                                        "val": "0000"
-                                    },
-                                    {
-                                        "name": "STATE_update_dr",
-                                        "val": "0101"
-                                    },
-                                    {
-                                        "name": "STATE_select_ir_scan",
-                                        "val": "0100"
-                                    },
-                                    {
-                                        "name": "STATE_capture_ir",
-                                        "val": "1110"
-                                    },
-                                    {
-                                        "name": "STATE_shift_ir",
-                                        "val": "1010"
-                                    },
-                                    {
-                                        "name": "STATE_exit1_ir",
-                                        "val": "1001"
-                                    },
-                                    {
-                                        "name": "STATE_pause_ir",
-                                        "val": "1011"
-                                    },
-                                    {
-                                        "name": "STATE_exit2_ir",
-                                        "val": "1000"
-                                    },
-                                    {
-                                        "name": "STATE_update_ir",
-                                        "val": "1101"
+                                        "name": "PHASE1",
+                                        "val": "01"
                                     }
                                 ]
                             }

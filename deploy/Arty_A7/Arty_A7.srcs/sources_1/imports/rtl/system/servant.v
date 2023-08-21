@@ -264,10 +264,12 @@ module servant # (
         // Global control
         .wb_clk     (wb_clk ),
         .wb_rstn    (wb_rstn ),
+        // Interrupt
+        .o_int      ( ),
         // Wishbone interface
+        .i_wb_adr   (wb_flash_adr ),
         .i_wb_dat   (wb_flash_dat ),
-        .i_wb_sel   (wb_flash_sel ),
-        .i_wb_we    (wb_flash_we ),
+        .i_wb_we    (wb_flash_we  ),
         .i_wb_cyc   (wb_flash_cyc ),
         .o_wb_rdt   (wb_flash_rdt ),
         .o_wb_ack   (wb_flash_ack ),

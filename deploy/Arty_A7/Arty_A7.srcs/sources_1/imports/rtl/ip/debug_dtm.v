@@ -109,19 +109,19 @@ module debug_dtm (
             count <= count + 1'b1;
     end
     
-    vio_0 vio_0_inst(
-        .clk        (i_clk ),
-        .probe_in0  (count ),
-        .probe_out0 (count_rst)
-    );
+//    vio_0 vio_0_inst(
+//        .clk        (i_clk ),
+//        .probe_in0  (count ),
+//        .probe_out0 (count_rst)
+//    );
 
-    ila_1 ila_1_inst(
-        .clk    (i_clk ),
-        .probe0 (tap_ctrl_state ),
-        .probe1 (tap_reg_ireg   ),
-        .probe2 (tap_reg_dmi),
-        .probe3 (i_tck)
-    );
+//    ila_1 ila_1_inst(
+//        .clk    (i_clk ),
+//        .probe0 (tap_ctrl_state ),
+//        .probe1 (tap_reg_ireg   ),
+//        .probe2 (tap_reg_dmi),
+//        .probe3 (i_tck)
+//    );
                     
     always @(posedge i_clk)
         if (i_rst || !tap_sync_trst) tap_ctrl_state <= STATE_test_logic_reset;

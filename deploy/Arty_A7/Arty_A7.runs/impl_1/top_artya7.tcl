@@ -141,8 +141,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/synth_1/top_artya7.dcp
-  read_ip -quiet /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/vio_0/vio_0.xci
-  read_ip -quiet /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/ila_1/ila_1.xci
+  read_ip -quiet /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/wb_ila/wb_ila.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/constrs_1/imports/xdc/Arty-A7-35.xdc
 OPTRACE "read constraints: implementation" END { }

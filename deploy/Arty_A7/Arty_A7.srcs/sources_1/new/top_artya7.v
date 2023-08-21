@@ -73,6 +73,7 @@ module top_artya7(
     );
     
     assign FLASH_RST    = 1'b1;
-    assign FLASH_WP     = 1'b0;
-    assign FLASH_HOLD   = 1'b0;
+    assign FLASH_WP     = 1'b1;
+    assign FLASH_HOLD   = 1'b1;
+    
 endmodule

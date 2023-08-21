@@ -10,66 +10,114 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
-      <ZoomEndTime time="14"></ZoomEndTime>
-      <Cursor1Time time="0"></Cursor1Time>
+      <ZoomEndTime time="285"></ZoomEndTime>
+      <Cursor1Time time="160"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="393"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="261"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject type="logic" fp_name="u0/serv_dtm/i_tck">
+   <WVObjectSize size="12" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="vbus" fp_name="vbus14">
+      <obj_property name="label">Address</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="array" fp_name="u0/spi_inst0/i_wb_adr">
+         <obj_property name="DisplayName">FullPathName</obj_property>
+         <obj_property name="ElementShortName">u0/spi_inst0/i_wb_adr[31:2]</obj_property>
+         <obj_property name="ObjectShortName">i_wb_adr[31:2]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="LABELRADIX">true</obj_property>
+         <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="user_probe_0">
+         <obj_property name="DisplayName">FullPathName</obj_property>
+         <obj_property name="ElementShortName">user_probe_0[1:0]</obj_property>
+         <obj_property name="ObjectShortName">user_probe_0[1:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="LABELRADIX">true</obj_property>
+         <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="logic" fp_name="u0/spi_inst0/i_wb_cyc">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">u0/serv_dtm/i_tck</obj_property>
-      <obj_property name="ObjectShortName">i_tck</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/i_wb_cyc</obj_property>
+      <obj_property name="ObjectShortName">i_wb_cyc</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="u0/serv_dtm/tap_ctrl_state">
+   <wvobject type="array" fp_name="u0/spi_inst0/i_wb_dat">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">u0/serv_dtm/tap_ctrl_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">tap_ctrl_state[3:0]</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/i_wb_dat[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_dat[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="u0/serv_dtm/tap_reg_ireg">
+   <wvobject type="logic" fp_name="u0/spi_inst0/i_wb_we">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">u0/serv_dtm/tap_reg_ireg[4:0]</obj_property>
-      <obj_property name="ObjectShortName">tap_reg_ireg[4:0]</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/i_wb_we</obj_property>
+      <obj_property name="ObjectShortName">i_wb_we</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="u0/spi_inst0/o_wb_rdt">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/o_wb_rdt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wb_rdt[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="dmi_addr">
+   <wvobject type="array" fp_name="u0/spi_inst0/spi_seq">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dmi_addr[5:0]</obj_property>
-      <obj_property name="ObjectShortName">dmi_addr[5:0]</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/spi_seq[1:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_seq[1:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="dmi_wdata">
+   <wvobject type="logic" fp_name="u0/spi_inst0/SCK">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dmi_wdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dmi_wdata[31:0]</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/SCK</obj_property>
+      <obj_property name="ObjectShortName">SCK</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="u0/spi_inst0/MISO">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/MISO</obj_property>
+      <obj_property name="ObjectShortName">MISO</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="u0/spi_inst0/MOSI">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/MOSI</obj_property>
+      <obj_property name="ObjectShortName">MOSI</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="u0/spi_inst0/CSn">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/CSn</obj_property>
+      <obj_property name="ObjectShortName">CSn</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="u0/spi_inst0/bc">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/bc[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bc[2:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="dmi_op">
+   <wvobject type="logic" fp_name="u0/spi_inst0/bba">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">dmi_op[1:0]</obj_property>
-      <obj_property name="ObjectShortName">dmi_op[1:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="u0/serv_dtm/tap_reg_dmi">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">u0/serv_dtm/tap_reg_dmi[71:0]</obj_property>
-      <obj_property name="ObjectShortName">tap_reg_dmi[71:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">u0/spi_inst0/bba</obj_property>
+      <obj_property name="ObjectShortName">bba</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

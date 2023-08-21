@@ -1,0 +1,135 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 04:59:54 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 25881
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sat Aug 19 15:14:15 JST 2023
+Time zone: 	Japan Standard Time (Asia/Tokyo)
+
+OS: Ubuntu
+OS Version: 5.15.0-79-generic
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: 0
+Screen size: 2560x1440
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	/opt/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9
+Java executable: 	/opt/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m, -Xrs]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	binhkieudo
+User home directory: /home/binhkieudo
+User working directory: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2022.2
+RDI_DATADIR: /opt/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: /home/binhkieudo/.Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: /home/binhkieudo/.Xilinx/Vivado/2022.2/
+Vivado layouts directory: /home/binhkieudo/.Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	/opt/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vivado.log
+Vivado journal file: 	/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-25881-binhkieudo-hotswap
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: /opt/Xilinx/Vivado/2022.2
+RDI_BASEROOT: /opt/Xilinx/Vivado
+RDI_BINROOT: /opt/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /opt/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: /opt/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: /opt/Xilinx/Vivado/2022.2/lib/lnx64.o/Ubuntu/20:/opt/Xilinx/Vivado/2022.2/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vivado/2022.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /opt/Xilinx/Vitis/2022.2/bin:/opt/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /opt/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/vivado
+RDI_TPS_ROOT: /opt/Xilinx/Vivado/2022.2/tps/lnx64
+RDI_USE_JDK11: True
+XILINX: /opt/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: /opt/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2022.2
+XILINX_SDK: /opt/Xilinx/Vitis/2022.2
+XILINX_VITIS: /opt/Xilinx/Vitis/2022.2
+XILINX_VIVADO: /opt/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2022.2
+
+
+GUI allocated memory:	256 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,895 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 110 MB (+113278kb) [00:00:08]
+// [Engine Memory]: 1,769 MB (+1703295kb) [00:00:08]
+// Opening Vivado Project: ./vc707/vc707.xpr. Version: Vivado v2022.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project ./vc707/vc707.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,950 MB. GUI used memory: 63 MB. Current time: 8/19/23, 3:14:16 PM JST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,973 MB (+121472kb) [00:00:14]
+// [GUI Memory]: 116 MB (+153kb) [00:00:16]
+// WARNING: HEventQueue.dispatchEvent() is taking  2601 ms.
+// Tcl Message: open_project ./vc707/vc707.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vc707/vc707.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2022.2/data/ip'. 
+// [Engine Memory]: 2,073 MB (+688kb) [00:00:16]
+// Tcl Message: open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:08 . Memory (MB): peak = 7342.992 ; gain = 279.789 ; free physical = 12457 ; free virtual = 87025 
+// [GUI Memory]: 127 MB (+5030kb) [00:00:17]
+// Project name: vc707; location: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vc707; part: xc7vx485tffg1761-2
+dismissDialog("Open Project"); // bq
+// Tcl Message: update_compile_order -fileset sources_1 
