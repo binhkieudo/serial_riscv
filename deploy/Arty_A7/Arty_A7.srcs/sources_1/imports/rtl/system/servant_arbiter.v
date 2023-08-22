@@ -31,7 +31,12 @@ module servant_arbiter
    output wire 	      o_wb_cpu_we,
    output wire 	      o_wb_cpu_cyc,
    input wire [31:0]  i_wb_cpu_rdt,
-   input wire 	      i_wb_cpu_ack
+   input wire 	      i_wb_cpu_ack,
+   // To ROM
+   output wire [31:0] o_wb_rom_adr,
+   output wire 	      o_wb_rom_cyc,
+   input  wire [31:0] i_wb_rom_rdt,
+   input  wire 	      i_wb_rom_ack
 );
  
    wire dm_sel = (i_wb_cpu_ibus_cyc && (&i_wb_cpu_ibus_adr[29:16])) ||

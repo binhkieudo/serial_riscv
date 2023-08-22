@@ -95,6 +95,15 @@ module servant # (
    wire 	    wb_timer_cyc;
    wire [31:0] 	wb_timer_rdt;
 
+   wire [31:0]  wb_ram_adr;
+   wire [31:0]  wb_ram_dat;
+   wire [3:0]   wb_ram_sel;
+   wire 	    wb_ram_we;
+   wire 	    wb_ram_cyc;
+   wire [31:0]  wb_ram_rdt;   
+    wire 	    wb_ram_ack;
+
+    
    wire w_dbg_halt;
    wire w_dbg_reset;
    wire w_dbg_process;
@@ -162,6 +171,13 @@ module servant # (
       .o_wb_timer_we  (wb_timer_we  ),
       .o_wb_timer_cyc (wb_timer_cyc ),
       .i_wb_timer_rdt (wb_timer_rdt ),
+      // To RAM
+      .o_wb_ram_adr   (wb_ram_adr   ),
+      .o_wb_ram_dat   (wb_ram_dat   ),
+      .o_wb_ram_sel   (wb_ram_sel   ),
+      .o_wb_ram_we    (wb_ram_we    ),
+      .o_wb_ram_cyc   (wb_ram_cyc   ),
+      .i_wb_ram_rdt   (wb_ram_rdt   ),
       // To SPI Programmer
       .o_wb_flash_adr (wb_flash_adr ),
       .o_wb_flash_dat (wb_flash_dat ),
@@ -172,6 +188,42 @@ module servant # (
       .i_wb_flash_ack (wb_flash_ack )      
    );
 
+   myram #(
+       .depth (memsize)
+   ) myram_inst0 (
+      .i_wb_clk (wb_clk             ),
+      .i_wb_rst (wb_rst             ),
+      //Wishbone interface
+      .i_wb_adr (wb_ram_adr[31:2]   ),
+      .i_wb_cyc (wb_ram_cyc         ),
+      .i_wb_we  (wb_ram_we          ),
+      .i_wb_sel (wb_ram_sel         ),
+      .i_wb_dat (wb_ram_dat         ),
+      .o_wb_rdt (wb_ram_rdt         ),
+      .o_wb_ack (wb_ram_ack         )
+   );
+   
+   wb_ila wb_ila_inst0(
+        .clk    (wb_clk ),
+        .probe0 (wb_ram_adr ),
+        .probe1 (wb_ram_dat ),
+        .probe2 (wb_ram_sel ),
+        .probe3 (wb_ram_we  ),
+        .probe4 (wb_ram_cyc ),
+        .probe5 (wb_ram_rdt ),
+        // Flash
+        .probe6  (wb_flash_adr ),
+        .probe7  (wb_flash_dat ),
+        .probe8  (wb_flash_we  ),
+        .probe9  (wb_flash_cyc ),
+        .probe10 (wb_flash_rdt ),
+        .probe11 (wb_flash_ack ),
+        .probe12 (o_flash_SCK  ),
+        .probe13 (o_flash_CSn  ),
+        .probe14 (o_flash_MOSI ),
+        .probe15 (i_flash_MISO )
+   );
+   
    servant_ram #(
        .depth (memsize)
    ) ram (
@@ -199,8 +251,6 @@ module servant # (
 	    .o_wb_dat (wb_timer_rdt)
     );
 
-
-    
    gpio gpio (
       .i_wb_clk (wb_clk     ),
       .i_wb_dat (wb_gpio_dat),
@@ -241,7 +291,21 @@ module servant # (
       .o_dbg_process(w_dbg_process  )   
      );
         
-    
+    rom #(
+        .memsize        (8192           ), // in bytes
+        .FLASH_ADDRESS  (32'hc000_0000  ),
+        .RAM_ADDR       (32'h0000_8000  )
+    ) 
+    rom_inst0 (
+        .i_wb_clk   (wb_clk ),
+        .i_wb_rst   (wb_rst ),
+        // Wishbone
+        .i_wb_adr   ( ),
+        .i_wb_cyc   ( ),
+        .o_wb_rdt   ( ),
+        .o_wb_ack   ( )
+    );
+
     // SPI
     tiny_spi spi_inst0(
         // Global control
