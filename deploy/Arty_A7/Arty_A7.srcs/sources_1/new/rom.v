@@ -28,6 +28,7 @@ module rom# (
 (
     input  wire         i_wb_clk,
     input  wire         i_wb_rst,
+    output reg          o_prog_cmplt,
     // Wishbone
     input  wire [31:0]  i_wb_adr,
     input  wire         i_wb_cyc,
@@ -42,6 +43,13 @@ module rom# (
             o_wb_ack <= 1'b0;
         else
             o_wb_ack <= i_wb_cyc & !o_wb_ack;
+    
+    always @(posedge i_wb_clk)
+        if (i_wb_rst) o_prog_cmplt <= 1'b0;
+        else if (i_wb_cyc) begin
+            if (addr == 5'd0) o_prog_cmplt <= 1'b0;
+            else if (addr == 5'd23) o_prog_cmplt <= 1'b1;
+        end
     
     always @(posedge i_wb_clk)
         case (addr)
@@ -75,6 +83,7 @@ module rom# (
             // JUMP_TO_START:
             5'd22: o_wb_rdt <= {RAM_ADDR[31:12], 12'h437};
             5'd23: o_wb_rdt <= {RAM_ADDR[11:0], 20'h40067};
+//            5'd23: o_wb_rdt <= 32'h00000063;
             // WRITE_COMMAND:
             5'd24: o_wb_rdt <= {FLASH_ADDRESS[31:12], 12'h2b7};
             5'd25: o_wb_rdt <= 32'h00428293;

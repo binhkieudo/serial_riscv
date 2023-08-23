@@ -2,11 +2,11 @@ OUTPUT_ARCH( "riscv" )
 ENTRY(_start)
 
 MEMORY {
-    RAM (rwx)  : ORIGIN = 0x00000000, LENGTH = 32K
+    RAM (rwx)  : ORIGIN = 0x00008000, LENGTH = 8K
 }
 
 SECTIONS {
-    __stacktop = ORIGIN(RAM) + 16K;
+    __stacktop = ORIGIN(RAM) + LENGTH(RAM);
 
     . = ORIGIN(RAM);
     .text : {

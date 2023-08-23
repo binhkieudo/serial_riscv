@@ -1,10 +1,14 @@
 module serv_ctrl
 #(
-    parameter RESET_PC = 32'd0
+    parameter RESET_PC          = 32'd0,
+    parameter BOOT_FLASH_ADDR   = 32'h0000_0080,
+    parameter RAM_ADDR          = 32'h0000_8000
 )
   (
    input wire 	     clk,
    input wire 	     i_rst,
+   input wire        i_dbg_reset,
+   input wire        i_boot_mode,
    //State
    input wire 	     i_pc_en,
    input wire 	     i_cnt12to31,
@@ -85,7 +89,8 @@ module serv_ctrl
 
       pc_plus_8_cy_r <= i_pc_en & pc_plus_8_cy;
       
-      if (i_rst) o_ibus_adr          <= RESET_PC;
+      if (i_rst) o_ibus_adr          <= i_boot_mode? BOOT_FLASH_ADDR: RESET_PC;
+      else if (i_dbg_reset) o_ibus_adr <= RAM_ADDR;
       else if (i_pc_en) o_ibus_adr <= {new_pc, o_ibus_adr[31:1]};
       
       if (i_rst) r_ibus_nxtadr          <= RESET_PC;

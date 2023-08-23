@@ -11,7 +11,7 @@ module servant_arbiter
    input wire 	      i_wb_cpu_dbus_cyc,
    output wire [31:0] o_wb_cpu_dbus_rdt,
    output wire 	      o_wb_cpu_dbus_ack,
-   // From CPU (Mux)
+   // From CPU
    input wire [31:0]  i_wb_cpu_ibus_adr,
    input wire 	      i_wb_cpu_ibus_cyc,
    output wire [31:0] o_wb_cpu_ibus_rdt,
@@ -24,14 +24,14 @@ module servant_arbiter
    output wire        o_wb_dm_cyc,
    input  wire [31:0] i_wb_dm_rdt,
    input  wire        i_wb_dm_ack, 
-   // To memory
-   output wire [31:0] o_wb_cpu_adr,
-   output wire [31:0] o_wb_cpu_dat,
-   output wire [3:0]  o_wb_cpu_sel,
-   output wire 	      o_wb_cpu_we,
-   output wire 	      o_wb_cpu_cyc,
-   input wire [31:0]  i_wb_cpu_rdt,
-   input wire 	      i_wb_cpu_ack,
+   // To RAM
+   output wire [31:0] o_wb_ram_adr,
+   output wire [31:0] o_wb_ram_dat,
+   output wire [3:0]  o_wb_ram_sel,
+   output wire 	      o_wb_ram_we,
+   output wire 	      o_wb_ram_cyc,
+   input wire [31:0]  i_wb_ram_rdt,
+   input wire 	      i_wb_ram_ack,
    // To ROM
    output wire [31:0] o_wb_rom_adr,
    output wire 	      o_wb_rom_cyc,
@@ -39,28 +39,48 @@ module servant_arbiter
    input  wire 	      i_wb_rom_ack
 );
  
+   localparam INSTR_NOP    = 32'h00000013; // NOP
+   
    wire dm_sel = (i_wb_cpu_ibus_cyc && (&i_wb_cpu_ibus_adr[29:16])) ||
                  (i_wb_cpu_dbus_cyc && (&i_wb_cpu_dbus_adr[29:16]));
-   wire mem_sel = !dm_sel;
+   wire rom_sel = i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:8] == 24'h000000) && ~i_wb_cpu_ibus_adr[7];
+   wire mem_sel = (i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:16] == 16'h0000) && (i_wb_cpu_ibus_adr[15:13] == 3'b100)) ||
+                  (i_wb_cpu_dbus_cyc && (i_wb_cpu_dbus_adr[31:16] == 16'b0000) && (i_wb_cpu_dbus_adr[15:13] == 3'b100));
+   wire boot_flash = i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:8] == 24'h000000) && i_wb_cpu_ibus_adr[7];
+   wire illegal = !(dm_sel || rom_sel || mem_sel || boot_flash);
    
-   assign o_wb_cpu_dbus_rdt = i_wb_dm_ack? i_wb_dm_rdt: i_wb_cpu_rdt;
-   assign o_wb_cpu_dbus_ack = (i_wb_cpu_ack & !i_wb_cpu_ibus_cyc) ||
-                              (i_wb_dm_ack  & !i_wb_cpu_ibus_cyc);
+   wire [31:0] boot_flash_rdt = 32'h00000063;
+   wire        boot_flash_ack = boot_flash;
+   
+   assign o_wb_cpu_dbus_rdt = i_wb_dm_ack? i_wb_dm_rdt: i_wb_ram_rdt;
+   assign o_wb_cpu_dbus_ack = (i_wb_ram_ack & i_wb_cpu_dbus_cyc) ||
+                              (i_wb_dm_ack  & i_wb_cpu_dbus_cyc);
 
-   assign o_wb_cpu_ibus_rdt = i_wb_dm_ack? i_wb_dm_rdt: i_wb_cpu_rdt;
-   assign o_wb_cpu_ibus_ack = (i_wb_cpu_ack & i_wb_cpu_ibus_cyc) ||
-                              (i_wb_dm_ack  & i_wb_cpu_ibus_cyc);
-
-   assign o_wb_cpu_adr = i_wb_cpu_ibus_cyc ? i_wb_cpu_ibus_adr : i_wb_cpu_dbus_adr;
-   assign o_wb_cpu_dat = i_wb_cpu_dbus_dat;
-   assign o_wb_cpu_sel = i_wb_cpu_dbus_sel;
-   assign o_wb_cpu_we  = i_wb_cpu_dbus_we & !i_wb_cpu_ibus_cyc;
-   assign o_wb_cpu_cyc = (i_wb_cpu_ibus_cyc | i_wb_cpu_dbus_cyc) & mem_sel;
+   assign o_wb_cpu_ibus_rdt = i_wb_dm_ack   ? i_wb_dm_rdt: 
+                              i_wb_rom_ack  ? i_wb_rom_rdt:
+                              i_wb_ram_ack  ? i_wb_ram_rdt: 
+                              boot_flash_ack? boot_flash_rdt: INSTR_NOP;
+   assign o_wb_cpu_ibus_ack = i_wb_cpu_ibus_cyc && (i_wb_ram_ack    ||
+                                                    i_wb_dm_ack     ||
+                                                    i_wb_rom_ack    ||
+                                                    boot_flash_ack  ||
+                                                    illegal);
+   
+   // Access instruction + data
+   assign o_wb_ram_adr = i_wb_cpu_ibus_cyc ? i_wb_cpu_ibus_adr : i_wb_cpu_dbus_adr;
+   assign o_wb_ram_dat = i_wb_cpu_dbus_dat;
+   assign o_wb_ram_sel = i_wb_cpu_dbus_sel;
+   assign o_wb_ram_we  = i_wb_cpu_dbus_we & !i_wb_cpu_ibus_cyc;
+   assign o_wb_ram_cyc = (i_wb_cpu_ibus_cyc | i_wb_cpu_dbus_cyc) && mem_sel;
 
    assign o_wb_dm_adr = i_wb_cpu_ibus_cyc ? i_wb_cpu_ibus_adr : i_wb_cpu_dbus_adr;
    assign o_wb_dm_dat = i_wb_cpu_dbus_dat;
    assign o_wb_dm_sel = i_wb_cpu_dbus_sel;
    assign o_wb_dm_we  = i_wb_cpu_dbus_we & !i_wb_cpu_ibus_cyc;
-   assign o_wb_dm_cyc = (i_wb_cpu_ibus_cyc | i_wb_cpu_dbus_cyc) & dm_sel; 
-    
+   assign o_wb_dm_cyc = (i_wb_cpu_ibus_cyc | i_wb_cpu_dbus_cyc) && dm_sel; 
+   
+   // Access only instruction
+   assign o_wb_rom_adr = i_wb_cpu_ibus_adr;
+   assign o_wb_rom_cyc = i_wb_cpu_ibus_cyc && rom_sel;
+   
 endmodule

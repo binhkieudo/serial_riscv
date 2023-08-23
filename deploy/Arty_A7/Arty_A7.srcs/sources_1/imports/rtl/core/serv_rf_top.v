@@ -8,6 +8,7 @@ module serv_rf_top
 (
     input  wire 	    clk,
     input  wire 	    i_rst,
+    input  wire         i_boot_mode,
     // Interrupts
     input  wire 	    i_timer_irq,
     // Instruction bus
@@ -60,6 +61,7 @@ module serv_rf_top
       .clk         (clk         ),
       .i_rst       (i_rst       ),
       .i_timer_irq (i_timer_irq ),
+      .i_boot_mode (i_boot_mode ),
       // RF Interface
       .o_rf_rreq   (rf_rreq     ), // read request
       .o_rf_wreq   (rf_wreq     ), // write request

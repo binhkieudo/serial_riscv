@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692697185" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1692729810" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/clock_gen.dcp">
   <File Type="VDS-TIMING-PB" Name="top_artya7_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="top_artya7_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_artya7.dcp"/>
@@ -39,6 +39,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/myram.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/rom.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -207,6 +214,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/setup_reg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/rtl/ip/timer.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/timer.v"/>
@@ -230,6 +244,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/rtl/ip/spi_master.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/spi_master.v"/>
+        <Attr Name="ImportTime" Val="1692202497"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/boot_rom.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -241,16 +265,6 @@
     <File Path="$PSRCDIR/sources_1/new/spi.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/rtl/ip/spi_master.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../rtl/ip/spi_master.v"/>
-        <Attr Name="ImportTime" Val="1692202497"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -284,7 +298,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/rom.v">
+    <File Path="$PSRCDIR/sources_1/new/rom_debug.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -329,5 +343,4 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="wb_ila"/>
 </GenRun>

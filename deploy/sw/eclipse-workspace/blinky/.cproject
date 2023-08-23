@@ -55,7 +55,7 @@
 								<option id="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.gcsections.735967404" name="Remove unused sections (-Xlinker --gc-sections)" superClass="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.gcsections" value="true" valueType="boolean"/>
 								<option id="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.other.897407028" name="Other linker flags" superClass="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.other" value="--specs=nosys.specs" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.scriptfile.659989655" name="Script files (-T)" superClass="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.scriptfile" valueType="stringList">
-									<listOptionValue builtIn="false" value="/home/binhkieudo/Workspace/XRPIX/urisc-serv/serial_riscv/deploy/sw/link.ld"/>
+									<listOptionValue builtIn="false" value="/home/binhkieudo/Workspace/XRPIX/serv/sw/link.ld"/>
 								</option>
 								<option id="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.nostart.811734624" name="Do not use standard start files (-nostartfiles)" superClass="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.nostart" value="true" valueType="boolean"/>
 								<option id="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.nodeflibs.965212164" name="Do not use default libraries (-nodefaultlibs)" superClass="ilg.gnumcueclipse.managedbuild.cross.riscv.option.c.linker.nodeflibs" value="true" valueType="boolean"/>
@@ -193,4 +193,5 @@
 			<resource resourceType="PROJECT" workspacePath="/blinky"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

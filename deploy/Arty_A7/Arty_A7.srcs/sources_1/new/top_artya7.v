@@ -24,6 +24,11 @@ module top_artya7(
         input  wire i_clk,
         input  wire i_rstn,
         // GPIOs
+        input  wire boot_mode,
+        input  wire prog_mode,
+        output wire o_prog_cmplt,
+        output wire o_prog_flash,
+        output wire boot_led,
         output wire q,
         // JTAG
         input  wire jtag_trst,
@@ -58,7 +63,11 @@ module top_artya7(
      .wb_clk        (i_clk      ),
      .wb_rstn       (r_rstn[3]  ),
      // GPIO
-     .q             (q          ),
+     .boot_mode     (boot_mode    ),
+     .prog_mode     (prog_mode    ),
+     .o_prog_cmplt  (o_prog_cmplt ),
+     .o_prog_flash  (o_prog_flash ),
+     .q             (q            ),
      // JTAG
      .i_jtag_trst   (jtag_trst  ),
      .i_jtag_tck    (jtag_tck   ),
@@ -75,5 +84,7 @@ module top_artya7(
     assign FLASH_RST    = 1'b1;
     assign FLASH_WP     = 1'b1;
     assign FLASH_HOLD   = 1'b1;
+    
+    assign boot_led = boot_mode;
     
 endmodule

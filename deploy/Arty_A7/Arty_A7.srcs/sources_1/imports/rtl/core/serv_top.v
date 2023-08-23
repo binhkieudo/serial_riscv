@@ -1,12 +1,14 @@
 module serv_top
 #(
-    parameter RESET_PC = 32'd0,
+    parameter RESET_PC    = 32'd0,
+    parameter RAM_ADDRESS = 32'h0000_8000,
     parameter E_EXT    = 1'b1
 )
 (
    input  wire 		  clk,
    input  wire 		  i_rst,
    input  wire 		  i_timer_irq,
+   input  wire        i_boot_mode,
    //RF Interface
    output wire 		  o_rf_rreq,
    output wire 		  o_rf_wreq,
@@ -367,7 +369,9 @@ module serv_top
        .RESET_PC (RESET_PC)
    ) ctrl (
       .clk           (clk                ),
-      .i_rst         (i_rst | i_dbg_reset),
+      .i_rst         (i_rst              ),
+      .i_dbg_reset   (i_dbg_reset        ),
+      .i_boot_mode   (i_boot_mode        ),
       //State
       .i_pc_en       (ctrl_pc_en         ),
       .i_cnt12to31   (cnt12to31          ),
