@@ -76,6 +76,7 @@ module servant_mux
    assign o_wb_mem_sel = i_wb_cpu_sel;
    assign o_wb_mem_we  = i_wb_cpu_we;
    assign o_wb_mem_cyc = i_wb_cpu_cyc & (((s == 3'b000) & mem_select) || (s == 3'b111)); // Update from flash or update from debugger
+//   assign o_wb_mem_cyc = i_wb_cpu_cyc & (s == 3'b010 || (s == 3'b111));
    
    assign o_wb_sreg_dat = i_wb_cpu_dat;
    assign o_wb_sreg_we  = i_wb_cpu_we;
@@ -100,5 +101,6 @@ module servant_mux
    assign o_wb_ram_sel = i_wb_cpu_sel;
    assign o_wb_ram_we  = i_wb_cpu_we;
    assign o_wb_ram_cyc = i_wb_cpu_cyc & (s == 3'b000) & mem_select;
+//   assign o_wb_ram_cyc = i_wb_cpu_cyc & (s == 3'b010);
    
 endmodule

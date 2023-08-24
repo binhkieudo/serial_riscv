@@ -24,10 +24,17 @@ module debug_dm(
     output reg         o_sbus_ack,
     // CPU control
     output wire        o_cpu_ndmrst,
-    output wire        o_cpu_req_halt
+    output wire        o_cpu_req_halt,
+    output wire [31:0] o_data_buf,
+    output wire [31:0] o_probuf_0,
+    output wire [31:0] o_probuf_1,
+    output wire [31:0] o_probuf_2,
+    output wire        o_exe_req,
+    output wire [2:0]  o_autoexec,
+    output wire        o_autoexec_wr
 );
                         
-    //============== RISC-V DM =============
+     //============== RISC-V DM =============
     // DM configurations
     localparam DM_BASE      = 32'hfffff800;
     localparam DM_SIZE      = 32'd256; // debug ROM address space size in bytes
@@ -160,21 +167,10 @@ module debug_dm(
     reg         dm_ctrl_hart_resume_req;
     reg [1:0]   dm_ctrl_hart_resume_state;
     reg         dm_ctrl_hart_resume_ack;
-    reg         dm_ctrl_hart_reset;    
+    reg         dm_ctrl_hart_reset;
     
-//    ila_0 ila0_inst(
-//        .clk    (i_clk              ),
-//        .probe0 (i_dmi_req_address  ),
-//        .probe1 (i_dmi_req_op       ),
-//        .probe2 (i_dmi_req_valid    ),
-//        .probe3 (i_dmi_req_data     ),
-//        .probe4 (o_dmi_rsp_valid    ),
-//        .probe5 (o_dmi_rsp_data     ),
-//        .probe6 (cpu_progbuf0       ),
-//        .probe7 (cpu_progbuf1       ),
-//        .probe8 (cpu_progbuf2       ),
-//        .probe9 (data_buf           )
-//    );
+    reg         autoexec_addr_inc;
+        
     /*================================================================
     ============ Debug Module (DM) control FSM =======================
     ================================================================*/
@@ -440,16 +436,34 @@ module debug_dm(
   // SOC reset
   assign o_cpu_ndmrst =  dm_reg_dmcontrol_ndmreset && dm_reg_dmcontrol_dmactive; // to processor's reset generator
   
+  wire is_load = (dm_reg_progbuf1 == 32'h0044_0413) &&
+                 (dm_reg_progbuf0 == 32'h0094_2023) &&
+                 (dm_ctrl_ldsw_progbuf == 32'h8800_2483);
+  
   // construct program buffer array for CPU access
   assign cpu_progbuf0 = dm_ctrl_ldsw_progbuf; // pseudo program buffer for GPR access
   assign cpu_progbuf1 = !dm_ctrl_pbuf_en? INSTR_NOP : dm_reg_progbuf0;
-  assign cpu_progbuf2 = !dm_ctrl_pbuf_en? INSTR_NOP : dm_reg_progbuf1;
+  assign cpu_progbuf2 = !dm_ctrl_pbuf_en? INSTR_NOP :
+                        (dm_reg_abstractauto_autoexecdata && is_load)? {dm_reg_progbuf1[31:23], autoexec_addr_inc, dm_reg_progbuf1[21:0]}: dm_reg_progbuf1;
+//  assign cpu_progbuf2 = !dm_ctrl_pbuf_en? INSTR_NOP : dm_reg_progbuf1;
   assign cpu_progbuf3 = INSTR_EBREAK; // implicit ebreak instruction
   
   // DMI status
   assign o_dmi_rsp_op    = 2'b00; // operation success
   assign o_dmi_req_ready = 1'b1; // always ready for new read/write
   
+  always @(posedge i_clk) begin
+    if (i_rst) autoexec_addr_inc <= 1'b0;
+    else begin
+        if (!dm_reg_abstractauto_autoexecdata) autoexec_addr_inc <= 1'b0;
+        else begin
+            if (dci_data_we) autoexec_addr_inc <= 1'b1;
+            else if (rden && (maddr == 2'b01) && (i_sbus_adr[3:2] == 2'b10))
+                autoexec_addr_inc <= 1'b0;
+        end
+    end
+  end
+
   // ===== Debug Module Interface ==========================ndmodule
   // Read access
   always @(posedge i_clk)
@@ -646,4 +660,12 @@ module debug_dm(
         endcase  
   end
   
+  assign o_data_buf = data_buf;
+  assign o_probuf_0 = cpu_progbuf0;
+  assign o_probuf_1 = cpu_progbuf1;
+  assign o_probuf_2 = cpu_progbuf2;
+  assign o_exe_req  = dci_execute_req;
+  assign o_autoexec = {dci_data_we, autoexec_addr_inc, dm_reg_abstractauto_autoexecdata};
+  assign o_autoexec_wr = dm_reg_autoexec_wr;
+ 
 endmodule

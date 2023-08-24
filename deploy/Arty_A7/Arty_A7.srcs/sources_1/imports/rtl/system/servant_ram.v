@@ -24,8 +24,7 @@ module servant_ram
    integer i;
    initial begin
     for (i = 0; i < depth/4; i = i + 1)
-        mem[i] = 32'd0;
-    mem[0] = 32'h00000063;    
+        mem[i] = 32'd0; 
    end
    
 

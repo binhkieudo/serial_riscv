@@ -1,0 +1,243 @@
+
+blinky.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00008000 <_start>:
+    8000:	20000437          	lui	s0,0x20000
+    8004:	00100493          	li	s1,1
+    8008:	00942023          	sw	s1,0(s0) # 20000000 <__stacktop+0x1fff6000>
+    800c:	00042403          	lw	s0,0(s0)
+    8010:	01145413          	srl	s0,s0,0x11
+    8014:	00147413          	and	s0,s0,1
+    8018:	00040463          	beqz	s0,8020 <__crt0_cpu_csr_init>
+    801c:	0800006f          	j	809c <_flash_erase>
+
+00008020 <__crt0_cpu_csr_init>:
+    8020:	30005073          	.4byte	0x30005073
+    8024:	30401073          	.4byte	0x30401073
+    8028:	30509073          	.4byte	0x30509073
+
+0000802c <__crt0_pointer_init>:
+    802c:	00002117          	auipc	sp,0x2
+    8030:	fd410113          	add	sp,sp,-44 # a000 <__stacktop>
+
+00008034 <__crt0_reg_file_init>:
+    8034:	00000213          	li	tp,0
+    8038:	00000293          	li	t0,0
+    803c:	00000313          	li	t1,0
+    8040:	00000393          	li	t2,0
+    8044:	00000413          	li	s0,0
+    8048:	00000493          	li	s1,0
+
+0000804c <__jump_to_main>:
+    804c:	000000ef          	jal	804c <__jump_to_main>
+    8050:	2700006f          	j	82c0 <__exit>
+
+00008054 <__select_flash>:
+    8054:	c0000437          	lui	s0,0xc0000
+    8058:	00040413          	mv	s0,s0
+    805c:	00100493          	li	s1,1
+    8060:	00942023          	sw	s1,0(s0) # c0000000 <__stacktop+0xbfff6000>
+    8064:	00008067          	ret
+
+00008068 <__deselect_flash>:
+    8068:	c0000437          	lui	s0,0xc0000
+    806c:	00040413          	mv	s0,s0
+    8070:	00000493          	li	s1,0
+    8074:	00942023          	sw	s1,0(s0) # c0000000 <__stacktop+0xbfff6000>
+    8078:	00008067          	ret
+
+0000807c <__write_command>:
+    807c:	c0000437          	lui	s0,0xc0000
+    8080:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    8084:	00a42023          	sw	a0,0(s0)
+
+00008088 <___check_busy>:
+    8088:	c0000437          	lui	s0,0xc0000
+    808c:	00040413          	mv	s0,s0
+
+00008090 <___check_busy_loop>:
+    8090:	00044483          	lbu	s1,0(s0) # c0000000 <__stacktop+0xbfff6000>
+    8094:	fe049ee3          	bnez	s1,8090 <___check_busy_loop>
+    8098:	00008067          	ret
+
+0000809c <_flash_erase>:
+    809c:	20000437          	lui	s0,0x20000
+    80a0:	00100493          	li	s1,1
+    80a4:	00942023          	sw	s1,0(s0) # 20000000 <__stacktop+0x1fff6000>
+
+000080a8 <__flash_set_write_enable>:
+    80a8:	fadff0ef          	jal	8054 <__select_flash>
+    80ac:	00600513          	li	a0,6
+    80b0:	fcdff0ef          	jal	807c <__write_command>
+    80b4:	fb5ff0ef          	jal	8068 <__deselect_flash>
+
+000080b8 <__flash_erase_read_status>:
+    80b8:	f9dff0ef          	jal	8054 <__select_flash>
+    80bc:	00500513          	li	a0,5
+    80c0:	fbdff0ef          	jal	807c <__write_command>
+    80c4:	fb9ff0ef          	jal	807c <__write_command>
+    80c8:	fa1ff0ef          	jal	8068 <__deselect_flash>
+    80cc:	c0000437          	lui	s0,0xc0000
+    80d0:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    80d4:	00044483          	lbu	s1,0(s0)
+    80d8:	0024f493          	and	s1,s1,2
+    80dc:	fc0486e3          	beqz	s1,80a8 <__flash_set_write_enable>
+
+000080e0 <__flash_erase_process>:
+    80e0:	f75ff0ef          	jal	8054 <__select_flash>
+    80e4:	0d800513          	li	a0,216
+    80e8:	f95ff0ef          	jal	807c <__write_command>
+    80ec:	00000513          	li	a0,0
+    80f0:	f8dff0ef          	jal	807c <__write_command>
+    80f4:	f89ff0ef          	jal	807c <__write_command>
+    80f8:	f85ff0ef          	jal	807c <__write_command>
+    80fc:	f6dff0ef          	jal	8068 <__deselect_flash>
+
+00008100 <__flash_erase_check_status>:
+    8100:	f55ff0ef          	jal	8054 <__select_flash>
+    8104:	00500513          	li	a0,5
+    8108:	f75ff0ef          	jal	807c <__write_command>
+    810c:	00007533          	and	a0,zero,zero
+    8110:	f6dff0ef          	jal	807c <__write_command>
+    8114:	f55ff0ef          	jal	8068 <__deselect_flash>
+    8118:	c0000437          	lui	s0,0xc0000
+    811c:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    8120:	00044483          	lbu	s1,0(s0)
+    8124:	0014f493          	and	s1,s1,1
+    8128:	fc049ce3          	bnez	s1,8100 <__flash_erase_check_status>
+
+0000812c <__flash_erase_check_fstatus>:
+    812c:	f29ff0ef          	jal	8054 <__select_flash>
+    8130:	07000513          	li	a0,112
+    8134:	f49ff0ef          	jal	807c <__write_command>
+    8138:	00007533          	and	a0,zero,zero
+    813c:	f41ff0ef          	jal	807c <__write_command>
+    8140:	f29ff0ef          	jal	8068 <__deselect_flash>
+    8144:	c0000437          	lui	s0,0xc0000
+    8148:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    814c:	00044483          	lbu	s1,0(s0)
+    8150:	0804f493          	and	s1,s1,128
+    8154:	fc048ce3          	beqz	s1,812c <__flash_erase_check_fstatus>
+
+00008158 <__flash_erase_disable_write>:
+    8158:	efdff0ef          	jal	8054 <__select_flash>
+    815c:	00400513          	li	a0,4
+    8160:	f1dff0ef          	jal	807c <__write_command>
+    8164:	f05ff0ef          	jal	8068 <__deselect_flash>
+    8168:	eedff0ef          	jal	8054 <__select_flash>
+    816c:	00500513          	li	a0,5
+    8170:	f0dff0ef          	jal	807c <__write_command>
+    8174:	f09ff0ef          	jal	807c <__write_command>
+    8178:	ef1ff0ef          	jal	8068 <__deselect_flash>
+    817c:	c0000437          	lui	s0,0xc0000
+    8180:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    8184:	00044483          	lbu	s1,0(s0)
+    8188:	0024f493          	and	s1,s1,2
+    818c:	fc0496e3          	bnez	s1,8158 <__flash_erase_disable_write>
+
+00008190 <_flash_program>:
+    8190:	000072b3          	and	t0,zero,zero
+
+00008194 <__flash_program_write_enable>:
+    8194:	ec1ff0ef          	jal	8054 <__select_flash>
+    8198:	00600513          	li	a0,6
+    819c:	ee1ff0ef          	jal	807c <__write_command>
+    81a0:	ec9ff0ef          	jal	8068 <__deselect_flash>
+    81a4:	eb1ff0ef          	jal	8054 <__select_flash>
+    81a8:	00500513          	li	a0,5
+    81ac:	ed1ff0ef          	jal	807c <__write_command>
+    81b0:	ecdff0ef          	jal	807c <__write_command>
+    81b4:	eb5ff0ef          	jal	8068 <__deselect_flash>
+    81b8:	c0000437          	lui	s0,0xc0000
+    81bc:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    81c0:	00044483          	lbu	s1,0(s0)
+    81c4:	0024f493          	and	s1,s1,2
+    81c8:	fc0486e3          	beqz	s1,8194 <__flash_program_write_enable>
+
+000081cc <__flash_program_write_command>:
+    81cc:	e89ff0ef          	jal	8054 <__select_flash>
+    81d0:	00200513          	li	a0,2
+    81d4:	ea9ff0ef          	jal	807c <__write_command>
+
+000081d8 <__flash_program_write_address>:
+    81d8:	0102d513          	srl	a0,t0,0x10
+    81dc:	ea1ff0ef          	jal	807c <__write_command>
+    81e0:	0082d513          	srl	a0,t0,0x8
+    81e4:	e99ff0ef          	jal	807c <__write_command>
+    81e8:	0ff2f513          	zext.b	a0,t0
+    81ec:	e91ff0ef          	jal	807c <__write_command>
+    81f0:	00028263          	beqz	t0,81f4 <__flash_program_write_data>
+
+000081f4 <__flash_program_write_data>:
+    81f4:	00008437          	lui	s0,0x8
+    81f8:	00040413          	mv	s0,s0
+    81fc:	00540433          	add	s0,s0,t0
+    8200:	00044503          	lbu	a0,0(s0) # 8000 <_start>
+    8204:	e79ff0ef          	jal	807c <__write_command>
+    8208:	00128293          	add	t0,t0,1
+
+0000820c <__flash_program_loop>:
+    820c:	0ff2f413          	zext.b	s0,t0
+    8210:	fe0412e3          	bnez	s0,81f4 <__flash_program_write_data>
+    8214:	e55ff0ef          	jal	8068 <__deselect_flash>
+
+00008218 <__flash_program_check_status>:
+    8218:	e3dff0ef          	jal	8054 <__select_flash>
+    821c:	00500513          	li	a0,5
+    8220:	e5dff0ef          	jal	807c <__write_command>
+    8224:	e59ff0ef          	jal	807c <__write_command>
+    8228:	e41ff0ef          	jal	8068 <__deselect_flash>
+    822c:	c0000437          	lui	s0,0xc0000
+    8230:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    8234:	00044483          	lbu	s1,0(s0)
+    8238:	0014f493          	and	s1,s1,1
+    823c:	fc049ee3          	bnez	s1,8218 <__flash_program_check_status>
+
+00008240 <__flash_program_check_fstatus>:
+    8240:	e15ff0ef          	jal	8054 <__select_flash>
+    8244:	07000513          	li	a0,112
+    8248:	e35ff0ef          	jal	807c <__write_command>
+    824c:	e31ff0ef          	jal	807c <__write_command>
+    8250:	e19ff0ef          	jal	8068 <__deselect_flash>
+    8254:	c0000437          	lui	s0,0xc0000
+    8258:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    825c:	00044483          	lbu	s1,0(s0)
+    8260:	0804f493          	and	s1,s1,128
+    8264:	fc048ee3          	beqz	s1,8240 <__flash_program_check_fstatus>
+
+00008268 <__flash_program_disable_write>:
+    8268:	dedff0ef          	jal	8054 <__select_flash>
+    826c:	00400513          	li	a0,4
+    8270:	e0dff0ef          	jal	807c <__write_command>
+    8274:	df5ff0ef          	jal	8068 <__deselect_flash>
+    8278:	dddff0ef          	jal	8054 <__select_flash>
+    827c:	00500513          	li	a0,5
+    8280:	dfdff0ef          	jal	807c <__write_command>
+    8284:	df9ff0ef          	jal	807c <__write_command>
+    8288:	de1ff0ef          	jal	8068 <__deselect_flash>
+    828c:	c0000437          	lui	s0,0xc0000
+    8290:	00440413          	add	s0,s0,4 # c0000004 <__stacktop+0xbfff6004>
+    8294:	00044483          	lbu	s1,0(s0)
+    8298:	0024f493          	and	s1,s1,2
+    829c:	fc0496e3          	bnez	s1,8268 <__flash_program_disable_write>
+    82a0:	00002437          	lui	s0,0x2
+    82a4:	00040413          	mv	s0,s0
+    82a8:	ee8296e3          	bne	t0,s0,8194 <__flash_program_write_enable>
+
+000082ac <__flash_program_exit>:
+    82ac:	20000437          	lui	s0,0x20000
+    82b0:	00040413          	mv	s0,s0
+    82b4:	00300493          	li	s1,3
+    82b8:	00942023          	sw	s1,0(s0) # 20000000 <__stacktop+0x1fff6000>
+    82bc:	d65ff06f          	j	8020 <__crt0_cpu_csr_init>
+
+000082c0 <__exit>:
+    82c0:	30401073          	.4byte	0x30401073
+    82c4:	34051073          	.4byte	0x34051073
+
+000082c8 <__crt0_shutdown>:
+    82c8:	0000006f          	j	82c8 <__crt0_shutdown>
+    82cc:	00100073          	ebreak

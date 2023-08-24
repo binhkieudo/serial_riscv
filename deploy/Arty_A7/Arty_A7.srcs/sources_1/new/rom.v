@@ -23,11 +23,12 @@
 module rom# (
     parameter memsize = 8192, // in bytes
     parameter FLASH_ADDRESS = 32'hc000_0000,
-    parameter RAM_ADDR = 32'h0000_8000
+    parameter RAM_ADDR = 32'h4000_0000
 )
 (
     input  wire         i_wb_clk,
     input  wire         i_wb_rst,
+    input  wire         i_boot_mode,
     output reg          o_prog_cmplt,
     // Wishbone
     input  wire [31:0]  i_wb_adr,
@@ -54,7 +55,7 @@ module rom# (
     always @(posedge i_wb_clk)
         case (addr)
             // LOAD_PC:
-            5'd0:  o_wb_rdt <= 32'h00000617;
+            5'd0:  o_wb_rdt <= i_boot_mode? 32'h00000063: 32'h00007633;
             // ENABLE_FLASH:
             5'd1:  o_wb_rdt <= 32'h00047433;
             5'd2:  o_wb_rdt <= {FLASH_ADDRESS[31:12], 12'h437};

@@ -3,6 +3,8 @@
  */
 module servant_arbiter
   (
+   input wire         i_rst,
+   input wire         i_boot_mode,
    // From CPU (MUX)
    input wire [31:0]  i_wb_cpu_dbus_adr,
    input wire [31:0]  i_wb_cpu_dbus_dat,
@@ -45,26 +47,24 @@ module servant_arbiter
                  (i_wb_cpu_dbus_cyc && (&i_wb_cpu_dbus_adr[29:16]));
    wire rom_sel = i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:8] == 24'h000000) && ~i_wb_cpu_ibus_adr[7];
    wire mem_sel = (i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:16] == 16'h0000) && (i_wb_cpu_ibus_adr[15:13] == 3'b100)) ||
-                  (i_wb_cpu_dbus_cyc && (i_wb_cpu_dbus_adr[31:16] == 16'b0000) && (i_wb_cpu_dbus_adr[15:13] == 3'b100));
-   wire boot_flash = i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:8] == 24'h000000) && i_wb_cpu_ibus_adr[7];
-   wire illegal = !(dm_sel || rom_sel || mem_sel || boot_flash);
+                  (i_wb_cpu_dbus_cyc && (i_wb_cpu_dbus_adr[31:16] == 16'h0000) && (i_wb_cpu_dbus_adr[15:13] == 3'b100));
+//   wire mem_sel = (i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:29] == 3'b010)) ||
+//                  (i_wb_cpu_dbus_cyc && (i_wb_cpu_dbus_adr[31:29] == 3'b010));
+//   wire boot_flash = i_wb_cpu_ibus_cyc && (i_wb_cpu_ibus_adr[31:8] == 24'h000000) && i_wb_cpu_ibus_adr[7];
+   wire illegal = !(dm_sel || rom_sel || mem_sel);
    
-   wire [31:0] boot_flash_rdt = 32'h00000063;
-   wire        boot_flash_ack = boot_flash;
+//   wire [31:0] boot_flash_rdt = 32'h00000063;
+//   wire        boot_flash_ack = boot_flash;
    
    assign o_wb_cpu_dbus_rdt = i_wb_dm_ack? i_wb_dm_rdt: i_wb_ram_rdt;
    assign o_wb_cpu_dbus_ack = (i_wb_ram_ack & i_wb_cpu_dbus_cyc) ||
                               (i_wb_dm_ack  & i_wb_cpu_dbus_cyc);
 
-   assign o_wb_cpu_ibus_rdt = i_wb_dm_ack   ? i_wb_dm_rdt: 
+   assign o_wb_cpu_ibus_rdt = 
+                              i_wb_dm_ack   ? i_wb_dm_rdt: 
                               i_wb_rom_ack  ? i_wb_rom_rdt:
-                              i_wb_ram_ack  ? i_wb_ram_rdt: 
-                              boot_flash_ack? boot_flash_rdt: INSTR_NOP;
-   assign o_wb_cpu_ibus_ack = i_wb_cpu_ibus_cyc && (i_wb_ram_ack    ||
-                                                    i_wb_dm_ack     ||
-                                                    i_wb_rom_ack    ||
-                                                    boot_flash_ack  ||
-                                                    illegal);
+                              i_wb_ram_ack  ? i_wb_ram_rdt: INSTR_NOP;
+   assign o_wb_cpu_ibus_ack = i_wb_cpu_ibus_cyc && (i_wb_ram_ack || i_wb_dm_ack || i_wb_rom_ack);
    
    // Access instruction + data
    assign o_wb_ram_adr = i_wb_cpu_ibus_cyc ? i_wb_cpu_ibus_adr : i_wb_cpu_dbus_adr;

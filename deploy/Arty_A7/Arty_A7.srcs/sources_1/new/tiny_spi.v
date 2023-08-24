@@ -22,7 +22,7 @@ module tiny_spi(
 
     
    parameter BAUD_WIDTH = 8;
-   parameter BAUD_DIV = 4;
+   parameter BAUD_DIV = 8;
    parameter SPI_MODE = 0;
    parameter BC_WIDTH = 3;
    parameter DIV_WIDTH = $clog2(BAUD_DIV / 2 - 1);
@@ -62,6 +62,15 @@ module tiny_spi(
              PHASE2 = 2;
 
    reg [1:0] spi_seq, spi_seq_next;
+   
+//   wb_ila wb_ila0 (
+//        .clk    (wb_clk ),
+//        .probe0 (SCK    ),
+//        .probe1 (CSn    ),
+//        .probe2 (MOSI   ),
+//        .probe3 (MISO   ),
+//        .probe4 (cc     )
+//   );
     
    always @(posedge wb_clk)
      if (!wb_rstn)  spi_seq <= IDLE;
@@ -75,7 +84,7 @@ module tiny_spi(
    always @(*)
      begin
 	sck = 1'b0;
-    cc_next = 1'b0;
+    cc_next = BAUD_DIV / 2 - 1;
 	bc_next = bc;
 	sf = 1'b0;
 
@@ -90,23 +99,23 @@ module tiny_spi(
 	  PHASE2:
 	    begin
 	       sck = 1'b0;
-	       if (cc) spi_seq_next = PHASE1;
+	       if (cc == 0) spi_seq_next = PHASE1;
 	       else begin
-		    cc_next = ~cc;
+		    cc_next = cc - 1;
 		    spi_seq_next = PHASE2;
 		   end
 	    end
 	  PHASE1:
 	    begin
 	       sck = 1'b1;
-	       if (!cc == 0) begin
+	       if (cc == 0) begin
 		      bc_next = bc + 1'b1;
 		      sf = 1'b1;
 		      if (&bc) spi_seq_next = IDLE;
 		      else spi_seq_next = PHASE2;
 		  end
 	      else begin
-		      cc_next = ~cc;
+		      cc_next = cc - 1;
 		      spi_seq_next = PHASE1;
 		  end
 	    end

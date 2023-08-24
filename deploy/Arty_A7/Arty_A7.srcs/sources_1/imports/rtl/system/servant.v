@@ -138,8 +138,18 @@ module servant # (
    wire cpu_boot_mode;
    wire cpu_prog_mode;
    
+   wire [31:0] o_data_buf;
+   wire [31:0] o_probuf_0;
+   wire [31:0] o_probuf_1;
+   wire [31:0] o_probuf_2;
+   wire        o_exe_req;
+   wire [2:0]  o_autoexec;
+   wire        o_autoexec_wr;
+   
    servant_arbiter arbiter
    (
+      .i_rst             (wb_rst        ),
+      .i_boot_mode       (cpu_boot_mode ),
        // from CPU
       .i_wb_cpu_dbus_adr (wb_dmem_adr),
       .i_wb_cpu_dbus_dat (wb_dmem_dat),
@@ -175,6 +185,40 @@ module servant # (
       .i_wb_rom_rdt      (wb_rom_rdt ),
       .i_wb_rom_ack      (wb_rom_ack )
    );
+   
+   
+//   ila_0 ila_0_0(
+//        .clk     (wb_clk        ),
+//        .probe0  (wb_dbus_adr   ),
+//        .probe1  (wb_dbus_dat   ),
+//        .probe2  (wb_dbus_we    ),
+//        .probe3  (wb_dbus_cyc   ),
+//        .probe4  (wb_mem_adr    ),
+//        .probe5  (wb_mem_dat    ),
+//        .probe6  (wb_mem_we     ),
+//        .probe7  (wb_mem_cyc    ),
+//        .probe8  (wb_ibus_adr   ),
+//        .probe9  (wb_ibus_cyc   ),
+//        .probe10 (wb_ibus_rdt   ),
+//        .probe11 (wb_ibus_ack   ),
+//        .probe12 (o_data_buf    )
+//    );
+   
+//   ila_1 ila_1_0(
+//        .clk     (wb_clk        ),
+//        .probe0  (wb_dbus_adr   ),
+//        .probe1  (wb_dbus_cyc   ),
+//        .probe2  (wb_dbus_dat   ),
+//        .probe3  (wb_dbus_we    ),
+//        .probe4  (wb_dbus_rdt   ),
+//        .probe5  (o_probuf_0    ),
+//        .probe6  (o_probuf_1    ),
+//        .probe7  (o_probuf_2    ),
+//        .probe8  (o_exe_req     ),
+//        .probe9  (o_autoexec    ),
+//        .probe10 (o_autoexec_wr ),
+//        .probe11 (wb_dbus_ack   )
+//    );
         
    servant_mux servant_mux (
       .i_clk        (wb_clk         ),
@@ -218,7 +262,13 @@ module servant # (
       .o_wb_flash_we  (wb_flash_we  ),
       .o_wb_flash_cyc (wb_flash_cyc ),
       .i_wb_flash_rdt (wb_flash_rdt ),
-      .i_wb_flash_ack (wb_flash_ack )      
+      .i_wb_flash_ack (wb_flash_ack ),
+      // To SREG
+      .o_wb_sreg_dat  (wb_sreg_data ),
+      .o_wb_sreg_we   (wb_sreg_we   ),
+      .o_wb_sreg_cyc  (wb_sreg_cyc  ),
+      .i_wb_sreg_rdt  (wb_sreg_rdt  ),
+      .i_wb_sreg_ack  (wb_sreg_ack  )   
    );
 
    myram #(
@@ -333,7 +383,8 @@ module servant # (
     rom_inst0 (
         .i_wb_clk    (wb_clk        ),
         .i_wb_rst    (wb_rst        ),
-        .o_prog_cmplt(prog_cmplt  ),
+        .i_boot_mode (cpu_boot_mode ),
+        .o_prog_cmplt(prog_cmplt    ),
         // Wishbone
         .i_wb_adr   (wb_rom_adr ),
         .i_wb_cyc   (wb_rom_cyc ),
@@ -411,7 +462,14 @@ module servant # (
         .o_sbus_ack         (wb_dm_ack      ),
         // CPU control
         .o_cpu_ndmrst       (w_dbg_reset    ),
-        .o_cpu_req_halt     (w_dbg_halt     )        
+        .o_cpu_req_halt     (w_dbg_halt     ),
+        .o_data_buf         (o_data_buf     ),
+        .o_probuf_0         (o_probuf_0     ),
+        .o_probuf_1         (o_probuf_1     ),
+        .o_probuf_2         (o_probuf_2     ),
+        .o_exe_req          (o_exe_req      ),
+        .o_autoexec         (o_autoexec     ),
+        .o_autoexec_wr      (o_autoexec_wr  )  
     );
        
 endmodule

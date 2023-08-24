@@ -1,7 +1,7 @@
 TOOLCHAIN_PREFIX=riscv64-unknown-elf-
 
 %.elf: %.S link.ld
-	$(TOOLCHAIN_PREFIX)gcc -nostartfiles -nostdlib -march=rv32e -mabi=ilp32e -Tlink.ld -o$@ $<
+	$(TOOLCHAIN_PREFIX)gcc -nostartfiles -nostdlib -march=rv32e -mabi=ilp32e -misa-spec=2.2 -Tlink.ld -o$@ $<
 %.bin: %.elf
 	$(TOOLCHAIN_PREFIX)objcopy -O binary $< $@
 %.hex: %.bin

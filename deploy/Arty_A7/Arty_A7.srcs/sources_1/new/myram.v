@@ -21,7 +21,7 @@
 
 
 module myram #(
-    parameter depth = 256
+    parameter depth = 8192
 )
 (
     input wire 		   i_wb_clk,

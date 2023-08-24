@@ -47,11 +47,11 @@ module top_artya7(
         output wire FLASH_HOLD
     );
     
-    reg [3:0] r_rstn = 4'b0000;
+    reg [3:0] r_rstn = 4'd0;
     
     always @(posedge i_clk)
-        if (!i_rstn) r_rstn <= 4'b0000;
-        else r_rstn <= {r_rstn[2:0], 1'b1};
+        if (!i_rstn) r_rstn <= 4'd0;
+        else r_rstn <= {1'b1, r_rstn[3:1]};
     
     servant # (
         .memsize    (8192           ),
@@ -61,7 +61,7 @@ module top_artya7(
     )
     u0 (
      .wb_clk        (i_clk      ),
-     .wb_rstn       (r_rstn[3]  ),
+     .wb_rstn       (r_rstn[0]  ),
      // GPIO
      .boot_mode     (boot_mode    ),
      .prog_mode     (prog_mode    ),

@@ -1,4 +1,5 @@
-OUTPUT_ARCH( "riscv" )
+OUTPUT_FORMAT("elf32-littleriscv")
+OUTPUT_ARCH(riscv)
 ENTRY(_start)
 
 MEMORY {
@@ -7,9 +8,11 @@ MEMORY {
 
 SECTIONS {
     __stacktop = ORIGIN(RAM) + LENGTH(RAM);
+    __stack_size = 4K;
 
     . = ORIGIN(RAM);
     .text : {
+    	KEEP(*(.text.crt0)); /* keep start-up code crt0 right at the beginning of rom */
         KEEP(*(.stack))
         KEEP(*(.vectors))
         KEEP(*(.text))
@@ -34,4 +37,13 @@ SECTIONS {
 
     . = ALIGN(4);
     __heap_start = .;
+    
+    .stack ORIGIN(RAM) + LENGTH(RAM) - __stack_size :
+  {
+    PROVIDE( _heap_end = . );
+    . = __stack_size;
+    PROVIDE(__crt0_stack_begin = .);
+  }
+  
+    
 }

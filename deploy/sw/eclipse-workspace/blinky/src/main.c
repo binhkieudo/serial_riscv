@@ -69,12 +69,16 @@ uint32_t arr[] = {31, 32, 33, 34};
 //	return devID;
 //}
 
+uint32_t calc (uint32_t i) {
+	return i + 1;
+}
+
 int
 main(void)
 {
   int i = 0;
-  while (1) {
-	  arr[i] = arr[i] + 1;
+  for (i = 0; i < 4; i = i + 1) {
+	  arr[i] = calc(arr[i]);
 	  i = (i + 1) % 4;
   }
 

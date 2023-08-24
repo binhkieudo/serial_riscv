@@ -60,20 +60,23 @@ module setup_reg(
      else
        o_wb_ack <= i_wb_cyc & !o_wb_ack;
        
-   always @(posedge i_wb_clk)
-      if (i_wb_rst) status = 32'd0;
-      else begin
-        if (i_wb_cyc && i_wb_we) begin
+   always @(posedge i_wb_clk) begin
+//        if (i_wb_rst) begin 
+//            stat
+//        end
+        if (i_wb_rst) status[1] <= 1'b0;  
+        else if (i_wb_cyc && i_wb_we) begin
             status[1] <= i_wb_dat[1]; 
         end
-            
-        status[0] <= i_prog_cmplt;
+        
+        if (i_wb_rst) status[0] <= 1'b0;   
+        else status[0] <= (i_wb_cyc && i_wb_we && i_wb_dat[0]) || status[0];
         
         status[16] <= i_boot_mode;
         status[17] <= i_prog_mode;
         status[18] <= status[0];
         status[19] <= status[1];
-      end
+   end
       
    assign o_wb_rdt = status;   
    
