@@ -1,0 +1,127 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Aug 26 21:16:25 2023
+# Process ID: 49841
+# Current directory: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7
+# Command line: vivado Arty_A7.
+# Log file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/vivado.log
+# Journal file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/vivado.jou
+# Running On: binhkieudo-hotswap, OS: Linux, CPU Frequency: 1400.000 MHz, CPU Physical cores: 16, Host memory: 33036 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.xpr
+update_compile_order -fileset sources_1
+open_hw_manager
+connect_hw_server -u localhost:3121
+open_hw_target {localhost:3121/xilinx_tcf/Digilent/210319B4A283A}
+set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.runs/impl_1/top_artya7.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_hw_manager
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name fifo_generator_0
+set_property -dict [list \
+  CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+  CONFIG.Input_Data_Width {3} \
+  CONFIG.Input_Depth {2048} \
+  CONFIG.Read_Clock_Frequency {10} \
+  CONFIG.Write_Clock_Frequency {100} \
+] [get_ips fifo_generator_0]
+generate_target {instantiation_template} [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+generate_target all [get_files  /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+catch { config_ip_cache -export [get_ips -all fifo_generator_0] }
+export_ip_user_files -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci]
+launch_runs fifo_generator_0_synth_1 -jobs 16
+wait_on_run fifo_generator_0_synth_1
+export_simulation -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci] -directory /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/sim_scripts -ip_user_files_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files -ipstatic_source_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/modelsim} {questa=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/questa} {xcelium=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/xcelium} {vcs=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/vcs} {riviera=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci] -no_script -reset -force -quiet
+remove_files  -fileset fifo_generator_0 /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name input_fifo
+set_property -dict [list \
+  CONFIG.Component_Name {input_fifo} \
+  CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+  CONFIG.Input_Data_Width {4} \
+  CONFIG.Input_Depth {2048} \
+  CONFIG.Read_Clock_Frequency {100} \
+  CONFIG.Write_Clock_Frequency {10} \
+] [get_ips input_fifo]
+generate_target {instantiation_template} [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/input_fifo/input_fifo.xci]
+generate_target all [get_files  /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/input_fifo/input_fifo.xci]
+catch { config_ip_cache -export [get_ips -all input_fifo] }
+export_ip_user_files -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/input_fifo/input_fifo.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/input_fifo/input_fifo.xci]
+launch_runs input_fifo_synth_1 -jobs 16
+wait_on_run input_fifo_synth_1
+export_simulation -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/input_fifo/input_fifo.xci] -directory /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/sim_scripts -ip_user_files_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files -ipstatic_source_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/modelsim} {questa=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/questa} {xcelium=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/xcelium} {vcs=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/vcs} {riviera=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/input_fifo/input_fifo.xci] -no_script -reset -force -quiet
+remove_files  -fileset input_fifo /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/input_fifo/input_fifo.xci
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name inpu_fifo
+set_property -dict [list \
+  CONFIG.Component_Name {inpu_fifo} \
+  CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+  CONFIG.Input_Data_Width {4} \
+  CONFIG.Input_Depth {2048} \
+  CONFIG.Read_Clock_Frequency {100} \
+  CONFIG.Write_Clock_Frequency {10} \
+] [get_ips inpu_fifo]
+generate_target {instantiation_template} [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo/inpu_fifo.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo/inpu_fifo.xci]
+catch { config_ip_cache -export [get_ips -all inpu_fifo] }
+export_ip_user_files -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo/inpu_fifo.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo/inpu_fifo.xci]
+export_simulation -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo/inpu_fifo.xci] -directory /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/sim_scripts -ip_user_files_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files -ipstatic_source_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/modelsim} {questa=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/questa} {xcelium=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/xcelium} {vcs=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/vcs} {riviera=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name fifo_generator_0
+set_property -dict [list \
+  CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+  CONFIG.Input_Data_Width {1} \
+  CONFIG.Input_Depth {2048} \
+] [get_ips fifo_generator_0]
+generate_target {instantiation_template} [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0_1/fifo_generator_0.xci]
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0_1/fifo_generator_0.xci] -no_script -reset -force -quiet
+remove_files  /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/fifo_generator_0_1/fifo_generator_0.xci
+create_ip -name fifo_generator -vendor xilinx.com -library ip -version 13.2 -module_name output_fifo
+set_property -dict [list \
+  CONFIG.Component_Name {output_fifo} \
+  CONFIG.Fifo_Implementation {Independent_Clocks_Builtin_FIFO} \
+  CONFIG.Input_Data_Width {1} \
+  CONFIG.Input_Depth {2048} \
+] [get_ips output_fifo]
+generate_target {instantiation_template} [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci]
+generate_target all [get_files  /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci]
+catch { config_ip_cache -export [get_ips -all output_fifo] }
+export_ip_user_files -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci]
+launch_runs output_fifo_synth_1 -jobs 16
+wait_on_run output_fifo_synth_1
+export_simulation -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci] -directory /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/sim_scripts -ip_user_files_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files -ipstatic_source_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/modelsim} {questa=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/questa} {xcelium=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/xcelium} {vcs=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/vcs} {riviera=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list \
+  CONFIG.Read_Clock_Frequency {10} \
+  CONFIG.Write_Clock_Frequency {100} \
+] [get_ips output_fifo]
+generate_target all [get_files  /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci]
+catch { config_ip_cache -export [get_ips -all output_fifo] }
+export_ip_user_files -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci] -no_script -sync -force -quiet
+reset_run output_fifo_synth_1
+launch_runs output_fifo_synth_1 -jobs 16
+wait_on_run output_fifo_synth_1
+export_simulation -of_objects [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci] -directory /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/sim_scripts -ip_user_files_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files -ipstatic_source_dir /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/modelsim} {questa=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/questa} {xcelium=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/xcelium} {vcs=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/vcs} {riviera=/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo/inpu_fifo.xci] -no_script -reset -force -quiet
+remove_files  /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo/inpu_fifo.xci
+file delete -force /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/inpu_fifo
+file delete -force /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.gen/sources_1/ip/inpu_fifo
+export_ip_user_files -of_objects  [get_files /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci] -no_script -reset -force -quiet
+remove_files  -fileset output_fifo /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo/output_fifo.xci
+file delete -force /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.srcs/sources_1/ip/output_fifo
+file delete -force /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Arty_A7/Arty_A7.gen/sources_1/ip/output_fifo

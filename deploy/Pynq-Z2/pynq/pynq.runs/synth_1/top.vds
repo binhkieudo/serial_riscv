@@ -1,0 +1,714 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Aug 27 12:08:40 2023
+# Process ID: 112376
+# Current directory: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1/top.vds
+# Journal file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1/vivado.jou
+# Running On: binhkieudo-hotswap, OS: Linux, CPU Frequency: 1400.000 MHz, CPU Physical cores: 16, Host memory: 33036 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2022.2/data/ip'.
+Command: read_checkpoint -auto_incremental -incremental /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/utils_1/imports/synth_1/top_artya7.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/utils_1/imports/synth_1/top_artya7.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 112406
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/opt/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'prog_cmplt', assumed default net type 'wire' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant.v:288]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'i_rstn' is not allowed [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/top_artya7.v:52]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2781.156 ; gain = 387.676 ; free physical = 294 ; free virtual = 74004
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2194.902; parent = 1992.714; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3812.250; parent = 2784.129; children = 1028.121
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'zynq_top_wrapper' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/hdl/zynq_top_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'zynq_top' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:12]
+INFO: [Synth 8-6157] synthesizing module 'zynq_top_processing_system7_0_1' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1/.Xil/Vivado-112376-binhkieudo-hotswap/realtime/zynq_top_processing_system7_0_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_top_processing_system7_0_1' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1/.Xil/Vivado-112376-binhkieudo-hotswap/realtime/zynq_top_processing_system7_0_1_stub.v:5]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARVALID' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWVALID' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_BREADY' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_RREADY' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WLAST' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WVALID' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARID' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWID' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WID' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARBURST' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARLOCK' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARSIZE' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWBURST' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWLOCK' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWSIZE' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARPROT' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWPROT' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARADDR' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWADDR' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WDATA' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARCACHE' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARLEN' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARQOS' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWCACHE' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWLEN' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_AWQOS' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_WSTRB' of module 'zynq_top_processing_system7_0_1' is unconnected for instance 'processing_system7_0' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'zynq_top_processing_system7_0_1' has 65 connections declared, but only 36 given [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_top' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/synth/zynq_top.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'zynq_top_wrapper' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/hdl/zynq_top_wrapper.v:12]
+WARNING: [Synth 8-7071] port 'DDR_addr' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_ba' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_cas_n' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_ck_n' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_ck_p' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_cke' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_cs_n' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_dm' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_dq' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_dqs_n' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_dqs_p' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_odt' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_ras_n' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_reset_n' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'DDR_we_n' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'FIXED_IO_ddr_vrn' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'FIXED_IO_ddr_vrp' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'FIXED_IO_mio' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'FIXED_IO_ps_clk' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'FIXED_IO_ps_porb' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7071] port 'FIXED_IO_ps_srstb' of module 'zynq_top_wrapper' is unconnected for instance 'clock_gen' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+WARNING: [Synth 8-7023] instance 'clock_gen' of module 'zynq_top_wrapper' has 23 connections declared, but only 2 given [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:51]
+INFO: [Synth 8-6157] synthesizing module 'top_artya7' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/top_artya7.v:23]
+INFO: [Synth 8-6157] synthesizing module 'servant' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant.v:10]
+	Parameter memsize bound to: 8192 - type: integer 
+	Parameter RESET_ADDR bound to: 0 - type: integer 
+	Parameter E_EXT bound to: 1 - type: integer 
+	Parameter CSR_COUNT bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'servant_arbiter' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant_arbiter.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'servant_arbiter' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant_arbiter.v:4]
+INFO: [Synth 8-6157] synthesizing module 'servant_mux' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant_mux.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'servant_mux' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant_mux.v:7]
+INFO: [Synth 8-6157] synthesizing module 'servant_ram' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant_ram.v:1]
+	Parameter depth bound to: 8192 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'servant_ram' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant_ram.v:1]
+INFO: [Synth 8-6157] synthesizing module 'timer' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/timer.v:1]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/timer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/gpio.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/gpio.v:1]
+INFO: [Synth 8-6157] synthesizing module 'setup_reg' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/setup_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'setup_reg' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/setup_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_top' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_top.v:1]
+	Parameter RESET_PC bound to: 0 - type: integer 
+	Parameter E_EXT bound to: 1 - type: integer 
+	Parameter RF_WIDTH bound to: 8 - type: integer 
+	Parameter CSR_COUNT bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'serv_top' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_top.v:1]
+	Parameter RESET_PC bound to: 0 - type: integer 
+	Parameter E_EXT bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'serv_state' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_state.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_state' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_state.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_decode' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_decode.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'serv_decode' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_decode.v:2]
+INFO: [Synth 8-6157] synthesizing module 'serv_immdec' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_immdec.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_immdec' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_immdec.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_bufreg' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_bufreg.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_bufreg' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_bufreg.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_bufreg2' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_bufreg2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_bufreg2' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_bufreg2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_ctrl' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_ctrl.v:1]
+	Parameter RESET_PC bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'serv_ctrl' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_ctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_alu' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_alu.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_alu' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_if.v:1]
+	Parameter E_EXT bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_if.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_mem_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_mem_if.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_mem_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_mem_if.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_csr' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_csr.v:1]
+	Parameter E_EXT bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'serv_csr' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_csr.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_top' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_ram_if.v:1]
+	Parameter width bound to: 8 - type: integer 
+	Parameter csr_regs bound to: 8 - type: integer 
+	Parameter rf_count bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_ram_if' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_ram_if.v:1]
+WARNING: [Synth 8-689] width (6) of port connection 'i_wreg0' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_top.v:110]
+WARNING: [Synth 8-689] width (6) of port connection 'i_wreg1' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_top.v:111]
+WARNING: [Synth 8-689] width (6) of port connection 'i_rreg0' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_top.v:116]
+WARNING: [Synth 8-689] width (6) of port connection 'i_rreg1' does not match port width (5) of module 'serv_rf_ram_if' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_top.v:117]
+INFO: [Synth 8-6157] synthesizing module 'serv_rf_ram' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_ram.v:1]
+	Parameter width bound to: 8 - type: integer 
+	Parameter rf_count bound to: 16 - type: integer 
+	Parameter csr_count bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_ram' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_ram.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'serv_rf_top' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_rf_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'rom' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/rom.v:23]
+	Parameter memsize bound to: 8192 - type: integer 
+	Parameter FLASH_ADDRESS bound to: -1073741824 - type: integer 
+	Parameter RAM_ADDR bound to: 32768 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/rom.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/rom.v:23]
+INFO: [Synth 8-6157] synthesizing module 'tiny_spi' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/tiny_spi.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/tiny_spi.v:91]
+INFO: [Synth 8-6155] done synthesizing module 'tiny_spi' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/tiny_spi.v:3]
+INFO: [Synth 8-6157] synthesizing module 'debug_dtm' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dtm.v:2]
+INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dtm.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'debug_dtm' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dtm.v:2]
+INFO: [Synth 8-6157] synthesizing module 'debug_dm' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dm.v:2]
+INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dm.v:641]
+INFO: [Synth 8-226] default block is never used [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dm.v:644]
+INFO: [Synth 8-6155] done synthesizing module 'debug_dm' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dm.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'servant' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'top_artya7' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/top_artya7.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/new/top.v:23]
+WARNING: [Synth 8-6014] Unused sequential element op29_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_decode.v:282]
+WARNING: [Synth 8-6014] Unused sequential element op31_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/core/serv_decode.v:283]
+WARNING: [Synth 8-6014] Unused sequential element r_dmi_req_valid_reg was removed.  [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/debug_dm.v:474]
+WARNING: [Synth 8-3848] Net wb_ram_rdt in module/entity servant does not have driver. [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/system/servant.v:118]
+WARNING: [Synth 8-7129] Port i_dmi_rsp_ready in module debug_dm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_sbus_adr[1] in module debug_dm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_sbus_adr[0] in module debug_dm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[31] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[30] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[29] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[28] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[27] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[26] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[25] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[24] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[23] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[22] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[21] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[20] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[19] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[18] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[17] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[16] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[15] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[14] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[13] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[12] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[11] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[10] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[9] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[8] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[7] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[6] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[5] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[4] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[3] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[1] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[0] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[31] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[30] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[29] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[28] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[27] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[26] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[25] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[24] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[23] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[22] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[21] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[20] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[19] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[18] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[17] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[16] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[15] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[14] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[13] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[12] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[11] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[10] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[9] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_dat[8] in module tiny_spi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[31] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[30] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[29] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[28] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[27] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[26] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[25] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[24] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[23] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[22] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[21] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[20] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[19] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[18] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[17] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[16] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[15] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[14] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[13] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[12] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[11] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[10] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[9] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[8] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[7] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[1] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_adr[0] in module rom is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_rst in module serv_rf_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_ren in module serv_rf_ram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_mhartid_en in module serv_csr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_dret in module serv_csr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_pcnext in module serv_rf_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_rs2_raddr[4] in module serv_rf_if is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_ebreak in module serv_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[31] in module serv_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[29] in module serv_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[28] in module serv_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[25] in module serv_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[24] in module serv_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[23] in module serv_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[19] in module serv_decode is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_wb_rdt[18] in module serv_decode is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2864.094 ; gain = 470.613 ; free physical = 430 ; free virtual = 74087
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2194.902; parent = 1992.714; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3892.219; parent = 2864.098; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2881.906 ; gain = 488.426 ; free physical = 430 ; free virtual = 74088
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2194.902; parent = 1992.714; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3910.031; parent = 2881.910; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2881.906 ; gain = 488.426 ; free physical = 431 ; free virtual = 74089
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2194.902; parent = 1992.714; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3910.031; parent = 2881.910; children = 1028.121
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2881.906 ; gain = 0.000 ; free physical = 420 ; free virtual = 74078
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/ip/zynq_top_processing_system7_0_1/zynq_top_processing_system7_0_1/zynq_top_processing_system7_0_1_in_context.xdc] for cell 'clock_gen/zynq_top_i/processing_system7_0'
+Finished Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.gen/sources_1/bd/zynq_top/ip/zynq_top_processing_system7_0_1/zynq_top_processing_system7_0_1/zynq_top_processing_system7_0_1_in_context.xdc] for cell 'clock_gen/zynq_top_i/processing_system7_0'
+Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/constrs_1/imports/xdc/PYNQ-Z2 v1.0.xdc]
+Finished Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/constrs_1/imports/xdc/PYNQ-Z2 v1.0.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/constrs_1/imports/xdc/PYNQ-Z2 v1.0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3046.656 ; gain = 0.000 ; free physical = 326 ; free virtual = 73989
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3046.656 ; gain = 0.000 ; free physical = 326 ; free virtual = 73989
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/opt/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 374 ; free virtual = 74044
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2205.396; parent = 2003.564; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 374 ; free virtual = 74044
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2205.396; parent = 2003.564; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for clock_gen/zynq_top_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for clock_gen/zynq_top_i/processing_system7_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 373 ; free virtual = 74043
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2205.396; parent = 2003.564; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'spi_seq_reg' in module 'tiny_spi'
+INFO: [Synth 8-802] inferred FSM for state register 'tap_ctrl_state_reg' in module 'debug_dtm'
+INFO: [Synth 8-802] inferred FSM for state register 'dmi_ctrl_state_reg' in module 'debug_dtm'
+INFO: [Synth 8-802] inferred FSM for state register 'dm_ctrl_state_reg' in module 'debug_dm'
+INFO: [Synth 8-802] inferred FSM for state register 'dm_ctrl_cmderr_reg' in module 'debug_dm'
+INFO: [Synth 8-802] inferred FSM for state register 'dm_ctrl_hart_resume_state_reg' in module 'debug_dm'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_spi_seq_next_reg' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/tiny_spi.v:95]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_spi_seq_next_reg' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/tiny_spi.v:95]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                  PHASE2 |                               01 |                               10
+                  PHASE1 |                               10 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'spi_seq_reg' using encoding 'sequential' in module 'tiny_spi'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_spi_seq_next_reg' [/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.srcs/sources_1/imports/rtl/ip/tiny_spi.v:95]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+          DMI_STATE_Idle |                              000 |                              000
+     DMI_STATE_read_wait |                              110 |                              001
+          DMI_STATE_read |                              101 |                              010
+     DMI_STATE_read_busy |                              100 |                              011
+    DMI_STATE_write_wait |                              011 |                              100
+         DMI_STATE_write |                              010 |                              101
+    DMI_STATE_write_busy |                              001 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dmi_ctrl_state_reg' using encoding 'sequential' in module 'debug_dtm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+  STATE_test_logic_reset |                 0000000000000001 |                             1111
+     STATE_run_test_idle |                 0000000000000010 |                             1100
+    STATE_select_dr_scan |                 0000000000000100 |                             0111
+    STATE_select_ir_scan |                 0000000000001000 |                             0100
+        STATE_capture_ir |                 0000000000010000 |                             1110
+          STATE_shift_ir |                 0000000000100000 |                             1010
+          STATE_exit1_ir |                 0000000001000000 |                             1001
+          STATE_pause_ir |                 0000000010000000 |                             1011
+          STATE_exit2_ir |                 0000000100000000 |                             1000
+         STATE_update_ir |                 0000001000000000 |                             1101
+        STATE_capture_dr |                 0000010000000000 |                             0110
+          STATE_shift_dr |                 0000100000000000 |                             0010
+          STATE_exit1_dr |                 0001000000000000 |                             0001
+          STATE_pause_dr |                 0010000000000000 |                             0011
+          STATE_exit2_dr |                 0100000000000000 |                             0000
+         STATE_update_dr |                 1000000000000000 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tap_ctrl_state_reg' using encoding 'one-hot' in module 'debug_dtm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                              001 |                               00
+                  iSTATE |                              010 |                               01
+                 iSTATE0 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dm_ctrl_hart_resume_state_reg' using encoding 'one-hot' in module 'debug_dm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                CMD_IDLE |                              000 |                              000
+           CMD_EXE_CHECK |                              101 |                              001
+         CMD_EXE_PREAPRE |                              100 |                              010
+         CMD_EXE_TRIGGER |                              011 |                              011
+            CMD_EXE_BUSY |                              010 |                              100
+           CMD_EXE_ERROR |                              001 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dm_ctrl_state_reg' using encoding 'sequential' in module 'debug_dm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              000 |                              000
+                 iSTATE0 |                              001 |                              100
+                 iSTATE1 |                              010 |                              011
+                 iSTATE3 |                              011 |                              010
+                 iSTATE2 |                              100 |                              001
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dm_ctrl_cmderr_reg' using encoding 'sequential' in module 'debug_dm'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 356 ; free virtual = 74030
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2205.396; parent = 2003.564; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 2     
+	   3 Input    2 Bit       Adders := 5     
+	   2 Input    2 Bit       Adders := 1     
+	   4 Input    1 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               40 Bit    Registers := 1     
+	               32 Bit    Registers := 18    
+	               30 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 9     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 80    
++---RAMs : 
+	              64K Bit	(2048 X 32 bit)          RAMs := 1     
+	              768 Bit	(96 X 8 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   40 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 31    
+	   7 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 1     
+	  16 Input   32 Bit        Muxes := 1     
+	   2 Input   29 Bit        Muxes := 2     
+	   2 Input   17 Bit        Muxes := 1     
+	  16 Input   16 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 16    
+	   2 Input   15 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 5     
+	   2 Input    7 Bit        Muxes := 3     
+	   2 Input    6 Bit        Muxes := 5     
+	   2 Input    5 Bit        Muxes := 5     
+	   3 Input    5 Bit        Muxes := 2     
+	   4 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 2     
+	   7 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 12    
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 6     
+	   3 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 75    
+	   5 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 10    
+	   7 Input    1 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design top has port FLASH_RST driven by constant 1
+WARNING: [Synth 8-3917] design top has port FLASH_WP driven by constant 1
+WARNING: [Synth 8-3917] design top has port FLASH_HOLD driven by constant 1
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 307 ; free virtual = 73994
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2205.396; parent = 2003.564; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-----------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-----------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | u0/u0/ram/mem_reg           | 2 K x 32(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|top         | u0/u0/cpu/rf_ram/memory_reg | 96 x 8(READ_FIRST)     | W |   | 96 x 8(WRITE_FIRST)    |   | R | Port A and B     | 1      | 0      | 
++------------+-----------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 251 ; free virtual = 73888
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2313.189; parent = 2111.425; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 265 ; free virtual = 73843
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2343.939; parent = 2142.175; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-----------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-----------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | u0/u0/ram/mem_reg           | 2 K x 32(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|top         | u0/u0/cpu/rf_ram/memory_reg | 96 x 8(READ_FIRST)     | W |   | 96 x 8(WRITE_FIRST)    |   | R | Port A and B     | 1      | 0      | 
++------------+-----------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance u0/u0/ram/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u0/u0/ram/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u0/u0/cpu/rf_ram/memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 259 ; free virtual = 73839
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2344.936; parent = 2143.171; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 248 ; free virtual = 73833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2345.260; parent = 2143.495; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 248 ; free virtual = 73833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2345.322; parent = 2143.558; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 247 ; free virtual = 73833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2345.475; parent = 2143.710; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 247 ; free virtual = 73833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2345.475; parent = 2143.710; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 247 ; free virtual = 73833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2345.510; parent = 2143.745; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 247 ; free virtual = 73833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2345.510; parent = 2143.745; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                              | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top         | u0/u0/serv_dtm/tap_reg_idcode_reg[13] | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|top         | u0/u0/serv_dtm/tap_reg_idcode_reg[5]  | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------+----------+
+|      |BlackBox name                   |Instances |
++------+--------------------------------+----------+
+|1     |zynq_top_processing_system7_0_1 |         1|
++------+--------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------+------+
+|      |Cell                          |Count |
++------+------------------------------+------+
+|1     |zynq_top_processing_system7_0 |     1|
+|2     |CARRY4                        |     8|
+|3     |LUT1                          |     4|
+|4     |LUT2                          |    80|
+|5     |LUT3                          |   196|
+|6     |LUT4                          |   102|
+|7     |LUT5                          |   156|
+|8     |LUT6                          |   346|
+|9     |MUXF7                         |     3|
+|10    |RAMB18E1                      |     1|
+|11    |RAMB36E1                      |     2|
+|12    |SRL16E                        |     2|
+|13    |FDRE                          |   745|
+|14    |FDSE                          |    18|
+|15    |LD                            |     2|
+|16    |IBUF                          |     7|
+|17    |OBUF                          |    11|
++------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 247 ; free virtual = 73833
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2345.525; parent = 2143.761; children = 202.188
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.766; parent = 3014.645; children = 1028.121
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 149 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 3046.656 ; gain = 488.426 ; free physical = 293 ; free virtual = 73880
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 3046.656 ; gain = 653.176 ; free physical = 294 ; free virtual = 73880
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3046.656 ; gain = 0.000 ; free physical = 403 ; free virtual = 73989
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3046.656 ; gain = 0.000 ; free physical = 343 ; free virtual = 73931
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  LD => LDCE: 2 instances
+
+Synth Design complete, checksum: a9160c5c
+INFO: [Common 17-83] Releasing license: Synthesis
+108 Infos, 168 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:34 . Memory (MB): peak = 3046.656 ; gain = 989.707 ; free physical = 571 ; free virtual = 74159
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Common 17-1381] The checkpoint '/home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/Pynq-Z2/pynq/pynq.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 27 12:09:24 2023...

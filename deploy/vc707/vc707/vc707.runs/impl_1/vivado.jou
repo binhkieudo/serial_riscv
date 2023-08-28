@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Aug 27 15:46:00 2023
+# Process ID: 185655
+# Current directory: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vc707/vc707/vc707.runs/impl_1
+# Command line: vivado -log top_vc707.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_vc707.tcl -notrace
+# Log file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vc707/vc707/vc707.runs/impl_1/top_vc707.vdi
+# Journal file: /home/binhkieudo/Workspace/XRPIX/serial_riscv/deploy/vc707/vc707/vc707.runs/impl_1/vivado.jou
+# Running On: binhkieudo-hotswap, OS: Linux, CPU Frequency: 1400.000 MHz, CPU Physical cores: 16, Host memory: 33036 MB
+#-----------------------------------------------------------
+source top_vc707.tcl -notrace

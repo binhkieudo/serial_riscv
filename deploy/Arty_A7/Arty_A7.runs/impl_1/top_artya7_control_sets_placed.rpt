@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Fri Aug 25 05:34:32 2023
+| Date         : Sat Aug 26 11:41:54 2023
 | Host         : binhkieudo-hotswap running 64-bit Ubuntu 20.04.6 LTS
 | Command      : report_control_sets -verbose -file top_artya7_control_sets_placed.rpt
 | Design       : top_artya7
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              75 |           34 |
+| No           | No                    | No                     |              75 |           32 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             173 |           63 |
+| No           | Yes                   | No                     |             173 |           62 |
 | Yes          | No                    | No                     |              71 |           28 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             448 |          113 |
+| Yes          | Yes                   | No                     |             448 |          119 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,46 +73,46 @@ Table of Contents
 +----------------------------------------------------------+---------------------------------------------+---------------------------------------------------+------------------+----------------+--------------+
 |                       Clock Signal                       |                Enable Signal                |                  Set/Reset Signal                 | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------------------------------------------------+---------------------------------------------+---------------------------------------------------+------------------+----------------+--------------+
-|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_sync_tck_falling            | u0/serv_dm/wb_rst                                 |                1 |              1 |         1.00 |
 |  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/bufreg/data_reg[2]_0             | u0/serv_dm/wb_rst                                 |                1 |              1 |         1.00 |
-|  u0/spi_inst0/FSM_sequential_spi_seq_next_reg[1]_i_2_n_0 |                                             |                                                   |                2 |              2 |         1.00 |
-|  i_clk_IBUF_BUFG                                         |                                             | u0/cpu/cpu/state/SR[0]                            |                2 |              4 |         2.00 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/state/E[0]                       |                                                   |                2 |              4 |         2.00 |
-|  i_clk_IBUF_BUFG                                         |                                             | p_0_in                                            |                2 |              4 |         2.00 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/ctrl/rden                        | u0/cpu/cpu/ctrl/o_ibus_adr_reg[2]_0               |                1 |              4 |         4.00 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_ireg                    | u0/serv_dtm/tap_reg_ireg[4]_i_1_n_0               |                1 |              4 |         4.00 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_sync_tck_falling            | u0/serv_dm/wb_rst                                 |                1 |              1 |         1.00 |
+|  u0/spi_inst0/FSM_sequential_spi_seq_next_reg[1]_i_2_n_0 |                                             |                                                   |                1 |              2 |         2.00 |
 |  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_idcode[31]_i_2_n_0      |                                                   |                1 |              4 |         4.00 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_ctrl_ldsw_progbuf[27]_i_1_n_0 |                                                   |                2 |              4 |         2.00 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/p_36_in                         | u0/serv_dm/wb_rst                                 |                3 |              5 |         1.67 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[2]_1[0]        |                                                   |                2 |              5 |         2.50 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/E[0]                      |                                                   |                2 |              5 |         2.50 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/state/E[0]                       |                                                   |                1 |              4 |         4.00 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_ireg                    | u0/serv_dtm/tap_reg_ireg[4]_i_1_n_0               |                1 |              4 |         4.00 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_ctrl_ldsw_progbuf[27]_i_1_n_0 |                                                   |                1 |              4 |         4.00 |
+|  i_clk_IBUF_BUFG                                         |                                             | u0/cpu/cpu/state/SR[0]                            |                2 |              4 |         2.00 |
+|  i_clk_IBUF_BUFG                                         |                                             | p_0_in                                            |                1 |              4 |         4.00 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/ctrl/rden                        | u0/cpu/cpu/ctrl/o_ibus_adr_reg[2]_0               |                1 |              4 |         4.00 |
 |  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_ctrl_ldsw_progbuf[27]_i_1_n_0 | u0/serv_dm/dm_ctrl_ldsw_progbuf[11]_i_1_n_0       |                1 |              5 |         5.00 |
 |  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_ctrl_ldsw_progbuf[27]_i_1_n_0 | u0/serv_dm/dm_ctrl_ldsw_progbuf[24]_i_1_n_0       |                1 |              5 |         5.00 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[3]_1[0]        |                                                   |                1 |              6 |         6.00 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_ctrl_cmderr                   | u0/serv_dm/wb_rst                                 |                2 |              6 |         3.00 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/p_36_in                         | u0/serv_dm/wb_rst                                 |                3 |              5 |         1.67 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/E[0]                      |                                                   |                2 |              5 |         2.50 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[2]_1[0]        |                                                   |                1 |              5 |         5.00 |
 |  i_clk_IBUF_BUFG                                         |                                             | u0/serv_dm/dm_ctrl_hart_resume_ack                |                1 |              6 |         6.00 |
-|  i_clk_IBUF_BUFG                                         | u0/spi_inst0/sr8[7]_i_1_n_0                 |                                                   |                1 |              8 |         8.00 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[1]_0[0]        |                                                   |                3 |              9 |         3.00 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_ctrl_cmderr                   | u0/serv_dm/wb_rst                                 |                2 |              6 |         3.00 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[3]_1[0]        |                                                   |                2 |              6 |         3.00 |
+|  i_clk_IBUF_BUFG                                         | u0/spi_inst0/sr8[7]_i_1_n_0                 |                                                   |                3 |              8 |         2.67 |
 |  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_idcode[28]_i_1_n_0      | u0/serv_dm/wb_rst                                 |                2 |              9 |         4.50 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dm/wb_ibus_ack                      | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |                6 |             14 |         2.33 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[1]_0[0]        |                                                   |                4 |              9 |         2.25 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dm/wb_ibus_ack                      | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |                7 |             14 |         2.00 |
 |  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_sync_tck_rising             | u0/serv_dtm/FSM_onehot_tap_ctrl_state[15]_i_1_n_0 |                3 |             16 |         5.33 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_idcode[31]_i_2_n_0      | u0/serv_dtm/tap_reg_idcode[31]_i_1_n_0            |                4 |             20 |         5.00 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_dtmcs[31]_i_2_n_0       | u0/serv_dtm/tap_reg_dtmcs[31]_i_1_n_0             |                6 |             27 |         4.50 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/ctrl/rden                        |                                                   |               14 |             28 |         2.00 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/bufreg_en                 | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |                8 |             30 |         3.75 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/state/o_cnt_r_reg[3]_1           | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |                8 |             31 |         3.88 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_idcode[31]_i_2_n_0      | u0/serv_dtm/tap_reg_idcode[31]_i_1_n_0            |                5 |             20 |         4.00 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_dtmcs[31]_i_2_n_0       | u0/serv_dtm/tap_reg_dtmcs[31]_i_1_n_0             |                4 |             27 |         6.75 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/ctrl/rden                        |                                                   |               13 |             28 |         2.15 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/bufreg_en                 | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |                7 |             30 |         4.29 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/state/o_cnt_r_reg[3]_1           | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |                9 |             31 |         3.44 |
 |  i_clk_IBUF_BUFG                                         | u0/serv_dtm/dmi_rdata                       | u0/serv_dm/wb_rst                                 |                5 |             32 |         6.40 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[2]_2[0]        | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |               16 |             32 |         2.00 |
-|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/bufreg/E[0]                      | u0/serv_dm/wb_rst                                 |                7 |             32 |         4.57 |
-|  i_clk_IBUF_BUFG                                         |                                             | u0/serv_dtm/Q[1]                                  |               10 |             32 |         3.20 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_reg_progbuf1                  | u0/serv_dm/wb_rst                                 |               10 |             32 |         3.20 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/decode/opcode_reg[2]_2[0]        | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |               20 |             32 |         1.60 |
+|  i_clk_IBUF_BUFG                                         | u0/cpu/cpu/bufreg/E[0]                      | u0/serv_dm/wb_rst                                 |                8 |             32 |         4.00 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_reg_progbuf0                  | u0/serv_dm/wb_rst                                 |                8 |             32 |         4.00 |
 |  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_reg_command[31]_i_1_n_0       | u0/serv_dm/wb_rst                                 |                7 |             32 |         4.57 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_reg_progbuf0                  | u0/serv_dm/wb_rst                                 |                7 |             32 |         4.57 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dm/dm_reg_progbuf1                  | u0/serv_dm/wb_rst                                 |                8 |             32 |         4.00 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/dmi_wdata0                      | u0/serv_dm/wb_rst                                 |                7 |             38 |         5.43 |
-|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_dmi[39]_i_1_n_0         | u0/serv_dm/wb_rst                                 |                8 |             40 |         5.00 |
-|  i_clk_IBUF_BUFG                                         |                                             | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |               22 |             50 |         2.27 |
-|  i_clk_IBUF_BUFG                                         |                                             |                                                   |               32 |             73 |         2.28 |
-|  i_clk_IBUF_BUFG                                         |                                             | u0/serv_dm/wb_rst                                 |               26 |             77 |         2.96 |
+|  i_clk_IBUF_BUFG                                         |                                             | u0/serv_dtm/Q[1]                                  |               10 |             32 |         3.20 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/dmi_wdata0                      | u0/serv_dm/wb_rst                                 |                6 |             38 |         6.33 |
+|  i_clk_IBUF_BUFG                                         | u0/serv_dtm/tap_reg_dmi[39]_i_1_n_0         | u0/serv_dm/wb_rst                                 |                7 |             40 |         5.71 |
+|  i_clk_IBUF_BUFG                                         |                                             | u0/serv_dm/dm_reg_dmcontrol_ndmreset_reg_1        |               23 |             50 |         2.17 |
+|  i_clk_IBUF_BUFG                                         |                                             |                                                   |               31 |             73 |         2.35 |
+|  i_clk_IBUF_BUFG                                         |                                             | u0/serv_dm/wb_rst                                 |               25 |             77 |         3.08 |
 +----------------------------------------------------------+---------------------------------------------+---------------------------------------------------+------------------+----------------+--------------+
 
 

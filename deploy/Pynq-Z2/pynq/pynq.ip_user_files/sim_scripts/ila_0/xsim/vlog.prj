@@ -1,0 +1,6 @@
+verilog xil_defaultlib --include "/opt/Xilinx/Vivado/2022.2/data/xilinx_vip/include" --include "../../../../pynq.gen/sources_1/ip/ila_0/hdl/verilog" \
+"../../../../pynq.gen/sources_1/ip/ila_0/sim/ila_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
