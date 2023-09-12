@@ -1,2 +1,0 @@
-wb_ila.v,verilog,xil_defaultlib,../../../../Arty_A7.gen/sources_1/ip/wb_ila/sim/wb_ila.v,incdir="../../../../Arty_A7.gen/sources_1/ip/wb_ila/hdl/verilog"
-glbl.v,Verilog,xil_defaultlib,glbl.v

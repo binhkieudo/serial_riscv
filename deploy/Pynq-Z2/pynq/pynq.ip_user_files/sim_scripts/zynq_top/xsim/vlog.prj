@@ -1,7 +1,0 @@
-verilog xil_defaultlib --include "/opt/Xilinx/Vivado/2022.2/data/xilinx_vip/include" --include "../../../../pynq.gen/sources_1/bd/zynq_top/ipshared/ec67/hdl" --include "../../../../pynq.gen/sources_1/bd/zynq_top/ipshared/ee60/hdl" \
-"../../../bd/zynq_top/ip/zynq_top_processing_system7_0_1/sim/zynq_top_processing_system7_0_1.v" \
-"../../../bd/zynq_top/sim/zynq_top.v" \
-
-verilog xil_defaultlib "glbl.v"
-
-nosort

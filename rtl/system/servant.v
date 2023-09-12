@@ -415,6 +415,10 @@ module servant # (
         // CPU control
         .o_cpu_ndmrst       (w_dbg_reset    ),
         .o_cpu_req_halt     (w_dbg_halt     )
+<<<<<<< HEAD
    )    
        
+=======
+    )   
+>>>>>>> flash_program
 endmodule
