@@ -14,23 +14,14 @@ module servant # (
     parameter RAM_ADDR      = 32'h0000_8000,
     parameter E_EXT         = 1'b1,
     parameter RF_WIDTH      = 8,
-    parameter CSR_COUNT     = 8
+    parameter CSR_COUNT     = 0
 )
 (
  input  wire wb_clk,
- input  wire wb_rstn,
+ input  wire wb_rst,
  // GPIO
  input  wire boot_mode,
- input  wire prog_mode,
- output wire o_prog_cmplt,
- output wire o_prog_flash,
  output wire q,
- // JTAG
- input  wire i_jtag_trst,
- input  wire i_jtag_tck,
- input  wire i_jtag_tdi,
- output wire o_jtag_tdo,
- input  wire i_jtag_tms,
  // Flash control
  output wire o_flash_SCK,
  output wire o_flash_CSn,
@@ -78,28 +69,6 @@ module servant # (
    wire [31:0] 	wb_mem_rdt;
    wire 	    wb_mem_ack;
    
-   // Debug Module Interface (DMI) -- Request
-   wire        dmi_req_valid;
-   wire        dmi_req_ready;
-   wire [5:0]  dmi_req_address;
-   wire [31:0] dmi_req_data;
-   wire [1:0]  dmi_req_op;
-   
-   // Debug Module Interface (DMI) -- Response
-   wire        dmi_rsp_valid;
-   wire        dmi_rsp_ready;
-   wire [31:0] dmi_rsp_data;
-   wire [1:0]  dmi_rsp_op;
-   
-   // Debug module wishbone interface
-   wire [31:0] 	wb_dm_adr;
-   wire [31:0] 	wb_dm_dat;
-   wire [3:0] 	wb_dm_sel;
-   wire 	    wb_dm_we;
-   wire 	    wb_dm_cyc;
-   wire [31:0] 	wb_dm_rdt;
-   wire 	    wb_dm_ack;
-   
    wire 	wb_gpio_dat;
    wire 	wb_gpio_we;
    wire 	wb_gpio_cyc;
@@ -122,29 +91,6 @@ module servant # (
    wire 	    wb_rom_cyc;
    wire [31:0] 	wb_rom_rdt;
    wire 	    wb_rom_ack;
-    
-   wire [31:0]  wb_sreg_data;
-   wire         wb_sreg_we;
-   wire         wb_sreg_cyc;
-   wire [31:0]  wb_sreg_rdt;
-   wire         wb_sreg_ack;
-   
-   wire w_dbg_halt;
-   wire w_dbg_reset;
-   wire w_dbg_process;
-   
-   wire wb_rst = !wb_rstn;
-    
-   wire cpu_boot_mode;
-   wire cpu_prog_mode;
-   
-   wire [31:0] o_data_buf;
-   wire [31:0] o_probuf_0;
-   wire [31:0] o_probuf_1;
-   wire [31:0] o_probuf_2;
-   wire        o_exe_req;
-   wire [2:0]  o_autoexec;
-   wire        o_autoexec_wr;
    
    servant_arbiter arbiter
    (
@@ -163,14 +109,6 @@ module servant # (
       .i_wb_cpu_ibus_cyc (wb_ibus_cyc),
       .o_wb_cpu_ibus_rdt (wb_ibus_rdt),
       .o_wb_cpu_ibus_ack (wb_ibus_ack),
-      // to DM
-      .o_wb_dm_adr       (wb_dm_adr ),
-      .o_wb_dm_dat       (wb_dm_dat ),
-      .o_wb_dm_sel       (wb_dm_sel ),
-      .o_wb_dm_we        (wb_dm_we  ),
-      .o_wb_dm_cyc       (wb_dm_cyc ),
-      .i_wb_dm_rdt       (wb_dm_rdt ),
-      .i_wb_dm_ack       (wb_dm_ack ),
       // to RAM
       .o_wb_ram_adr      (wb_mem_adr ),
       .o_wb_ram_dat      (wb_mem_dat ),
@@ -186,7 +124,14 @@ module servant # (
       .i_wb_rom_ack      (wb_rom_ack )
    );
    
-        
+//   ila_0 ila_0(
+//    .clk    (wb_clk      ),
+//    .probe0 (wb_ibus_adr ),
+//    .probe1 (wb_ibus_cyc ),
+//    .probe2 (wb_ibus_rdt ),
+//    .probe3 (wb_ibus_ack )
+//   );
+   
    servant_mux servant_mux (
       .i_clk        (wb_clk         ),
       .i_rst        (wb_rst         ),
@@ -229,13 +174,7 @@ module servant # (
       .o_wb_flash_we  (wb_flash_we  ),
       .o_wb_flash_cyc (wb_flash_cyc ),
       .i_wb_flash_rdt (wb_flash_rdt ),
-      .i_wb_flash_ack (wb_flash_ack ),
-      // To SREG
-      .o_wb_sreg_dat  (wb_sreg_data ),
-      .o_wb_sreg_we   (wb_sreg_we   ),
-      .o_wb_sreg_cyc  (wb_sreg_cyc  ),
-      .i_wb_sreg_rdt  (wb_sreg_rdt  ),
-      .i_wb_sreg_ack  (wb_sreg_ack  )   
+      .i_wb_flash_ack (wb_flash_ack ) 
    );
 
    servant_ram #(
@@ -274,27 +213,6 @@ module servant # (
       .o_gpio   (q          )
    );
    
-   setup_reg setup_reg0 (
-    .i_wb_clk       (wb_clk ),
-    .i_wb_rst       (wb_rst ),
-    // Wishbone
-    .i_wb_dat       (wb_sreg_data ),
-    .i_wb_we        (wb_sreg_we ),
-    .i_wb_cyc       (wb_sreg_cyc ),
-    .o_wb_rdt       (wb_sreg_rdt ),
-    .o_wb_ack       (wb_sreg_ack ),
-    // IO port
-    .i_boot_mode    (boot_mode  ),
-    .i_prog_mode    (prog_mode  ),
-    .i_prog_cmplt   (prog_cmplt ),
-    // To cpu
-    .o_boot_mode    (cpu_boot_mode ),
-    .o_prog_mode    (cpu_prog_mode ),
-    // To outside
-    .o_prog_cmplt   (o_prog_cmplt ),
-    .o_prog_flash   (o_prog_flash )
-   );
-   
    serv_rf_top #(
     .RESET_PC  (RESET_ADDR    ),
     .E_EXT     (E_EXT         ),
@@ -305,7 +223,7 @@ module servant # (
      (
       .clk          (wb_clk         ),
       .i_rst        (wb_rst         ),
-      .i_boot_mode  (cpu_boot_mode  ),
+      .i_boot_mode  (boot_mode  ),
       // Interrupts
       .i_timer_irq  (1'b0),
       // Instruction bus
@@ -322,9 +240,9 @@ module servant # (
       .i_dbus_rdt   (wb_dbus_rdt    ),
       .i_dbus_ack   (wb_dbus_ack    ),
       // Debug interface
-      .i_dbg_halt   (w_dbg_halt     ),
-      .i_dbg_reset  (w_dbg_reset    ),
-      .o_dbg_process(w_dbg_process  )   
+      .i_dbg_halt   (1'b0           ),
+      .i_dbg_reset  (1'b0           ),
+      .o_dbg_process(               )   
      );
         
     rom #(
@@ -335,7 +253,7 @@ module servant # (
     rom_inst0 (
         .i_wb_clk    (wb_clk        ),
         .i_wb_rst    (wb_rst        ),
-        .i_boot_mode (cpu_boot_mode ),
+        .i_boot_mode (boot_mode ),
         .o_prog_cmplt(prog_cmplt    ),
         // Wishbone
         .i_wb_adr   (wb_rom_adr ),
@@ -348,7 +266,7 @@ module servant # (
     tiny_spi spi_inst0(
         // Global control
         .wb_clk     (wb_clk ),
-        .wb_rstn    (wb_rstn ),
+        .wb_rst     (wb_rst ),
         // Wishbone interface
         .i_wb_adr   (wb_flash_adr ),
         .i_wb_dat   (wb_flash_dat ),
@@ -361,60 +279,6 @@ module servant # (
         .CSn        (o_flash_CSn  ),
         .MOSI       (o_flash_MOSI ),
         .MISO       (i_flash_MISO )   
-    );
-    
-    // Debug Transport Module (DTM)
-    debug_dtm serv_dtm(
-        // global control
-        .i_clk              (wb_clk         ),
-        .i_rst              (wb_rst         ),
-        // jtag connection
-        .i_trst             (i_jtag_trst    ),
-        .i_tck              (i_jtag_tck     ), 
-        .i_tdi              (i_jtag_tdi     ),
-        .o_tdo              (o_jtag_tdo     ),
-        .i_tms              (i_jtag_tms     ),
-        // Debug Module Interface (DMI) -- Request
-        .o_dmi_req_valid    (dmi_req_valid  ),
-        .i_dmi_req_ready    (dmi_req_ready  ),
-        .o_dmi_req_address  (dmi_req_address),
-        .o_dmi_req_data     (dmi_req_data   ),
-        .o_dmi_req_op       (dmi_req_op     ),
-        // Debug Module Interface (DMI) -- Response
-        .i_dmi_rsp_valid    (dmi_rsp_valid  ),
-        .o_dmi_rsp_ready    (dmi_rsp_ready  ),
-        .i_dmi_rsp_data     (dmi_rsp_data   ),
-        .i_dmi_rsp_op       (dmi_rsp_op     )
-    );
-    
-    // Debug Module (DM)
-    debug_dm serv_dm(
-        // Global control
-        .i_clk              (wb_clk         ),
-        .i_rst              (wb_rst         ),
-        .i_cpu_debug        (w_dbg_process  ), // cpu in debug mode
-        // Debug Module Interface (DMI) - Request
-        .i_dmi_req_valid    (dmi_req_valid  ),
-        .o_dmi_req_ready    (dmi_req_ready  ),
-        .i_dmi_req_address  (dmi_req_address),
-        .i_dmi_req_op       (dmi_req_op     ),
-        .i_dmi_req_data     (dmi_req_data   ),
-        // Debug Module Interface (DMI) - Response
-        .o_dmi_rsp_valid    (dmi_rsp_valid  ),
-        .i_dmi_rsp_ready    (dmi_rsp_ready  ),
-        .o_dmi_rsp_data     (dmi_rsp_data   ),
-        .o_dmi_rsp_op       (dmi_rsp_op     ),
-        // Wishbone bus slave interface
-        .i_sbus_adr         (wb_dm_adr      ),
-        .i_sbus_dat         (wb_dm_dat      ),
-        .i_sbus_sel         (wb_dm_sel      ),
-        .i_sbus_we          (wb_dm_we       ),
-        .i_sbus_cyc         (wb_dm_cyc      ),
-        .o_sbus_rdt         (wb_dm_rdt      ),
-        .o_sbus_ack         (wb_dm_ack      ),
-        // CPU control
-        .o_cpu_ndmrst       (w_dbg_reset    ),
-        .o_cpu_req_halt     (w_dbg_halt     )
     );
 	
 endmodule

@@ -24,18 +24,7 @@ module top_artya7(
         input  wire i_clk,
         input  wire i_rstn,
         // GPIOs
-        input  wire boot_mode,
-        input  wire prog_mode,
-        output wire o_prog_cmplt,
-        output wire o_prog_flash,
-        output wire boot_led,
         output wire q,
-        // JTAG
-        input  wire jtag_trst,
-        input  wire jtag_tdi,
-        input  wire jtag_tms,
-        input  wire jtag_tck,
-        output wire jtag_tdo,
         // Flash SPI
         output wire SCK,
         output wire CSn,
@@ -47,11 +36,18 @@ module top_artya7(
         output wire FLASH_HOLD
     );
     
-    reg [3:0] r_rstn = 4'd0;
+    reg [3:0] r_rst = 4'hf;
     
-    always @(posedge i_clk)
-        if (!i_rstn) r_rstn <= 4'd0;
-        else r_rstn <= {1'b1, r_rstn[3:1]};
+    wire sysclk;
+    
+    clk_wiz_0 clk50_gen(
+      .clk_out1 (sysclk ),
+      .clk_in1  (i_clk  )
+    );
+    
+    always @(posedge sysclk)
+        if (!i_rstn) r_rst <= 4'hf;
+        else r_rst <= {1'b0, r_rst[3:1]};
     
     servant # (
         .memsize    (8192           ),
@@ -60,20 +56,11 @@ module top_artya7(
         .CSR_COUNT  (8              ) 
     )
     u0 (
-     .wb_clk        (i_clk      ),
-     .wb_rstn       (r_rstn[0]  ),
+     .wb_clk        (sysclk     ),
+     .wb_rst        (r_rst[0]   ),
      // GPIO
-     .boot_mode     (boot_mode    ),
-     .prog_mode     (prog_mode    ),
-     .o_prog_cmplt  (o_prog_cmplt ),
-     .o_prog_flash  (o_prog_flash ),
-     .q             (q            ),
-     // JTAG
-     .i_jtag_trst   (jtag_trst  ),
-     .i_jtag_tck    (jtag_tck   ),
-     .i_jtag_tdi    (jtag_tdi   ),
-     .o_jtag_tdo    (jtag_tdo   ),
-     .i_jtag_tms    (jtag_tms   ),
+     .boot_mode     (1'b0       ),
+     .q             (q          ),
      // Flash control
      .o_flash_SCK   (SCK        ),
      .o_flash_CSn   (CSn        ),
@@ -84,7 +71,5 @@ module top_artya7(
     assign FLASH_RST    = 1'b1;
     assign FLASH_WP     = 1'b1;
     assign FLASH_HOLD   = 1'b1;
-    
-    assign boot_led = boot_mode;
     
 endmodule

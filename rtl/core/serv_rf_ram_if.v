@@ -4,7 +4,7 @@ module serv_rf_ram_if
     parameter width=8,
     //Number of CSR registers. These are allocated after the normal
     // GPR registers in the RAM.
-    parameter csr_regs=4,
+    parameter csr_regs=0,
     parameter rf_count = 32,
     //Internal parameters calculated from above values. Do not change
     parameter raw=$clog2(rf_count+csr_regs), //Register address width

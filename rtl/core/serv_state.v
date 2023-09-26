@@ -9,17 +9,11 @@ module serv_state
    output wire 	     o_cnt_en,
    output wire 	     o_cnt0to3,
    output wire 	     o_cnt12to31,
-   output wire       o_cnt11to31,
    output wire 	     o_cnt0,
    output wire 	     o_cnt1,
    output wire 	     o_cnt2,
    output wire 	     o_cnt3,
-   output wire       o_cnt4,
-   output wire       o_cnt6,
    output wire 	     o_cnt7,
-   output wire       o_cnt8,
-   output wire       o_cnt15,
-   output wire       o_cnt30,
    output reg 	     o_cnt_done,
    output wire 	     o_bufreg_en,
    output wire 	     o_ctrl_pc_en,
@@ -73,17 +67,11 @@ module serv_state
 
    assign o_cnt0to3   = (o_cnt[4:2] == 3'd0);
    assign o_cnt12to31 = (o_cnt[4] | (o_cnt[3:2] == 2'b11));
-   assign o_cnt11to31 = o_cnt12to31 | (o_cnt[3] & o_cnt_r[3]);
    assign o_cnt0      = (o_cnt[4:2] == 3'd0) & o_cnt_r[0];
    assign o_cnt1      = (o_cnt[4:2] == 3'd0) & o_cnt_r[1];
    assign o_cnt2      = (o_cnt[4:2] == 3'd0) & o_cnt_r[2];
    assign o_cnt3      = (o_cnt[4:2] == 3'd0) & o_cnt_r[3];
-   assign o_cnt4      = (o_cnt[4:2] == 3'd1) & o_cnt_r[0];
-   assign o_cnt6      = (o_cnt[4:2] == 3'd1) & o_cnt_r[2];
    assign o_cnt7      = (o_cnt[4:2] == 3'd1) & o_cnt_r[3];
-   assign o_cnt8      = (o_cnt[4:2] == 3'd2) & o_cnt_r[0];
-   assign o_cnt15     = (o_cnt[4:2] == 3'd3) & o_cnt_r[3];
-   assign o_cnt30     = (o_cnt[4:2] == 3'd7) & o_cnt_r[2];
 
    //Take branch for jump or branch instructions (opcode == 1x0xx) if
    //a) It's an unconditional branch (opcode[0] == 1)

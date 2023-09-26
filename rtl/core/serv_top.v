@@ -35,11 +35,7 @@ module serv_top
    output wire 		  o_dbus_we ,
    output wire 		  o_dbus_cyc,
    input  wire [31:0] i_dbus_rdt,
-   input  wire 		  i_dbus_ack,
-   // Debug interface
-   input  wire        i_dbg_halt,
-   input  wire        i_dbg_reset,
-   output wire        o_dbg_process
+   input  wire 		  i_dbus_ack
 );
 
    wire [4:0]    rd_addr;
@@ -172,11 +168,9 @@ module serv_top
    assign i_wb_rdt =  wb_ibus_rdt;
    assign iscomp   =  1'b0;
    
-   wire dbg_process_delay;
-   
    serv_state state (
       .i_clk          (clk          ),
-      .i_rst          (i_rst | i_dbg_reset),
+      .i_rst          (i_rst        ),
       //State
       .i_new_irq      (new_irq      ),
       .i_alu_cmp      (alu_cmp      ),
@@ -184,17 +178,11 @@ module serv_top
       .o_cnt_en       (cnt_en       ),
       .o_cnt0to3      (cnt0to3      ),
       .o_cnt12to31    (cnt12to31    ),
-      .o_cnt11to31    (cnt11to31    ),
       .o_cnt0         (cnt0         ),
       .o_cnt1         (cnt1         ),
       .o_cnt2         (cnt2         ),
       .o_cnt3         (cnt3         ),
-      .o_cnt4         (cnt4         ),
-      .o_cnt6         (cnt6         ),
       .o_cnt7         (cnt7         ),
-      .o_cnt8         (cnt8         ),
-      .o_cnt15        (cnt15        ),       
-      .o_cnt30        (cnt30        ),
       .o_cnt_done     (cnt_done     ),
       .o_bufreg_en    (bufreg_en    ),
       .o_ctrl_pc_en   (ctrl_pc_en   ),
@@ -230,7 +218,7 @@ module serv_top
 
    serv_decode decode (
       .clk                (clk              ),
-      .i_rst              (i_rst | i_dbg_reset),
+      .i_rst              (i_rst            ),
       //Input
       .i_wb_rdt           (i_wb_rdt[31:2]   ),
       .i_wb_en            (wb_ibus_ack      ),
@@ -259,7 +247,6 @@ module serv_top
       .o_ctrl_utype       (utype            ),
       .o_ctrl_pc_rel      (pc_rel           ),
       .o_ctrl_mret        (mret             ),
-      .o_ctrl_dret        (dret             ),
       //To alu
       .o_alu_sub          (alu_sub          ),
       .o_alu_bool_op      (alu_bool_op      ),
@@ -272,17 +259,17 @@ module serv_top
       .o_mem_word         (mem_word         ),
       .o_mem_half         (mem_half         ),
       //To CSR
-      .o_csr_en           (csr_en           ),
-      .o_csr_addr         (csr_addr         ),
-      .o_csr_mstatus_en   (csr_mstatus_en   ),
-      .o_csr_mie_en       (csr_mie_en       ),
-      .o_csr_mcause_en    (csr_mcause_en    ),
-      .o_csr_misa_en      (csr_misa_en      ),
-      .o_csr_mhartid_en   (csr_mhartid_en   ),
-      .o_csr_dcsr_en      (csr_dcsr_en      ),
-      .o_csr_source       (csr_source       ),
-      .o_csr_d_sel        (csr_d_sel        ),
-      .o_csr_imm_en       (csr_imm_en       ),
+//      .o_csr_en           (csr_en           ),
+//      .o_csr_addr         (csr_addr         ),
+//      .o_csr_mstatus_en   (csr_mstatus_en   ),
+//      .o_csr_mie_en       (csr_mie_en       ),
+//      .o_csr_mcause_en    (csr_mcause_en    ),
+//      .o_csr_misa_en      (csr_misa_en      ),
+//      .o_csr_mhartid_en   (csr_mhartid_en   ),
+//      .o_csr_dcsr_en      (csr_dcsr_en      ),
+//      .o_csr_source       (csr_source       ),
+//      .o_csr_d_sel        (csr_d_sel        ),
+//      .o_csr_imm_en       (csr_imm_en       ),
       .o_mtval_pc         (mtval_pc         ),
       //To top
       .o_immdec_ctrl      (immdec_ctrl      ),
@@ -290,12 +277,7 @@ module serv_top
       //To RF IF
       .o_rd_mem_en        (rd_mem_en        ),
       .o_rd_csr_en        (rd_csr_en        ),
-      .o_rd_alu_en        (rd_alu_en        ),
-      // Debug interface
-      .i_dbg_halt         (i_dbg_halt       ),
-      .i_dbg_step         (dbg_step         ),
-      .o_dbg_process      (o_dbg_process    ),
-      .o_dbg_delay        (dbg_process_delay)
+      .o_rd_alu_en        (rd_alu_en        )
    );
 
    serv_immdec immdec (
@@ -305,7 +287,7 @@ module serv_top
       .i_cnt_done   (cnt_done       ),
       //Controli_cnt_11to31
       .i_immdec_en  (immdec_en      ),
-      .i_csr_imm_en (csr_imm_en     ),
+      .i_csr_imm_en (1'b0           ),
       .i_ctrl       (immdec_ctrl    ),
       .o_rd_addr    (rd_addr        ),
       .o_rs1_addr   (rs1_addr       ),
@@ -320,7 +302,7 @@ module serv_top
 
    serv_bufreg bufreg (
       .i_clk        (clk              ),
-      .i_rst        (i_rst | i_dbg_reset),
+      .i_rst        (i_rst            ),
       //State
       .i_cnt0       (cnt0             ),
       .i_cnt1       (cnt1             ),
@@ -342,7 +324,7 @@ module serv_top
 
    serv_bufreg2 bufreg2 (
       .i_clk        (clk        ),
-      .i_rst        (i_rst | i_dbg_reset),
+      .i_rst        (i_rst      ),
       //State
       .i_en         (cnt_en     ),
       .i_init       (init       ),
@@ -370,7 +352,6 @@ module serv_top
    ) ctrl (
       .clk           (clk                ),
       .i_rst         (i_rst              ),
-      .i_dbg_reset   (i_dbg_reset        ),
       .i_boot_mode   (i_boot_mode        ),
       //State
       .i_pc_en       (ctrl_pc_en         ),
@@ -384,9 +365,8 @@ module serv_top
       .i_jal_or_jalr (jal_or_jalr        ),
       .i_utype       (utype              ),
       .i_pc_rel      (pc_rel             ),
-      .i_trap        (trap | mret | dret ),
+      .i_trap        (trap | mret        ),
       .i_ebreak      (ebreak             ),
-      .i_halt        (i_dbg_halt | dbg_step ),
       .i_iscomp      (iscomp             ),
       //Data
       .i_imm         (imm                ),
@@ -395,13 +375,12 @@ module serv_top
       .o_rd          (ctrl_rd            ),
       .o_bad_pc      (bad_pc             ),
       //External
-      .o_ibus_adr    (wb_ibus_adr        ),
-      .o_ibus_nxtadr (wb_ibus_adr_nxt    )
+      .o_ibus_adr    (wb_ibus_adr        )
    );
 
    serv_alu alu (
       .clk        (clk          ),
-      .i_rst      (i_rst | i_dbg_reset),
+      .i_rst      (i_rst        ),
       //State
       .i_en       (cnt_en       ),
       .i_cnt0     (cnt0         ),
@@ -425,7 +404,6 @@ module serv_top
    rf_if (
       //RF interface
       .i_cnt_en    (cnt_en          ),
-      .i_cnt_11to31(cnt11to31       ),
       .o_wreg0     (o_wreg0         ),
       .o_wreg1     (o_wreg1         ),
       .o_wen0      (o_wen0          ),
@@ -438,12 +416,8 @@ module serv_top
       .i_rdata1    (i_rdata1        ),
       //Trap interface
       .i_trap      (trap            ),
-      .i_ebreak    (ebreak          ),
-      .i_dbg_process (dbg_process_delay),
       .i_mret      (mret            ),
-      .i_dret      (dret            ),
       .i_mepc      (wb_ibus_adr[0]  ),
-      .i_pcnext    (wb_ibus_adr_nxt ),
       .i_mtval_pc  (mtval_pc        ),
       .i_bufreg_q  (bufreg_q        ),
       .i_bad_pc    (bad_pc          ),
@@ -459,7 +433,7 @@ module serv_top
       .i_alu_rd    (alu_rd          ),
       .i_rd_alu_en (rd_alu_en       ),
       .i_csr_rd    (csr_rd          ),
-      .i_rd_csr_en (rd_csr_en | ebreak),
+      .i_rd_csr_en (rd_csr_en       ),
       .i_mem_rd    (mem_rd          ),
       .i_rd_mem_en (rd_mem_en       ),
       //RS1 read port
@@ -475,7 +449,7 @@ module serv_top
    serv_mem_if mem_if
    (
       .i_clk        (clk            ),
-      .i_rst        (i_rst | i_dbg_reset),
+      .i_rst        (i_rst          ),
       //State
       .i_bytecnt    (mem_bytecnt    ),
       .i_lsb        (lsb            ),
@@ -492,52 +466,49 @@ module serv_top
       .o_wb_sel     (o_dbus_sel     )
    );
 
-   serv_csr # (
-        .E_EXT        (E_EXT          )
-   )
-   csr (
-	    .i_clk        (clk            ),
-	    .i_rst        (i_rst          ),
-	    .i_dbg_halt   (i_dbg_halt     ),
-	    .i_dbg_reset  (i_dbg_reset    ),
-	    //State
-	    .i_init       (init           ),
-	    .i_en         (cnt_en         ),
-	    .i_cnt0to3    (cnt0to3        ),
-	    .i_cnt2       (cnt2           ),
-	    .i_cnt3       (cnt3           ),
-	    .i_cnt4       (cnt4           ),
-	    .i_cnt6       (cnt6           ),
-	    .i_cnt7       (cnt7           ),
-	    .i_cnt8       (cnt8           ),
-	    .i_cnt15      (cnt15          ),
-	    .i_cnt30      (cnt30          ),
-	    .i_cnt_done   (cnt_done       ),
-	    .i_mem_op     (!mtval_pc      ),
-	    .i_mtip       (i_timer_irq    ),
-	    .i_trap       (trap           ),
-	    .o_new_irq    (new_irq        ),
-	    .o_dbg_step   (dbg_step       ),
-	    //Control
-	    .i_e_op       (e_op           ),
-	    .i_ebreak     (ebreak         ),
-	    .i_mem_cmd    (o_dbus_we      ),
-	    .i_mstatus_en (csr_mstatus_en ),
-	    .i_mie_en     (csr_mie_en     ),
-	    .i_mcause_en  (csr_mcause_en  ),
-	    .i_misa_en    (csr_misa_en    ),
-	    .i_mhartid_en (csr_mhartid_en ),
-	    .i_dcsr_en    (csr_dcsr_en    ),
-	    .i_csr_source (csr_source     ),
-	    .i_mret       (mret           ),
-	    .i_dret       (dret           ),
-	    .i_csr_d_sel  (csr_d_sel      ),
-	    //Data
-	    .i_rf_csr_out (rf_csr_out     ),
-	    .o_csr_in     (csr_in         ),
-	    .i_csr_imm    (csr_imm        ),
-	    .i_rs1        (rs1            ),
-	    .o_q          (csr_rd         )
-    );
+//   serv_csr # (
+//        .E_EXT        (E_EXT          )
+//   )
+//   csr (
+//	    .i_clk        (clk            ),
+//	    .i_rst        (i_rst          ),
+//	    //State
+//	    .i_init       (init           ),
+//	    .i_en         (cnt_en         ),
+//	    .i_cnt0to3    (cnt0to3        ),
+//	    .i_cnt2       (cnt2           ),
+//	    .i_cnt3       (cnt3           ),
+//	    .i_cnt4       (cnt4           ),
+//	    .i_cnt6       (cnt6           ),
+//	    .i_cnt7       (cnt7           ),
+//	    .i_cnt8       (cnt8           ),
+//	    .i_cnt15      (cnt15          ),
+//	    .i_cnt30      (cnt30          ),
+//	    .i_cnt_done   (cnt_done       ),
+//	    .i_mem_op     (!mtval_pc      ),
+//	    .i_mtip       (i_timer_irq    ),
+//	    .i_trap       (trap           ),
+//	    .o_new_irq    (new_irq        ),
+//	    //Control
+//	    .i_e_op       (e_op           ),
+//	    .i_ebreak     (ebreak         ),
+//	    .i_mem_cmd    (o_dbus_we      ),
+//	    .i_mstatus_en (csr_mstatus_en ),
+//	    .i_mie_en     (csr_mie_en     ),
+//	    .i_mcause_en  (csr_mcause_en  ),
+//	    .i_misa_en    (csr_misa_en    ),
+//	    .i_mhartid_en (csr_mhartid_en ),
+//	    .i_dcsr_en    (csr_dcsr_en    ),
+//	    .i_csr_source (csr_source     ),
+//	    .i_mret       (mret           ),
+//	    .i_dret       (dret           ),
+//	    .i_csr_d_sel  (csr_d_sel      ),
+//	    //Data
+//	    .i_rf_csr_out (rf_csr_out     ),
+//	    .o_csr_in     (csr_in         ),
+//	    .i_csr_imm    (csr_imm        ),
+//	    .i_rs1        (rs1            ),
+//	    .o_q          (csr_rd         )
+//    );
     
 endmodule

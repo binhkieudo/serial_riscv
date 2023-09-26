@@ -3,7 +3,7 @@
 module tiny_spi(
    // system
    input  wire          wb_clk,
-   input  wire          wb_rstn,
+   input  wire          wb_rst,
    // interrupt
    // memory mapped
    input  wire [31:0]   i_wb_adr,
@@ -73,7 +73,7 @@ module tiny_spi(
 //   );
     
    always @(posedge wb_clk)
-     if (!wb_rstn)  spi_seq <= IDLE;
+     if (wb_rst)  spi_seq <= IDLE;
      else           spi_seq <= spi_seq_next;
 
    always @(posedge wb_clk) begin
@@ -87,7 +87,8 @@ module tiny_spi(
     cc_next = BAUD_DIV / 2 - 1;
 	bc_next = bc;
 	sf = 1'b0;
-
+    spi_seq_next = IDLE;
+    
 	case (spi_seq)
 	  IDLE: begin
 	       if (wstb) begin
@@ -119,6 +120,13 @@ module tiny_spi(
 		      spi_seq_next = PHASE1;
 		  end
 	    end
+	   default: begin
+	       	sck = 1'b0;
+            cc_next = BAUD_DIV / 2 - 1;
+            bc_next = bc;
+            sf = 1'b0;
+            spi_seq_next = IDLE;
+	   end
 	endcase
    end
 
@@ -127,7 +135,7 @@ module tiny_spi(
 	else if (sf)   sr8 <= sr8_sf;
 	else           sr8 <= sr8;
 	
-	if (!wb_rstn) CSn <= 1'b1;
+	if (wb_rst) CSn <= 1'b1;
     else if (cs_set) CSn <= !i_wb_dat[0];
    end
    

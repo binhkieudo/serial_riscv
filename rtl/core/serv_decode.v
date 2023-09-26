@@ -29,7 +29,6 @@ module serv_decode
    output reg       o_ctrl_utype,
    output reg       o_ctrl_pc_rel,
    output reg       o_ctrl_mret,
-   output reg       o_ctrl_dret,
    //To alu
    output reg       o_alu_sub,
    output reg [1:0] o_alu_bool_op,
@@ -42,17 +41,17 @@ module serv_decode
    output reg       o_mem_half,
    output reg       o_mem_cmd,
    //To CSR
-   output reg       o_csr_en,
-   output reg [2:0] o_csr_addr,
-   output reg       o_csr_mstatus_en,
-   output reg       o_csr_mie_en,
-   output reg       o_csr_mcause_en,
-   output reg       o_csr_misa_en,
-   output reg       o_csr_mhartid_en,
-   output reg       o_csr_dcsr_en,
-   output reg [1:0] o_csr_source,
-   output reg       o_csr_d_sel,
-   output reg       o_csr_imm_en,
+//   output reg       o_csr_en,
+//   output reg [2:0] o_csr_addr,
+//   output reg       o_csr_mstatus_en,
+//   output reg       o_csr_mie_en,
+//   output reg       o_csr_mcause_en,
+//   output reg       o_csr_misa_en,
+//   output reg       o_csr_mhartid_en,
+//   output reg       o_csr_dcsr_en,
+//   output reg [1:0] o_csr_source,
+//   output reg       o_csr_d_sel,
+//   output reg       o_csr_imm_en,
    output reg       o_mtval_pc,
    //To top
    output reg [3:0] o_immdec_ctrl,
@@ -61,12 +60,7 @@ module serv_decode
    //To RF IF
    output reg       o_rd_mem_en,
    output reg       o_rd_csr_en,
-   output reg       o_rd_alu_en,
-   // Debug signal
-   input  wire      i_dbg_halt,
-   input  wire      i_dbg_step,
-   output reg       o_dbg_process,
-   output reg       o_dbg_delay
+   output reg       o_rd_alu_en
 );
 
    reg [4:0] opcode;
@@ -147,7 +141,7 @@ module serv_decode
    //opcode & funct3 & op21
 
    wire co_ctrl_mret = opcode[4] & opcode[2] & op21 & !(|funct3);
-   wire co_ctrl_dret = opcode[4] & opcode[2] & !(|funct3) & imm30;
+//   wire co_ctrl_dret = opcode[4] & opcode[2] & !(|funct3) & imm30;
    //Matches system opcodes except CSR accesses (funct3 == 0)
    //and mret (!op21)
    wire co_e_op = opcode[4] & opcode[2] & !op21 & !(|funct3);
@@ -202,35 +196,37 @@ module serv_decode
    //false for mstatus, mie, mcause, mip, dcsr, mhartid, misa
 //   wire csr_valid = op(op26 & !op21) | op20;
 //   wire csr_valid = imm30 | (op26 & !op22 & !op21) | op20;
-   wire csr_valid = (imm30 & (op21 | op20)) | // dpc, dscratch0
-                    ((op26 | op22) & op20)  | // mtvec, mepc, mtval
-                    (op26 & !(op22 | op21));  // mscratch
+//   wire csr_valid = (imm30 & (op21 | op20)) | // dpc, dscratch0
+//                    ((op26 | op22) & op20)  | // mtvec, mepc, mtval
+//                    (op26 & !(op22 | op21));  // mscratch
+//   wire co_rd_csr_en = csr_op;
+//   wire co_csr_en         = csr_op & csr_valid;
+//   wire co_csr_mstatus_en = ({imm30, op26, op22, op21, op20} == 5'b00_000) & csr_op;
+//   wire co_csr_mie_en     = ({imm30, op26, op22, op21, op20} == 5'b00_100) & csr_op;
+//   wire co_csr_mcause_en  = ({imm30, op26, op22, op21, op20} == 5'b01_010) & csr_op;
+//   wire co_csr_misa_en    = ({imm30, op26, op22, op21, op20} == 5'b00_001) & csr_op;
+//   wire co_csr_mhartid_en = ({imm30, op26, op22, op21, op20} == 5'b10_100) & csr_op;
+//   wire co_csr_dcsr_en    = ({imm30, op26, op22, op21, op20} == 5'b10_000) & csr_op;
+//   wire [1:0] co_csr_source = funct3[1:0];
+//   wire co_csr_d_sel = funct3[2];
+//   wire co_csr_imm_en = opcode[4] & opcode[2] & funct3[2];
+//   wire [2:0] co_csr_addr = {op27, op22 | op21, !op21 & op20};
    
-   wire co_rd_csr_en = csr_op;
+   wire csr_valid           = 1'b0;  // mscratch
+   wire co_rd_csr_en        = 1'b0;
+   wire co_csr_en           = 1'b0;
+   wire co_csr_mstatus_en   = 1'b0;
+   wire co_csr_mie_en       = 1'b0;
+   wire co_csr_mcause_en    = 1'b0;
+   wire co_csr_misa_en      = 1'b0;
+   wire co_csr_mhartid_en   = 1'b0;
+   wire co_csr_dcsr_en      = 1'b0;
+   wire [1:0] co_csr_source = 2'b00;
+   wire co_csr_d_sel        = 1'b0;
+   wire co_csr_imm_en       = 1'b0;
+   wire [2:0] co_csr_addr   = 3'b000;   
    
-   // for valid csr (stored in rf)
-   wire co_csr_en         = csr_op & csr_valid;
-   // for invalid csr (process in serv_csr)
-//   wire co_csr_mstatus_en = csr_op & !op22  & !op21 & !op20;
-//   wire co_csr_mie_en     = csr_op & !imm30 & !op26 &  op22;
-//   wire co_csr_mcause_en  = csr_op &  op21  & !op20;
-//   wire co_csr_misa_en    = csr_op &  op20;
-//   wire co_csr_mhartid_en = csr_op &  imm30 & op22;
-//   wire co_csr_dcsr_en    = csr_op &  imm30 & !op22;
    
-   wire co_csr_mstatus_en = ({imm30, op26, op22, op21, op20} == 5'b00_000) & csr_op;
-   wire co_csr_mie_en     = ({imm30, op26, op22, op21, op20} == 5'b00_100) & csr_op;
-   wire co_csr_mcause_en  = ({imm30, op26, op22, op21, op20} == 5'b01_010) & csr_op;
-   wire co_csr_misa_en    = ({imm30, op26, op22, op21, op20} == 5'b00_001) & csr_op;
-   wire co_csr_mhartid_en = ({imm30, op26, op22, op21, op20} == 5'b10_100) & csr_op;
-   wire co_csr_dcsr_en    = ({imm30, op26, op22, op21, op20} == 5'b10_000) & csr_op;
-   //4000_0500
-   //0100_0000_0000_0000_0000_0101_0000_0000
-   wire [1:0] co_csr_source = funct3[1:0];
-   wire co_csr_d_sel = funct3[2];
-   wire co_csr_imm_en = opcode[4] & opcode[2] & funct3[2];
-//   wire [2:0] co_csr_addr = {op26 & op20, !op26 | op21};
-   wire [2:0] co_csr_addr = {op27, op22 | op21, !op21 & op20};
    wire co_alu_cmp_eq = funct3[2:1] == 2'b00;
 
    wire co_alu_cmp_sig = ~((funct3[0] & funct3[1]) | (funct3[1] & funct3[2]));
@@ -266,7 +262,7 @@ module serv_decode
    //1 (OP_B_SOURCE_RS2) when BRANCH or OP
    wire co_op_b_source = opcode[3];
 
-   wire enter_debug = (i_dbg_halt | i_dbg_step) & !(o_dbg_delay | o_dbg_process);
+//   wire enter_debug = (i_dbg_halt | i_dbg_step) & !(o_dbg_delay | o_dbg_process);
    
     always @(posedge clk) begin
         if (i_rst) begin // NOP
@@ -287,14 +283,14 @@ module serv_decode
             // wire co_e_op = opcode[4] & opcode[2] & !op21 & !(|funct3);
             // When enter debug mode, the fetch instruction is replaced by ebreak
 //            funct3 <= i_wb_rdt[14:12] & {3{!enter_debug}};
-            funct3 <= i_wb_rdt[14:12] & {3{!enter_debug}};
+            funct3 <= i_wb_rdt[14:12];
             imm30  <= i_wb_rdt[30];
 //            imm25  <= i_wb_rdt[25];
 //            opcode <= i_wb_rdt[6:2];
-            opcode[4:2] <= i_wb_rdt[6:4] | {3{enter_debug}};
-            opcode[1:0] <= i_wb_rdt[3:2] & {2{!enter_debug}};
-            op20   <= i_wb_rdt[20] | enter_debug;
-            op21   <= i_wb_rdt[21] & !enter_debug;
+            opcode[4:2] <= i_wb_rdt[6:4];
+            opcode[1:0] <= i_wb_rdt[3:2];
+            op20   <= i_wb_rdt[20];
+            op21   <= i_wb_rdt[21];
             op22   <= i_wb_rdt[22];
             op26   <= i_wb_rdt[26];
             op27   <= i_wb_rdt[27];
@@ -302,20 +298,6 @@ module serv_decode
             op31   <= i_wb_rdt[31];
             
 
-        end
-        
-        if (i_rst) o_dbg_process <= 1'b0;
-        else begin
-//            if (&{i_wb_rdt[20], i_wb_rdt[6:4]}) o_dbg_process <= 1'b1;
-//            else if (co_ctrl_dret && i_cnt_done) o_dbg_process <= 1'b0;  
-            if (co_ebreak) o_dbg_process <= 1'b1;
-            else if (co_ctrl_dret && i_cnt_done) o_dbg_process <= 1'b0;        
-        end
-        
-        if (i_rst) o_dbg_delay <= 1'b1;
-        else begin
-            if (i_cnt_done && o_dbg_process) o_dbg_delay <= 1'b1;
-            else if (i_cnt_done && o_dbg_delay) o_dbg_delay <= 1'b0;
         end
     end
     
@@ -340,7 +322,6 @@ module serv_decode
         o_ctrl_utype       = co_ctrl_utype;
         o_ctrl_pc_rel      = co_ctrl_pc_rel;
         o_ctrl_mret        = co_ctrl_mret;
-        o_ctrl_dret        = co_ctrl_dret;
         o_alu_sub          = co_alu_sub;
         o_alu_bool_op      = co_alu_bool_op;
         o_alu_cmp_eq       = co_alu_cmp_eq;
@@ -350,17 +331,19 @@ module serv_decode
         o_mem_word         = co_mem_word;
         o_mem_half         = co_mem_half;
         o_mem_cmd          = co_mem_cmd;
-        o_csr_en           = co_csr_en;
-        o_csr_addr         = co_csr_addr;
-        o_csr_mstatus_en   = co_csr_mstatus_en;
-        o_csr_mie_en       = co_csr_mie_en;
-        o_csr_mcause_en    = co_csr_mcause_en;
-        o_csr_misa_en      = co_csr_misa_en;
-        o_csr_mhartid_en   = co_csr_mhartid_en;
-        o_csr_dcsr_en      = co_csr_dcsr_en;
-        o_csr_source       = co_csr_source;
-        o_csr_d_sel        = co_csr_d_sel;
-        o_csr_imm_en       = co_csr_imm_en;
+        
+//        o_csr_en           = co_csr_en;
+//        o_csr_addr         = co_csr_addr;
+//        o_csr_mstatus_en   = co_csr_mstatus_en;
+//        o_csr_mie_en       = co_csr_mie_en;
+//        o_csr_mcause_en    = co_csr_mcause_en;
+//        o_csr_misa_en      = co_csr_misa_en;
+//        o_csr_mhartid_en   = co_csr_mhartid_en;
+//        o_csr_dcsr_en      = co_csr_dcsr_en;
+//        o_csr_source       = co_csr_source;
+//        o_csr_d_sel        = co_csr_d_sel;
+//        o_csr_imm_en       = co_csr_imm_en;
+        
         o_immdec_ctrl      = co_immdec_ctrl;
         o_immdec_en        = co_immdec_en;
         o_op_b_source      = co_op_b_source;

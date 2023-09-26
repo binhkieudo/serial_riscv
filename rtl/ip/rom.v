@@ -29,7 +29,7 @@ module rom# (
     input  wire         i_wb_clk,
     input  wire         i_wb_rst,
     input  wire         i_boot_mode,
-    output reg          o_prog_cmplt,
+    output wire         o_prog_cmplt,
     // Wishbone
     input  wire [31:0]  i_wb_adr,
     input  wire         i_wb_cyc,
@@ -45,17 +45,18 @@ module rom# (
         else
             o_wb_ack <= i_wb_cyc & !o_wb_ack;
     
-    always @(posedge i_wb_clk)
-        if (i_wb_rst) o_prog_cmplt <= 1'b0;
-        else if (i_wb_cyc) begin
-            if (addr == 5'd0) o_prog_cmplt <= 1'b0;
-            else if (addr == 5'd23) o_prog_cmplt <= 1'b1;
-        end
+    assign o_prog_cmplt = 1'b0;
+//    always @(posedge i_wb_clk)
+//        if (i_wb_rst) o_prog_cmplt <= 1'b0;
+//        else if (i_wb_cyc) begin
+//            if (addr == 5'd0) o_prog_cmplt <= 1'b0;
+//            else if (addr == 5'd23) o_prog_cmplt <= 1'b1;
+//        end
     
     always @(posedge i_wb_clk)
         case (addr)
             // LOAD_PC:
-            5'd0:  o_wb_rdt <= i_boot_mode? 32'h00000063: 32'h00007633;
+            5'd0:  o_wb_rdt <= 32'h00007633;
             // ENABLE_FLASH:
             5'd1:  o_wb_rdt <= 32'h00047433;
             5'd2:  o_wb_rdt <= {FLASH_ADDRESS[31:12], 12'h437};
